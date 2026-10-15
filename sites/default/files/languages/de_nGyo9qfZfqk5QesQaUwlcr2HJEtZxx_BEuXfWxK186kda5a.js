@@ -1,0 +1,1 @@
+window.drupalTranslations = {"strings":{"":{"Changed":"Ge\u00e4ndert","New revision":"Neue Revision","Edit":"Bearbeiten","Save":"Speichern","Cancel":"Abbrechen","Not published":"Nicht ver\u00f6ffentlicht","Title":"Titel","ID":"ID","@count r\u00e9sultat\u0003@count r\u00e9sultats":"@count Ergebnis\u0003@count Ergebnisse"}},"pluralFormula":{"1":0,"default":1}};

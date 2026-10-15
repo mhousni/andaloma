@@ -1,0 +1,1 @@
+window.drupalTranslations = {"strings":{"":{"@count r\u00e9sultat\u0003@count r\u00e9sultats":"@count result\u0003@count results"}}};
