@@ -40,20 +40,126 @@
 />-->
 
     <style>
-        .embla__viewport {
+        .embla__viewport, .embla-2__viewport {
             overflow: hidden;
         }
 
-        .embla__container {
+        .embla__viewport .embla__container, .embla-2__viewport .embla__container {
             display: flex;
             touch-action: pan-y pinch-zoom;
         }
 
-        .embla__slide {
+        .embla__viewport .embla__slide, .embla-2__viewport .embla__slide {
             flex: 0 0 100%;
             min-width: 0;
         }
+
+
+        
     </style>
+
+
+  <style>
+    /* Card */
+.embla-2 .embla__slide {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+
+  min-width: 0;
+  flex: 0 0 320px;
+  padding: 24px 20px;
+  margin: 0 10px;
+
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 14px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+
+  color: #1f2937;
+  font-family: inherit;
+}
+
+/* Hover */
+.embla-2 .embla__slide:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.12);
+}
+
+/* Image */
+.embla-2 .embla__slide img {
+  width: 300px;
+  height: 300px;
+  object-fit: contain;
+  margin-bottom: 16px;
+  border-radius: 0;
+  background: #f3f4f6;
+  padding: 8px;
+}
+
+/* Title */
+.embla-2 .embla__slide h3 {
+  font-size: 1.05rem;
+  font-weight: 600;
+  line-height: 1.35;
+  margin: 0 0 14px;
+  color: #0f172a;
+}
+
+/* List */
+.embla-2 .embla__slide ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  text-align: left;
+  width: 100%;
+}
+
+.embla-2 .embla__slide ul li {
+  position: relative;
+  padding-left: 20px;
+  margin-bottom: 8px;
+  font-size: 1.9rem;
+  line-height: 1.4;
+  color: #4b5563;
+}
+
+/* Bullet */
+.embla-2 .embla__slide ul li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 8px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #0ea5e9;
+}
+
+/* Equal-height container */
+.embla-2 .embla__container {
+  display: flex;
+  align-items: stretch;
+}
+
+.embla-2 .embla__slide {
+  height: auto;
+}
+
+/* Dark mode */
+@media (prefers-color-scheme: dark) {
+  .embla-2 .embla__slide {
+    /* background: #1e293b;
+    border-color: #334155; */
+    color: #666600;
+  }
+  .embla-2 .embla__slide h3 { color: #666600; font-size: 1.4em; }
+  .embla-2 .embla__slide ul li { color: #cbd5e1; }
+  /* .embla-2 .embla__slide img { background: #0f172a; } */
+}
+  </style>
 
 
 
@@ -1632,7 +1738,41 @@
                                                                         </strong>&nbsp;<br>Equipe</h2>
                                                                     <div
                                                                         class="ParagraphImmersiveEditoItem-text text-content">
-                                                                        <div class="pv-org-chart">
+                                                                        <div class="embla-2">
+                                                                            <div class="embla-2__viewport">
+                                                                                <div class="embla__container">
+                                                                                    <div class="embla__slide">
+                                                                                        <img src="/themes/custom/sao_tome/assets/img/all/team/Groupe-20-268x300-1.png.png" alt="">
+                                                                                        <h3>Majida MAAROUF</h3>
+                                                                                        <h4>Directrice</h4>
+                                                                                        
+                                                                                    </div>
+                                                                                    <div class="embla__slide">
+                                                                                        <img src="/themes/custom/sao_tome/assets/img/team/majida-281x300-1.png.png" alt="">
+                                                                                        <h3>Majida MAAROUF</h3>
+                                                                                        <h4>Directrice</h4>
+                                                                                    </div>
+                                                                                    <div class="embla__slide">
+                                                                                        <img src="/themes/custom/sao_tome/assets/img/team/majida-281x300-1.png.png" alt="">
+                                                                                        <h3>Majida MAAROUF</h3>
+                                                                                        <h4>Directrice</h4>
+                                                                                    </div>
+                                                                                    
+                                                                                </div>
+                                                                            </div>
+
+                                                                            <!--<button class="embla__prev">Scroll to prev</button>
+  <button class="embla__next">Scroll to next</button>-->
+                                                                        </div>
+                                                                        <p>Le Conseil d'Administration de l'ANDA est
+                                                                            composé des membres suivants :</p>
+                                                                        <div class="">
+                                                                                <a href="#" id="tgl-member-conseil" class="display-member-conseil title--2--display">Clicker pour voir</a>
+                                                                                <div class="membres-conseil d-none"  >
+                                                                                    <a href="#" id="tgl-member-conseil-close" class="title--2--display">Close</a>
+                                                                                    <p>L'Organigramme : '</p>
+                                                                                    
+                                                                                      <div class="pv-org-chart">
 
                                                                             <!-- NIVEAU 0 : DIRECTION -->
                                                                             <div class="pv-node pv-level-0">Direction
@@ -1736,6 +1876,10 @@
                                                                             </div>
 
                                                                         </div>
+                                                                                </div>
+                                                                            </div>
+
+                                                                       
                                                                     </div>
 
 
@@ -1929,7 +2073,7 @@ Dans une démarche d’amélioration continue et d’alignement sur les bonnes p
                                                                         <p>Le Conseil d'Administration de l'ANDA est
                                                                             composé des membres suivants :</p>
                                                                             <div class="">
-                                                                                <a href="#" id="tgl-member-conseil" class="display-member-conseil title--2--display">clicker pour voir</a>
+                                                                                <a href="#" id="tgl-member-conseil" class="display-member-conseil title--2--display">Cliquer pour voir</a>
                                                                                 <div class="membres-conseil d-none"  >
                                                                                     <a href="#" id="tgl-member-conseil-close" class="title--2--display">Close</a>
                                                                                     <p>Le Conseil d'Administration de l'ANDA est
@@ -3229,10 +3373,25 @@ Dans une démarche d’amélioration continue et d’alignement sur les bonnes p
             EmblaCarouselAutoplay()
         ])
 
-        prevButtonNode.addEventListener('click', () => emblaApi.goToPrev(), false)
-        nextButtonNode.addEventListener('click', () => emblaApi.goToNext(), false)
+        // prevButtonNode.addEventListener('click', () => emblaApi.goToPrev(), false)
+        // nextButtonNode.addEventListener('click', () => emblaApi.goToNext(), false)
 
         emblaApi.plugins().autoplay?.play()
+    </script>
+    <script type="text/javascript">
+        const wrapperNode2 = document.querySelector('.embla-2')
+        const viewportNode2 = wrapperNode2.querySelector('.embla-2__viewport')
+        const prevButtonNode2 = wrapperNode2.querySelector('.embla-2__prev')
+        const nextButtonNode2 = wrapperNode2.querySelector('.embla-2__next')
+
+        const emblaApi2 = EmblaCarousel(viewportNode2, { loop: false }, [
+            EmblaCarouselAutoplay()
+        ])
+
+        // prevButtonNode2.addEventListener('click', () => emblaApi2.goToPrev(), false)
+        // nextButtonNode2.addEventListener('click', () => emblaApi2.goToNext(), false)
+
+        emblaApi2.plugins().autoplay?.play()
     </script>
 
 
