@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Étapes de la mytiliculture · FAQ</title>
+  <style>
+    /* ---------- GLOBAL RESET & FONTS ---------- */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      background: linear-gradient(145deg, #f6f9fc 0%, #e9f1f8 100%);
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 1.5rem;
+    }
+
+    /* ---------- CARD / CONTAINER ---------- */
+    .pvtb-faq-container {
+      background: rgba(255, 255, 255, 0.85);
+      backdrop-filter: blur(4px);
+      border-radius: 2rem;
+      padding: 2rem;
+      box-shadow: 0 20px 40px -12px rgba(0, 20, 30, 0.25),
+                  0 8px 24px -6px rgba(0, 0, 0, 0.1),
+                  inset 0 1px 0 rgba(255, 255, 255, 0.6);
+      max-width: 820px;
+      width: 100%;
+    }
+
+    .pvtb-faq-title {
+      font-size: 1.5rem;
+      font-weight: 650;
+      color: #1c3e55;
+      letter-spacing: -0.02em;
+      margin-bottom: 0.35rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .pvtb-faq-title span {
+      font-size: 1.6rem;
+    }
+
+    .pvtb-faq-subtitle {
+      color: #4a728c;
+      font-size: 0.95rem;
+      margin-bottom: 1.5rem;
+      letter-spacing: 0.01em;
+    }
+
+    /* ---------- FAQ LIST (vertical, one under another) ---------- */
+    .pvtb-faq-list {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+      list-style: none;
+    }
+
+    .pvtb-faq-item {
+      background: #ffffff;
+      border-radius: 1.25rem;
+      border: 1px solid rgba(220, 231, 240, 0.9);
+      box-shadow: 0 4px 12px -8px rgba(0, 40, 60, 0.15),
+                  inset 0 1px 0 #ffffff;
+      transition: all 0.25s ease;
+      overflow: hidden;
+    }
+
+    .pvtb-faq-item.pvtb-active {
+      box-shadow: 0 12px 28px -14px rgba(0, 40, 60, 0.35),
+                  0 4px 12px -6px rgba(0, 0, 0, 0.05),
+                  inset 0 1px 0 #ffffff;
+      border-color: rgba(46, 126, 163, 0.35);
+    }
+
+    /* ---------- FAQ QUESTION BUTTON ---------- */
+    .pvtb-faq-btn {
+      width: 100%;
+      border: none;
+      background: transparent;
+      padding: 1.15rem 1.25rem;
+      font-size: 1.05rem;
+      font-weight: 550;
+      color: #1e3b4f;
+      cursor: pointer;
+      letter-spacing: 0.01em;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      text-align: left;
+      transition: all 0.2s ease;
+      font-family: inherit;
+    }
+
+    .pvtb-faq-btn:hover {
+      background: rgba(220, 231, 240, 0.35);
+      color: #0b2a3b;
+    }
+
+    .pvtb-faq-btn:focus-visible {
+      outline: 2px solid #2e7ea3;
+      outline-offset: -2px;
+      border-radius: 1.25rem;
+    }
+
+    .pvtb-faq-item.pvtb-active .pvtb-faq-btn {
+      color: #0b2a3b;
+      font-weight: 650;
+      background: rgba(227, 240, 247, 0.5);
+    }
+
+    /* question label (step number + title) */
+    .pvtb-faq-label {
+      display: flex;
+      align-items: center;
+      gap: 0.85rem;
+    }
+
+    .pvtb-step-num {
+      flex-shrink: 0;
+      width: 2rem;
+      height: 2rem;
+      border-radius: 50%;
+      background: #e3f0f7;
+      color: #1a5b7a;
+      font-weight: 700;
+      font-size: 0.9rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.25s ease;
+    }
+
+    .pvtb-faq-item.pvtb-active .pvtb-step-num {
+      background: #2e7ea3;
+      color: #ffffff;
+    }
+
+    .pvtb-step-title {
+      line-height: 1.3;
+    }
+
+    /* ---------- CHEVRON ICON ---------- */
+    .pvtb-chevron {
+      flex-shrink: 0;
+      width: 22px;
+      height: 22px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: transform 0.3s ease;
+      color: #4a728c;
+    }
+
+    .pvtb-chevron svg {
+      width: 18px;
+      height: 18px;
+      transition: transform 0.3s ease;
+    }
+
+    .pvtb-faq-item.pvtb-active .pvtb-chevron svg {
+      transform: rotate(180deg);
+      color: #2e7ea3;
+    }
+
+    /* ---------- FAQ ANSWER PANEL ---------- */
+    .pvtb-faq-panel {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.35s cubic-bezier(0.4, 0, 0.2, 1),
+                  opacity 0.3s ease,
+                  padding 0.3s ease;
+      opacity: 0;
+      padding: 0 1.25rem;
+      background: linear-gradient(180deg, rgba(227, 240, 247, 0.35) 0%, rgba(255, 255, 255, 0) 100%);
+    }
+
+    .pvtb-faq-item.pvtb-active .pvtb-faq-panel {
+      max-height: 500px;
+      opacity: 1;
+      padding: 0 1.25rem 1.35rem 1.25rem;
+    }
+
+    .pvtb-faq-panel p {
+      color: #2e4e63;
+      line-height: 1.65;
+      font-size: 1rem;
+      margin-bottom: 0.9rem;
+    }
+
+    .pvtb-faq-panel p:last-child {
+      margin-bottom: 0;
+    }
+
+    .pvtb-badge {
+      background: #e3f0f7;
+      color: #1a5b7a;
+      border-radius: 2rem;
+      padding: 0.25rem 0.9rem;
+      font-size: 0.8rem;
+      font-weight: 500;
+      display: inline-block;
+      letter-spacing: 0.02em;
+    }
+
+    /* ---------- LIGHT RESPONSIVE ---------- */
+    @media (max-width: 480px) {
+      .pvtb-faq-container {
+        padding: 1.25rem 1rem;
+        border-radius: 1.5rem;
+      }
+
+      .pvtb-faq-title {
+        font-size: 1.25rem;
+        margin-bottom: 0.25rem;
+      }
+
+      .pvtb-faq-subtitle {
+        font-size: 0.85rem;
+        margin-bottom: 1.15rem;
+      }
+
+      .pvtb-faq-btn {
+        font-size: 0.95rem;
+        padding: 1rem 1rem;
+      }
+
+      .pvtb-step-num {
+        width: 1.75rem;
+        height: 1.75rem;
+        font-size: 0.8rem;
+      }
+
+      .pvtb-faq-panel {
+        padding: 0 1rem;
+      }
+
+      .pvtb-faq-item.pvtb-active .pvtb-faq-panel {
+        padding: 0 1rem 1.15rem 1rem;
+      }
+
+      .pvtb-faq-panel p {
+        font-size: 0.95rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="pvtb-faq-container">
+    <h2 class="pvtb-faq-title"><span>🦪</span> Étapes de la mytiliculture</h2>
+    <p class="pvtb-faq-subtitle">Cliquez sur chaque étape pour découvrir ce qui se passe.</p>
+
+    <!-- FAQ list : 5 étapes -->
+    <ul class="pvtb-faq-list" role="list">
+
+      <!-- Étape 1 -->
+      <li class="pvtb-faq-item pvtb-active" id="pvtb-faq-item-1">
+        <button class="pvtb-faq-btn" id="pvtb-faq-btn-1" aria-expanded="true" aria-controls="pvtb-faq-panel-1">
+          <span class="pvtb-faq-label">
+            <span class="pvtb-step-num">1</span>
+            <span class="pvtb-step-title">Naissain</span>
+          </span>
+          <span class="pvtb-chevron" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+          </span>
+        </button>
+        <div class="pvtb-faq-panel" id="pvtb-faq-panel-1" role="region" aria-labelledby="pvtb-faq-btn-1">
+          <p>Les jeunes moules, appelées <strong>naissains</strong>, sont collectées dans le milieu naturel lorsque le captage est autorisé et maîtrisé, ou produites par des structures spécialisées.</p>
+          <p class="pvtb-badge">Étape 1</p>
+        </div>
+      </li>
+
+      <!-- Étape 2 -->
+      <li class="pvtb-faq-item" id="pvtb-faq-item-2">
+        <button class="pvtb-faq-btn" id="pvtb-faq-btn-2" aria-expanded="false" aria-controls="pvtb-faq-panel-2">
+          <span class="pvtb-faq-label">
+            <span class="pvtb-step-num">2</span>
+            <span class="pvtb-step-title">Mise en élevage</span>
+          </span>
+          <span class="pvtb-chevron" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+          </span>
+        </button>
+        <div class="pvtb-faq-panel" id="pvtb-faq-panel-2" role="region" aria-labelledby="pvtb-faq-btn-2">
+          <p>Le naissain est réparti sur des cordes ou placé dans des supports adaptés, puis installé sur les <strong>filières mytilicoles</strong>.</p>
+          <p class="pvtb-badge">Étape 2</p>
+        </div>
+      </li>
+
+      <!-- Étape 3 -->
+      <li class="pvtb-faq-item" id="pvtb-faq-item-3">
+        <button class="pvtb-faq-btn" id="pvtb-faq-btn-3" aria-expanded="false" aria-controls="pvtb-faq-panel-3">
+          <span class="pvtb-faq-label">
+            <span class="pvtb-step-num">3</span>
+            <span class="pvtb-step-title">Croissance</span>
+          </span>
+          <span class="pvtb-chevron" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+          </span>
+        </button>
+        <div class="pvtb-faq-panel" id="pvtb-faq-panel-3" role="region" aria-labelledby="pvtb-faq-btn-3">
+          <p>Les moules grandissent grâce aux ressources naturelles de l'eau. Le producteur contrôle leur fixation, leur densité et l'état des équipements.</p>
+          <p class="pvtb-badge">Étape 3</p>
+        </div>
+      </li>
+
+      <!-- Étape 4 -->
+      <li class="pvtb-faq-item" id="pvtb-faq-item-4">
+        <button class="pvtb-faq-btn" id="pvtb-faq-btn-4" aria-expanded="false" aria-controls="pvtb-faq-panel-4">
+          <span class="pvtb-faq-label">
+            <span class="pvtb-step-num">4</span>
+            <span class="pvtb-step-title">Entretien et tri</span>
+          </span>
+          <span class="pvtb-chevron" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+          </span>
+        </button>
+        <div class="pvtb-faq-panel" id="pvtb-faq-panel-4" role="region" aria-labelledby="pvtb-faq-btn-4">
+          <p>Les cordes sont entretenues et les moules peuvent être triées ou réparties de nouveau pour favoriser une croissance homogène.</p>
+          <p class="pvtb-badge">Étape 4</p>
+        </div>
+      </li>
+
+      <!-- Étape 5 -->
+      <li class="pvtb-faq-item" id="pvtb-faq-item-5">
+        <button class="pvtb-faq-btn" id="pvtb-faq-btn-5" aria-expanded="false" aria-controls="pvtb-faq-panel-5">
+          <span class="pvtb-faq-label">
+            <span class="pvtb-step-num">5</span>
+            <span class="pvtb-step-title">Récolte et préparation</span>
+          </span>
+          <span class="pvtb-chevron" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+          </span>
+        </button>
+        <div class="pvtb-faq-panel" id="pvtb-faq-panel-5" role="region" aria-labelledby="pvtb-faq-btn-5">
+          <p>Les moules sont récoltées, nettoyées, calibrées et, lorsque cela est requis, purifiées avant leur conditionnement et leur expédition.</p>
+          <p class="pvtb-badge">Étape 5</p>
+        </div>
+      </li>
+
+    </ul>
+  </div>
+
+  <!-- FAQ accordion script -->
+  <script>
+    (function() {
+      const faqItems = document.querySelectorAll('.pvtb-faq-item');
+
+      // close all items except optionally one
+      function closeAll(exceptItem = null) {
+        faqItems.forEach(item => {
+          if (item === exceptItem) return;
+          item.classList.remove('pvtb-active');
+          const btn = item.querySelector('.pvtb-faq-btn');
+          if (btn) btn.setAttribute('aria-expanded', 'false');
+        });
+      }
+
+      // toggle a specific item
+      function toggleItem(item) {
+        const btn = item.querySelector('.pvtb-faq-btn');
+        const isActive = item.classList.contains('pvtb-active');
+
+        if (isActive) {
+          // collapse it
+          item.classList.remove('pvtb-active');
+          if (btn) btn.setAttribute('aria-expanded', 'false');
+        } else {
+          // close others first (accordion behaviour)
+          closeAll(item);
+          // open this one
+          item.classList.add('pvtb-active');
+          if (btn) {
+            btn.setAttribute('aria-expanded', 'true');
+            btn.focus();
+          }
+        }
+      }
+
+      // attach event listeners to each FAQ button
+      faqItems.forEach(item => {
+        const btn = item.querySelector('.pvtb-faq-btn');
+        if (!btn) return;
+
+        btn.addEventListener('click', (e) => {
+          e.preventDefault();
+          toggleItem(item);
+        });
+
+        // keyboard navigation: Up / Down arrows to move between steps
+        btn.addEventListener('keydown', (e) => {
+          const key = e.key;
+          if (key !== 'ArrowUp' && key !== 'ArrowDown') return;
+
+          e.preventDefault();
+          const itemsArray = Array.from(faqItems);
+          const currentIndex = itemsArray.indexOf(item);
+          let nextIndex;
+
+          if (key === 'ArrowDown') {
+            nextIndex = (currentIndex + 1) % itemsArray.length;
+          } else {
+            // ArrowUp
+            nextIndex = (currentIndex - 1 + itemsArray.length) % itemsArray.length;
+          }
+
+          const nextItem = itemsArray[nextIndex];
+          if (nextItem) {
+            const nextBtn = nextItem.querySelector('.pvtb-faq-btn');
+            if (nextBtn) nextBtn.focus();
+          }
+        });
+      });
+    })();
+  </script>
+</body>
+</html>
