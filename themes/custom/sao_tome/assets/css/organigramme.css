@@ -169,7 +169,7 @@
         }
 
 
-        .membres-conseil{
+        .membres-conseil, .membres-organigramme{
             background: #264f64;
             position: absolute;
             width: 60%;
