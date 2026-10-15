@@ -1,0 +1,185 @@
+    :root {
+            --pv-bg-color: #38492A;          /* Fond vert forêt */
+            --pv-color-dark: #1E2616;        /* Direction */
+            --pv-color-blue-dark: #6B8E23;   /* Départements (Olive) */
+            --pv-color-blue-light: #8FBC8F;  /* Services transverses (Sauge clair) */
+            --pv-color-grey: #5C6B4A;        /* Services standards (Olive grisé) */
+            --pv-color-line: #A3B18A;        /* Lignes de connexion */
+            --pv-text-color: #F5F5F5;        /* Blanc cassé */
+            --pv-text-dark: #1E2616;         /* Texte sombre pour fonds clairs */
+        }
+
+
+
+                .pv-org-chart {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+            max-width: 500px;
+        }
+
+        .pv-node {
+            padding: 10px 8px; /* Padding vertical augmenté */
+            border-radius: 4px;
+            color: var(--pv-text-color);
+            text-align: center;
+            font-size: 0.8rem; /* Taille de base augmentée */
+            font-weight: 500;
+            box-shadow: 0 3px 6px rgba(0, 0, 0, 0.4); 
+            margin: 3px 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 42px; /* Hauteur augmentée pour le confort */
+            line-height: 1.25;
+            box-sizing: border-box;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        /* --- Niveau 0 : Direction --- */
+        .pv-level-0 {
+            background-color: var(--pv-color-dark);
+            width: 65%;
+            height: 55px;
+            font-size: 1.15rem; /* Taille augmentée */
+            font-weight: 600;
+            margin-bottom: 22px;
+            position: relative;
+        }
+
+        .pv-level-0::after {
+            content: '';
+            position: absolute;
+            bottom: -22px;
+            left: 50%;
+            width: 2px;
+            height: 22px;
+            background-color: var(--pv-color-line);
+        }
+
+        /* --- Niveau 1 : Audit & Régional --- */
+        .pv-level-1-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+            gap: 8px;
+            position: relative;
+            padding-top: 10px;
+        }
+
+        .pv-audit-box {
+            background-color: var(--pv-color-blue-light);
+            width: 92%;
+            color: var(--pv-text-dark);
+            font-weight: 600;
+            font-size: 1.85rem; /* Taille augmentée */
+        }
+
+        .pv-regional-group {
+            display: flex;
+            flex-direction: row;
+            gap: 6px;
+            width: 92%;
+        }
+
+        .pv-regional-box {
+            background-color: var(--pv-color-grey);
+            font-size: 1.8rem; /* Taille augmentée */
+            width: 100%;
+        }
+
+        /* --- Niveau 2 : Départements --- */
+        .pv-level-2-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+            margin-top: 28px;
+            gap: 18px;
+        }
+
+        .pv-dept-column {
+            width: 96%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            border-left: 2px solid var(--pv-color-line);
+            padding-left: 8px;
+        }
+
+        .pv-dept-header {
+            background-color: var(--pv-color-blue-dark);
+            width: 100%;
+            height: auto;
+            min-height: 55px;
+            margin-bottom: 10px;
+            font-size: 0.9rem; /* Taille augmentée */
+            color: var(--pv-text-dark);
+            font-weight: 700;
+        }
+
+        /* --- Niveau 3 : Services --- */
+        .pv-service-list {
+            display: flex;
+            flex-direction: row;
+            width: 100%;
+            gap: 6px;
+        }
+
+        .pv-service-item {
+            background-color: var(--pv-color-grey);
+            width: 100%;
+            min-height: 38px;
+            font-size: 1.8rem; /* Taille augmentée */
+            position: relative;
+        }
+
+        .pv-service-item::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: -8px;
+            width: 8px;
+            height: 2px;
+            background-color: var(--pv-color-line);
+        }
+
+        .pv-service-item.pv-promo {
+            background-color: var(--pv-color-blue-light);
+            color: var(--pv-text-dark);
+            font-weight: 600;
+            font-size: 1.85rem; /* Taille augmentée */
+        }
+
+        /* Ajustement pour les très petits écrans */
+        @media (max-width: 400px) {
+            .pv-node {
+                font-size: 0.75rem;
+                padding: 8px 6px;
+            }
+            .pv-level-0 {
+                width: 80%;
+                font-size: 1rem;
+            }
+            .pv-dept-header {
+                font-size: 0.8rem;
+            }
+        }
+
+
+        .membres-conseil{
+            background: #264f64;
+            position: absolute;
+            width: 60%;
+            height: 100vh;
+            right: 10px;
+            padding: 10px;
+            top: 0;
+            padding: 10px;
+        }
+
+        .d-none{
+            display: none;
+        }
