@@ -1779,9 +1779,9 @@
                                                                         <p>Le Conseil d'Administration de l'ANDA est
                                                                             composé des membres suivants :</p>
                                                                         <div class="">
-                                                                                <a href="#" id="tgl-member-conseil" class="display-member-conseil title--2--display">Organigramme</a>
-                                                                                <div class="membres-conseil d-none"  >
-                                                                                    <a href="#" id="tgl-member-conseil-close" class="title--2--display">Close</a>
+                                                                                <a href="#" id="tgl-organigramme" class="display-member-organigramme title--2--display">Organigramme</a>
+                                                                                <div class="membres-organigramme d-none"  >
+                                                                                    <a href="#" id="tgl-member-organigramme-close" class="title--2--display">Close</a>
                                                                                     <p>L'Organigramme : '</p>
                                                                                     
                                                                                       <div class="pv-org-chart">
@@ -3482,6 +3482,22 @@ btnClose.addEventListener('click', (e) => {
     e.preventDefault()
 
     target.classList.toggle('d-none');
+});
+
+
+   const btno = document.getElementById('tgl-member-organigramme');
+const targeto = document.querySelector('.membres-organigramme');
+const btnCloseo = document.getElementById('tgl-member-organigramme-close');
+
+btno.addEventListener('click', (el) => {
+    el.preventDefault()
+
+    targeto.classList.toggle('d-none');
+});
+btnCloseo.addEventListener('click', (el) => {
+    el.preventDefault()
+
+    targeto.classList.toggle('d-none');
 });
 </script>
 
