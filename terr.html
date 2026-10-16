@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Souss-Massa - Territoire aquacole</title>
+    <style>
+        /* --- CSS Variables for Design Tokens --- */
+        :root {
+            --trtr-primary-blue: #0f3c6e;
+            --trtr-secondary-blue: #1d6bc3;
+            --trtr-text-main: #333333;
+            --trtr-text-light: #5a6b7c;
+            --trtr-bg-card: #f5f9fc;
+            --trtr-bg-pill: #e3f0fa;
+            --trtr-border-color: #e0e8f0;
+            --trtr-font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        }
+
+        /* --- Base Reset & Typography --- */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: var(--trtr-font-family);
+            background-color: #e9ecef; /* For contrast in this demo */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+            color: var(--trtr-text-main);
+        }
+
+        /* --- Main Container (The Card) --- */
+        .trtr-card {
+            background: #ffffff;
+            width: 100%;
+            max-width: 480px;
+            border-radius: 8px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            overflow: hidden;
+            position: relative;
+        }
+
+        /* --- Header Section --- */
+        .trtr-card-header {
+            position: relative;
+            padding: 24px 24px 16px;
+            /* Placeholder gradient to simulate the background image */
+            background: linear-gradient(to bottom, rgba(255,255,255,0.7) 0%, rgba(255,255,255,1) 100%), url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&q=80&w=800') center/cover;
+            border-bottom: 2px solid var(--trtr-border-color);
+        }
+
+        .trtr-close-btn {
+            position: absolute;
+            top: 16px;
+            right: 16px;
+            background: none;
+            border: none;
+            font-size: 24px;
+            color: var(--trtr-secondary-blue);
+            cursor: pointer;
+            line-height: 1;
+        }
+
+        .trtr-card-header h1 {
+            font-size: 28px;
+            color: var(--trtr-primary-blue);
+            font-weight: 700;
+            margin-bottom: 4px;
+        }
+
+        .trtr-card-header p {
+            font-size: 16px;
+            color: var(--trtr-secondary-blue);
+            font-weight: 500;
+            display: inline-block;
+            border-bottom: 1px solid var(--trtr-secondary-blue);
+            padding-bottom: 2px;
+        }
+
+        /* --- Content Body --- */
+        .trtr-card-body {
+            padding: 24px;
+        }
+
+        /* --- Top Stats Grid --- */
+        .trtr-stats-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+            margin-bottom: 24px;
+        }
+
+        .trtr-stat-card {
+            background-color: var(--trtr-bg-card);
+            border-radius: 8px;
+            padding: 16px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .trtr-stat-icon {
+            color: #8bb8e8;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .trtr-stat-info h3 {
+            font-size: 20px;
+            color: var(--trtr-primary-blue);
+            margin-bottom: 2px;
+        }
+
+        .trtr-stat-info p {
+            font-size: 12px;
+            color: var(--trtr-secondary-blue);
+        }
+
+        /* --- Sections (Filieres, Infrastructures, Atouts) --- */
+        .trtr-section {
+            margin-bottom: 20px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid var(--trtr-border-color);
+        }
+
+        .trtr-section:last-of-type {
+            border-bottom: none;
+            padding-bottom: 0;
+            margin-bottom: 24px;
+        }
+
+        .trtr-section-title {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 15px;
+            color: var(--trtr-primary-blue);
+            font-weight: 600;
+            margin-bottom: 12px;
+        }
+
+        .trtr-section-title svg {
+            color: var(--trtr-primary-blue);
+            width: 24px;
+            height: 24px;
+        }
+
+        /* --- Filieres Pills --- */
+        .trtr-pills-container {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .trtr-pill {
+            background-color: var(--trtr-bg-pill);
+            color: var(--trtr-secondary-blue);
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        /* --- Infrastructure List --- */
+        .trtr-infra-list {
+            display: grid;
+            grid-template-columns: auto 1fr;
+            gap: 8px 16px;
+            font-size: 14px;
+            padding-left: 34px; /* Align with section title text */
+        }
+
+        .trtr-infra-label {
+            color: var(--trtr-text-main);
+        }
+
+        .trtr-infra-value {
+            color: var(--trtr-secondary-blue);
+        }
+        
+        .trtr-infra-separator {
+            color: var(--trtr-secondary-blue);
+        }
+
+        /* --- Atouts List --- */
+        .trtr-atouts-list {
+            list-style: none;
+            padding-left: 34px; /* Align with section title text */
+        }
+
+        .trtr-atouts-list li {
+            position: relative;
+            font-size: 14px;
+            color: var(--trtr-text-main);
+            margin-bottom: 10px;
+            display: flex;
+            align-items: flex-start;
+            gap: 8px;
+        }
+
+        .trtr-atouts-list li::before {
+            content: '';
+            display: inline-block;
+            width: 16px;
+            height: 16px;
+            background-color: #7cb3e8;
+            border-radius: 50%;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='4' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='20 6 9 17 4 12'%3E%3C/polyline%3E%3C/svg%3E");
+            background-size: 10px;
+            background-position: center;
+            background-repeat: no-repeat;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+
+        /* --- Action Button --- */
+        .trtr-btn-primary {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            width: 100%;
+            background-color: var(--trtr-primary-blue);
+            color: #ffffff;
+            text-decoration: none;
+            padding: 16px;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 600;
+            transition: background-color 0.2s ease;
+            border: none;
+            cursor: pointer;
+        }
+
+        .trtr-btn-primary:hover {
+            background-color: #0c2e54;
+        }
+
+        .trtr-btn-primary svg {
+            width: 20px;
+            height: 20px;
+        }
+
+        /* --- Footer --- */
+        .trtr-footer-note {
+            text-align: right;
+            font-size: 10px;
+            color: var(--trtr-secondary-blue);
+            margin-top: 12px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="trtr-card">
+        <!-- Header -->
+        <header class="trtr-card-header">
+            <button class="trtr-close-btn" aria-label="Fermer">&times;</button>
+            <h1>Souss-Massa</h1>
+            <p>Territoire aquacole</p>
+        </header>
+
+        <div class="trtr-card-body">
+            <!-- Top Stats -->
+            <div class="trtr-stats-grid">
+                <div class="trtr-stat-card">
+                    <div class="trtr-stat-icon">
+                        <!-- Waves Icon -->
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M2 12h20M2 17h20M2 7h20"/>
+                        </svg>
+                    </div>
+                    <div class="trtr-stat-info">
+                        <h3>+ 3900 ha</h3>
+                        <p>Total identifié</p>
+                    </div>
+                </div>
+                <div class="trtr-stat-card">
+                    <div class="trtr-stat-icon">
+                        <!-- Grid Icon -->
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
+                            <line x1="3" y1="9" x2="21" y2="9"/>
+                            <line x1="9" y1="21" x2="9" y2="9"/>
+                        </svg>
+                    </div>
+                    <div class="trtr-stat-info">
+                        <h3>+250 parcelles</h3>
+                        <p>Identifiées</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Filières Potentielles -->
+            <section class="trtr-section">
+                <h2 class="trtr-section-title">
+                    <!-- Leaf/Plant Icon -->
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2z"/>
+                        <path d="M12 2v20M12 10c-3 0-5 2-5 5M12 14c3 0 5-2 5-5"/>
+                    </svg>
+                    Filières potentielles
+                </h2>
+                <div class="trtr-pills-container">
+                    <div class="trtr-pill">
+                        <!-- Algae Icon -->
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M12 22c4.97 0 9-4.03 9-9-4.97 0-9-4.03-9-9-4.97 0-9 4.03-9 9 0 4.97 4.03 9 9 9z"/>
+                        </svg>
+                        Algoculture
+                    </div>
+                    <div class="trtr-pill">
+                        <!-- Shell Icon -->
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M12 2a10 10 0 0 0-10 10c0 5.52 4.48 10 10 10s10-4.48 10-10A10 10 0 0 0 12 2z"/>
+                            <path d="M12 2v20M2 12h20"/>
+                        </svg>
+                        Conchyliculture
+                    </div>
+                </div>
+            </section>
+
+            <!-- Infrastructures Maritimes -->
+            <section class="trtr-section">
+                <h2 class="trtr-section-title">
+                    <!-- Anchor Icon -->
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="5" r="3"/>
+                        <line x1="12" y1="22" x2="12" y2="8"/>
+                        <path d="M5 12H2a10 10 0 0 0 20 0h-3"/>
+                    </svg>
+                    Infrastructures maritimes
+                </h2>
+                <div class="trtr-infra-list">
+                    <span class="trtr-infra-label">Port</span>
+                    <span class="trtr-infra-separator">:</span>
+                    <span class="trtr-infra-value" style="grid-column: 2;">Agadir</span>
+                    
+                    <span class="trtr-infra-label">VDP</span>
+                    <span class="trtr-infra-separator">:</span>
+                    <span class="trtr-infra-value" style="grid-column: 2;">Imessouane</span>
+                    
+                    <span class="trtr-infra-label">PDA</span>
+                    <span class="trtr-infra-separator">:</span>
+                    <span class="trtr-infra-value" style="grid-column: 2;">Imi Ouaddar, Tifnit, Aglou, Sidi Boufdial, Gourzim</span>
+                </div>
+            </section>
+
+            <!-- Atouts du territoire -->
+            <section class="trtr-section">
+                <h2 class="trtr-section-title">
+                    <!-- Bar Chart Icon -->
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="18" y1="20" x2="18" y2="10"/>
+                        <line x1="12" y1="20" x2="12" y2="4"/>
+                        <line x1="6" y1="20" x2="6" y2="14"/>
+                    </svg>
+                    Atouts du territoire
+                </h2>
+                <ul class="trtr-atouts-list">
+                    <li>Un tissu maritime et industriel structuré</li>
+                    <li>Une culture de valorisation des produits de la mer</li>
+                    <li>Un environnement de recherche et d'innovation</li>
+                </ul>
+            </section>
+
+            <!-- Action Button -->
+            <button class="trtr-btn-primary">
+                <!-- Map Icon -->
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <polygon points="1 6 1 22 8 18 16 22 23 18 23 2 16 6 8 2 1 6"/>
+                    <line x1="8" y1="2" x2="8" y2="18"/>
+                    <line x1="16" y1="6" x2="16" y2="22"/>
+                </svg>
+                Explorer le Géoportail
+                <!-- Arrow Icon -->
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="5" y1="12" x2="19" y2="12"/>
+                    <polyline points="12 5 19 12 12 19"/>
+                </svg>
+            </button>
+
+            <!-- Footer Note -->
+            <p class="trtr-footer-note">Illustration de conception — tracés indicatifs</p>
+        </div>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,224 @@
+
+        /* --- Main Container (The Card) --- */
+        .trtr-card {
+            /* background: #ffffff; */
+            width: 100%;
+            max-width: 480px;
+            border-radius: 8px;
+            box-shadow: 0 10px 30px rgba(252, 251, 251, 0.1);
+            overflow: hidden;
+            position: relative;
+        }
+
+        /* --- Header Section --- */
+        .trtr-card-header {
+            position: relative;
+            padding: 24px 24px 16px;
+            /* Placeholder gradient to simulate the background image */
+            background: linear-gradient(to bottom, rgba(25, 24, 24, 0.7) 0%, rgb(24, 23, 23) 100%), url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&q=80&w=800') center/cover;
+            border-bottom: 2px solid var(--trtr-border-color);
+        }
+
+        .trtr-close-btn {
+            position: absolute;
+            top: 16px;
+            right: 16px;
+            background: none;
+            border: none;
+            font-size: 24px;
+            color: var(--trtr-secondary-blue);
+            cursor: pointer;
+            line-height: 1;
+        }
+
+        .trtr-card-header h1 {
+            font-size: 28px;
+            color: var(--trtr-primary-blue);
+            font-weight: 700;
+            margin-bottom: 4px;
+        }
+
+        .trtr-card-header p {
+            font-size: 16px;
+            color: var(--trtr-secondary-blue);
+            font-weight: 500;
+            display: inline-block;
+            border-bottom: 1px solid var(--trtr-secondary-blue);
+            padding-bottom: 2px;
+        }
+
+        /* --- Content Body --- */
+        .trtr-card-body {
+            padding: 24px;
+        }
+
+        /* --- Top Stats Grid --- */
+        .trtr-stats-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+            margin-bottom: 24px;
+        }
+
+        .trtr-stat-card {
+            background-color: var(--trtr-bg-card);
+            border-radius: 8px;
+            padding: 16px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .trtr-stat-icon {
+            color: #8bb8e8;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .trtr-stat-info h3 {
+            font-size: 20px;
+            color: var(--trtr-primary-blue);
+            margin-bottom: 2px;
+        }
+
+        .trtr-stat-info p {
+            font-size: 12px;
+            color: var(--trtr-secondary-blue);
+        }
+
+        /* --- Sections (Filieres, Infrastructures, Atouts) --- */
+        .trtr-section {
+            margin-bottom: 20px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid var(--trtr-border-color);
+        }
+
+        .trtr-section:last-of-type {
+            border-bottom: none;
+            padding-bottom: 0;
+            margin-bottom: 24px;
+        }
+
+        .trtr-section-title {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 15px;
+            color: var(--trtr-primary-blue);
+            font-weight: 600;
+            margin-bottom: 12px;
+        }
+
+        .trtr-section-title svg {
+            color: var(--trtr-primary-blue);
+            width: 24px;
+            height: 24px;
+        }
+
+        /* --- Filieres Pills --- */
+        .trtr-pills-container {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .trtr-pill {
+            background-color: var(--trtr-bg-pill);
+            color: var(--trtr-secondary-blue);
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        /* --- Infrastructure List --- */
+        .trtr-infra-list {
+            display: grid;
+            grid-template-columns: auto 1fr;
+            gap: 8px 16px;
+            font-size: 14px;
+            padding-left: 34px; /* Align with section title text */
+        }
+
+        .trtr-infra-label {
+            color: var(--trtr-text-main);
+        }
+
+        .trtr-infra-value {
+            color: var(--trtr-secondary-blue);
+        }
+        
+        .trtr-infra-separator {
+            color: var(--trtr-secondary-blue);
+        }
+
+        /* --- Atouts List --- */
+        .trtr-atouts-list {
+            list-style: none;
+            padding-left: 34px; /* Align with section title text */
+        }
+
+        .trtr-atouts-list li {
+            position: relative;
+            font-size: 14px;
+            color: var(--trtr-text-main);
+            margin-bottom: 10px;
+            display: flex;
+            align-items: flex-start;
+            gap: 8px;
+        }
+
+        .trtr-atouts-list li::before {
+            content: '';
+            display: inline-block;
+            width: 16px;
+            height: 16px;
+            background-color: #7cb3e8;
+            border-radius: 50%;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='4' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='20 6 9 17 4 12'%3E%3C/polyline%3E%3C/svg%3E");
+            background-size: 10px;
+            background-position: center;
+            background-repeat: no-repeat;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+
+        /* --- Action Button --- */
+        .trtr-btn-primary {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            width: 100%;
+            background-color: var(--trtr-primary-blue);
+            color: #ffffff;
+            text-decoration: none;
+            padding: 16px;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 600;
+            transition: background-color 0.2s ease;
+            border: none;
+            cursor: pointer;
+        }
+
+        .trtr-btn-primary:hover {
+            background-color: #0c2e54;
+        }
+
+        .trtr-btn-primary svg {
+            width: 20px;
+            height: 20px;
+        }
+
+        /* --- Footer --- */
+        .trtr-footer-note {
+            text-align: right;
+            font-size: 10px;
+            color: var(--trtr-secondary-blue);
+            margin-top: 12px;
+        }
