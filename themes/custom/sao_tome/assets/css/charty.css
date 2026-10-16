@@ -68,7 +68,7 @@
         /* Typography inside cards */
         .kpi-title {
             font-size: 2rem;
-            text-transform: capitalize;
+            text-transform: uppercase;
             color: #053542;
             font-weight: bold;
             margin-bottom: 10px;
