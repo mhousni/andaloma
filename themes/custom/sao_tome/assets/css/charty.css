@@ -1,0 +1,158 @@
+
+        :root {
+            --primary-dark: #0f2647;
+            --primary-blue: #1c5596;
+            --accent-blue: #3b82f6;
+            --light-blue: #e0f2fe;
+            --bg-color: #f4f7f9;
+            --white: #ffffff;
+            --text-gray: #555;
+        }
+
+       
+
+        .sources {
+            font-size: 0.8rem;
+            color: var(--text-gray);
+            text-align: right;
+        }
+
+        /* Dashboard Grid */
+        .dashboard {
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            gap: 20px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        /* Generic Card Style */
+        .card {
+            background: var(--white);
+            
+            border-radius: 12px;
+            padding: 20px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeUp 0.6s ease forwards;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        @keyframes fadeUp {
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes fadeIn {
+            to { opacity: 1; }
+        }
+
+        /* Card Delays for Staggered Animation */
+        .card:nth-child(1) { animation-delay: 0.1s; }
+        .card:nth-child(2) { animation-delay: 0.2s; }
+        .card:nth-child(3) { animation-delay: 0.3s; }
+        .card:nth-child(4) { animation-delay: 0.4s; }
+        .card:nth-child(5) { animation-delay: 0.5s; }
+        .card:nth-child(6) { animation-delay: 0.6s; }
+
+        /* Specific Card Layouts */
+        .col-4 { grid-column: span 4; }
+
+        /* Typography inside cards */
+        .kpi-title {
+            font-size: 1.9rem;
+            text-transform: uppercase;
+            color: #053542;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .kpi-value {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--primary-blue);
+            margin-bottom: 15px;
+            display: inline-block;
+        }
+
+        /* Growth Items */
+        .growth-item {
+            display: flex;
+            align-items: center;
+            margin-top: 15px;
+        }
+
+        .growth-icon {
+            background: var(--light-blue);
+            color: var(--accent-blue);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-weight: bold;
+            margin-right: 15px;
+            font-size: 1.2rem;
+        }
+
+        .growth-text h4 { font-size: 1.5rem; margin: 0; color: var(--primary-dark); }
+        .growth-text p { font-size: 1.85rem; color: var(--text-gray); margin: 0; }
+
+        /* Lists */
+        ul.data-list {
+            list-style: none;
+            margin-top: 10px;
+        }
+
+        ul.data-list li {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px 0;
+            border-bottom: 1px dashed #eee;
+            font-size: 1.95rem;
+            opacity: 0;
+            animation: fadeIn 1s ease forwards;
+            animation-delay: 1s; /* Appear after counters */
+        }
+        
+        ul.data-list li:last-child { border-bottom: none; }
+        ul.data-list li span:last-child { font-weight: bold; color: var(--primary-blue); }
+
+        /* Employment Split */
+        .employment-split {
+            display: flex;
+            justify-content: space-around;
+            margin-top: auto;
+            padding-top: 15px;
+            border-top: 1px solid #eee;
+        }
+        
+        .emp-item { text-align: center; }
+        .emp-item h4 { font-size: 1.8rem; color: var(--primary-blue); }
+        .emp-item p { font-size: 1.5rem; color: var(--text-gray); }
+
+        /* Chart Containers */
+        .chart-container {
+            position: relative;
+            height: 200px;
+            width: 100%;
+            margin-top: auto;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1024px) {
+            .col-4 { grid-column: span 6; }
+        }
+        @media (max-width: 768px) {
+            .col-4 { grid-column: span 12; }
+            header { flex-direction: column; align-items: flex-start; }
+            .sources { text-align: left; margin-top: 10px; }
+        }
