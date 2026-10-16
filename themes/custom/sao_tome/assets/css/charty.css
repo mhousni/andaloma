@@ -67,19 +67,19 @@
 
         /* Typography inside cards */
         .kpi-title {
-            font-size: 1.9rem;
-            text-transform: uppercase;
+            font-size: 2rem;
+            text-transform: capitalize;
             color: #053542;
             font-weight: bold;
             margin-bottom: 10px;
         }
 
         .kpi-value {
-            font-size: 2.5rem;
-            font-weight: 800;
-            color: var(--primary-blue);
-            margin-bottom: 15px;
-            display: inline-block;
+           font-size: 3.5rem;
+    font-weight: 800;
+    color: #38492a;
+    margin-bottom: 15px;
+    display: inline-block;
         }
 
         /* Growth Items */
