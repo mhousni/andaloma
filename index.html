@@ -10,12 +10,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script
         type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Homepage"}]}</script>
-    <link rel="icon" href="themes/custom/sao_tome/favicon.png" type="image/png" />
+    <link rel="icon" href="themes/custom/sao_tome/favicon.svg" type="image/png" />
     <link rel="alternate" hreflang="fr" href="index.html" />
     <link rel="alternate" hreflang="ar" href="ar.html" />
     <link rel="alternate" hreflang="en" href="en.html" />
 
-    <title>Homepage | ANDA</title>
+    <title>Agence nationale pour le développement de l'aquaculture | ANDA</title>
     <link rel="stylesheet" media="all" href="modules/contrib/webform/css/webform.element.flexboxda5a.css?tmlhth" />
     <link rel="stylesheet" media="all" href="core/misc/components/resize.moduleda5a.css?tmlhth" />
     <link rel="stylesheet" media="all" href="core/misc/components/progress.moduleda5a.css?tmlhth" />
@@ -111,6 +111,23 @@
             }, 12000);
         })(document);
     </script>
+    <style>
+        .ScrollButton {
+        position: absolute;
+        bottom: -50px;
+        font-size: 19px;
+        left: 50%;
+        opacity: 1;
+        pointer-events: auto;
+        -webkit-transform: translate(-50%, 0);
+        -ms-transform: translate(-50%, 0);
+        transform: translate(-50%, 0);
+        color: var(--color-white);
+        padding-bottom: calc(8rem + var(--gap-s));
+        -webkit-transition: opacity 0.2s cubic-bezier(0.4, 0.64, 0.68, 1);
+        transition: opacity 0.2s cubic-bezier(0.4, 0.64, 0.68, 1);
+    }
+    </style>
 </head>
 
 <body class="is-front node-type-homepage" data-barba="wrapper">
@@ -137,7 +154,7 @@
                                     <div id="block-sao-tome-site-branding">
 
 
-                                        <a href="index.html" rel="home" class="logo">
+                                        <a href="/fr/index.html" rel="home" class="logo">
                                             <img src="themes/custom/sao_tome/assets/img/anda.png" alt="site branding"
                                                 width="200" height="65">
 
@@ -165,11 +182,11 @@
                                                             aria-current="page">fr</a>
                                                     </li>
                                                     <li role="none">
-                                                        <a href="ar.html" class="language-link" hreflang="ar"
+                                                        <a href="/index.html" class="language-link" hreflang="ar"
                                                             data-drupal-link-system-path="&lt;front&gt;">ar</a>
                                                     </li>
                                                     <li role="none">
-                                                        <a href="en.html" class="language-link" hreflang="en"
+                                                        <a href="/index.html" class="language-link" hreflang="en"
                                                             data-drupal-link-system-path="&lt;front&gt;">en</a>
                                                     </li>
 
@@ -317,52 +334,6 @@
                                                                                             et partenariats</a>
                                                                                     </li>
 
-                                                                                    <li
-                                                                                        class="menu-main__item menu-item--level-2">
-                                                                                        <a href="fr/pourquoi-sao-tome-et-principe/culture-et-patrimoine/un-voyage-travers-les-epoques.html"
-                                                                                            class="menu-main__link body--bold"
-                                                                                            data-label="Un voyage à travers les époques"
-                                                                                            data-drupal-link-system-path="node/50">Un
-                                                                                            voyage à travers les
-                                                                                            époques</a>
-                                                                                    </li>
-
-                                                                                    <li
-                                                                                        class="menu-main__item menu-item--level-2">
-                                                                                        <a href="fr/pourquoi-sao-tome-et-principe/culture-et-patrimoine/un-passe-colonial-seduisant-et-mysterieux.html"
-                                                                                            class="menu-main__link body--bold"
-                                                                                            data-label="Un passé colonial et mystérieux"
-                                                                                            data-drupal-link-system-path="node/51">Un
-                                                                                            passé colonial et
-                                                                                            mystérieux</a>
-                                                                                    </li>
-
-                                                                                    <li
-                                                                                        class="menu-main__item menu-item--level-2">
-                                                                                        <a href="fr/croyances.html"
-                                                                                            class="menu-main__link body--bold"
-                                                                                            data-label="Croyances"
-                                                                                            data-drupal-link-system-path="node/55">Croyances</a>
-                                                                                    </li>
-
-                                                                                    <li
-                                                                                        class="menu-main__item menu-item--level-2">
-                                                                                        <a href="fr/un-melange-culturel-et-historique.html"
-                                                                                            class="menu-main__link body--bold"
-                                                                                            data-label="Un mélange culturel et historique"
-                                                                                            data-drupal-link-system-path="node/53">Un
-                                                                                            mélange culturel et
-                                                                                            historique</a>
-                                                                                    </li>
-
-                                                                                    <li
-                                                                                        class="menu-main__item menu-item--level-2">
-                                                                                        <a href="fr/origines-et-ethnies.html"
-                                                                                            class="menu-main__link body--bold"
-                                                                                            data-label="Origines et ethnies"
-                                                                                            data-drupal-link-system-path="node/54">Origines
-                                                                                            et ethnies</a>
-                                                                                    </li>
 
                                                                                 </ul>
                                                                             </div>
@@ -695,7 +666,7 @@
                                                                                 class="menu-main__link menu-main__title title-3"
                                                                                 aria-expanded="false"
                                                                                 aria-controls="burger-17">
-                                                                                Actualités & AGENDA
+                                                                                ACTUALITÉS & AGENDA
                                                                             </button>
                                                                             <div data-a11y-disclosure-navigation-component="panel"
                                                                                 class="menu-burger-panel" id="burger-17"
@@ -920,7 +891,7 @@
 
                                                                         <li
                                                                             class="menu-item menu-item--expanded menu-item--active-trail">
-                                                                            <span>Utile</span>
+                                                                            <span>Liens Utils</span>
 
 
                                                                             <div
@@ -932,11 +903,9 @@
 
 
 
-                                                                                        <a href="fr/utile/espace-presse.html"
-                                                                                            title=" Espace presse">
-                                                                                            Espace presse</a>
-
-
+                                                                                        <a href="#"
+                                                                                            title=" Espace presse">Présentation
+                                                                                            de l’ANDA</a>
                                                                                         <div
                                                                                             class="menu_link_content menu-link-contentfooter view-mode-default menu-dropdown menu-dropdown-1 menu-type-default">
 
@@ -950,9 +919,9 @@
 
 
 
-                                                                                        <a href="fr/espace-institutionnel"
-                                                                                            title=" Espace institutionnel">
-                                                                                            Espace institutionnel</a>
+                                                                                        <a href="#"
+                                                                                            title="Filières Aquacoles">Filières
+                                                                                            Aquacoles</a>
 
 
                                                                                         <div
@@ -969,10 +938,9 @@
 
 
 
-                                                                                        <a href="fr.html"
-                                                                                            title="Contact"
+                                                                                        <a href="#" title="Contact"
                                                                                             data-dialog-component="global_opener"
-                                                                                            data-dialog-id="contact">Contact</a>
+                                                                                            data-dialog-id="contact">Blog</a>
 
 
                                                                                         <div
@@ -1125,39 +1093,6 @@
 
                                                     <!--<img src="themes/custom/sao_tome/assets/img/anda.png" alt="site branding" class="sublogo" width="200" height="65">-->
 
-
-                                                    <div class="ParagraphHeaderHP-slogan-item" data-index="0">
-                                                        <span class="title--2--body"
-                                                            data-header-homepage-component="slogan-text--1">La promesse
-                                                            d&#039;une</span>
-                                                        <span class="title--1"
-                                                            data-header-homepage-component="slogan-text--2">expérience
-                                                            sensorielle</span>
-                                                    </div>
-                                                    <div class="ParagraphHeaderHP-slogan-item" data-index="1">
-                                                        <span class="title--2--body"
-                                                            data-header-homepage-component="slogan-text--1">La promesse
-                                                            d&#039;un</span>
-                                                        <span class="title--1"
-                                                            data-header-homepage-component="slogan-text--2">appui de
-                                                            qualité aux investisseurs.</span>
-                                                    </div>
-                                                    <div class="ParagraphHeaderHP-slogan-item" data-index="2">
-                                                        <span class="title--2--body"
-                                                            data-header-homepage-component="slogan-text--1">La promesse
-                                                            d&#039;une</span>
-                                                        <span class="title--1"
-                                                            data-header-homepage-component="slogan-text--2">aquaculture
-                                                            sans frontières.</span>
-                                                    </div>
-                                                    <div class="ParagraphHeaderHP-slogan-item" data-index="3">
-                                                        <span class="title--2--body"
-                                                            data-header-homepage-component="slogan-text--1">La promesse
-                                                            d&#039;une</span>
-                                                        <span class="title--1"
-                                                            data-header-homepage-component="slogan-text--2">structure
-                                                            innovante et incontournable.</span>
-                                                    </div>
                                                 </div>
                                             </div>
 
@@ -1175,8 +1110,8 @@ data-player-provider="hls" data-player-variant="autoplay"-->
                                             <div class="MediaVideoStreaming media" data-player-component="container"
                                                 id="MediaVideoStreaming--10">
                                                 <video style="clip-path: inset(2px 4px);"
-                                                    src="themes/custom/sao_tome/assets/video/ANDA-v-fr.mp4"
-                                                    playsinline autoplay muted loop
+                                                    src="themes/custom/sao_tome/assets/video/ANDA-v-fr.mp4" playsinline
+                                                    autoplay muted loop
                                                     poster="themes/custom/sao_tome/assets/img/all/conchyliculture/01.png"></video>
                                             </div>
 
@@ -1192,10 +1127,10 @@ data-player-provider="hls" data-player-variant="autoplay"-->
 
                                             </div>
                                             <div class="ParagraphHeaderHP-body-text text-content">
-                                                <p class="text-align-center">Créée en 2011 dans le cadre de la stratégie
+                                                <p class="text-align-center" style="text-align:justify;">Créée en 2011 dans le cadre de la stratégie
                                                     nationale Halieutis, l’Agence Nationale pour le Développement de
                                                     l’Aquaculture (ANDA) est l’établissement public chargé d’accompagner
-                                                    le développement de l’aquaculture marine au Maroc.
+                                                    le développement de l’aquaculture marine au Maroc. <br>
                                                     Placée sous la tutelle de l’autorité gouvernementale chargée de la
                                                     Pêche maritime, l’ANDA œuvre à construire une aquaculture durable,
                                                     compétitive et créatrice de valeur, capable de contribuer pleinement
@@ -1219,7 +1154,8 @@ data-player-provider="hls" data-player-variant="autoplay"-->
                                                     <h3 class="ComponentHeaderEdito-overtitle subtitle">Pourquoi
                                                         investir</h3>
                                                     <h2 class="ComponentHeaderEdito-title title--2--display">
-                                                        <strong>dans l'aquaculture </strong><br></h2>
+                                                        <strong>en aquaculture </strong><br>
+                                                    </h2>
 
                                                 </header>
 
@@ -1290,7 +1226,7 @@ data-player-provider="hls" data-player-variant="autoplay"-->
                                             class="ParagraphVerticalSlider paragraph swiper slider--26"
                                             data-vertical-slider-component="container" data-slider-animate-id="26"
                                             data-scroll-animate-snap>
-                                            <h2 class="ParagraphVerticalSlider-title subtitle">Principales filières
+                                            <h2 class="ParagraphVerticalSlider-title subtitle">filières
                                                 Aquacoles</h2>
 
                                             <div class="ParagraphVerticalSlider-content swiper-wrapper"
@@ -1631,68 +1567,7 @@ data-player-provider="hls" data-player-variant="autoplay"-->
                                                     </div>
                                                 </div>
 
-                                                <div class="ParagraphVerticalSliderItem swiper-slide"
-                                                    data-vertical-slider-bg-color="#395665">
-                                                    <div class="ParagraphVerticalSliderItem-illustration-wrapper">
-                                                        <div class="ParagraphVerticalSliderItem-illustration-container"
-                                                            data-vertical-slider-component="media-left-container">
-                                                            <div class="ParagraphVerticalSliderItem-illustration"
-                                                                data-vertical-slider-component="media-left">
-                                                                <div class="MediaImage media" data-image-loader>
-
-                                                                    <img loading="lazy" alt="sao tome et principe"
-                                                                        width="200" height="133" data-multiplier="1x"
-                                                                        sizes="auto"
-                                                                        src="themes/custom/sao_tome/assets/img/all/conchyliculture/7.png"
-                                                                        data-to-process="true" />
-
-
-                                                                </div>
-
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="ParagraphVerticalSliderItem-content">
-                                                        <h3 class="ParagraphVerticalSliderItem-title title--2--display"
-                                                            data-vertical-slider-component="title"
-                                                            data-text-resizing-overflow>Conchyliculture</h3>
-                                                        <div
-                                                            class="ParagraphVerticalSliderItem-content-illustration-wrapper">
-                                                            <div class="ParagraphVerticalSliderItem-content-illustration-container"
-                                                                data-vertical-slider-component="media-right-container">
-                                                                <div class="ParagraphVerticalSliderItem-content-illustration"
-                                                                    data-vertical-slider-component="media-right">
-                                                                    <div class="MediaImage media" data-image-loader>
-
-                                                                        <img loading="lazy" alt="surf" width="200"
-                                                                            height="300" data-multiplier="1x"
-                                                                            sizes="auto"
-                                                                            src="themes/custom/sao_tome/assets/img/all/conchyliculture/5.png"
-                                                                            data-to-process="true" />
-
-
-                                                                    </div>
-
-                                                                </div>
-                                                            </div>
-                                                        </div>
-
-
-
-
-
-                                                        <div class="button button--secondary button--secondary--light ParagraphVerticalSliderItem-content-cta"
-                                                            data-custom-cursor-prevent="true">
-                                                            <a
-                                                                href="fr/organiser-mon-sejour/que-faire-sao-tome-e-principe/activites-nautiques-et-maritimes.html">
-                                                                <span class="button-label"
-                                                                    data-label="Découvrir la plongée">Découvrir</span>
-                                                            </a>
-                                                        </div>
-
-
-                                                    </div>
-                                                </div>
+                                               
 
 
 
@@ -1725,8 +1600,9 @@ data-player-provider="hls" data-player-variant="autoplay"-->
                                             </div>
 
 
-                                           
-                                            <img class="sublogo" width="200" height="255" src="themes/custom/sao_tome/assets/img/pattern-sea-bw.svg" alt="">
+
+                                            <img class="sublogo" width="200" height="255"
+                                                src="themes/custom/sao_tome/assets/img/pattern-sea-bw.svg" alt="">
 
 
 
@@ -1744,8 +1620,7 @@ data-player-provider="hls" data-player-variant="autoplay"-->
                                                 data-pages-slider-component="container" data-slider-animate-id="27">
 
                                                 <header class="ComponentHeaderEdito">
-                                                    <h3 class="ComponentHeaderEdito-overtitle subtitle">Opportunité
-                                                        d'Investissement
+                                                    <h3 class="ComponentHeaderEdito-overtitle subtitle">Investir
                                                     </h3>
                                                     <h2 class="ComponentHeaderEdito-title title--2--display">
                                                         <strong></strong>
@@ -1756,29 +1631,7 @@ data-player-provider="hls" data-player-variant="autoplay"-->
                                                     data-custom-cursor-component="target"
                                                     data-custom-cursor-label='<i class="icon icon-chevron-double-axis"></i>'
                                                     data-custom-cursor-drag="true">
-                                                    <div class="ParagraphPagesSlider-item swiper-slide">
-                                                        <article class="NodeArticleTeaser"
-                                                            data-custom-cursor-component="target"
-                                                            data-custom-cursor-label="Voir"
-                                                            data-fl-href="/fr/un-melange-culturel-et-historique">
-                                                            <div class="MediaImage media" data-image-loader>
-
-                                                                <img loading="lazy" alt="carnaval sao tome" width="200"
-                                                                    height="133" data-multiplier="1x" sizes="auto"
-                                                                    src="themes/custom/sao_tome/assets/img/all/pisciculture/Pisci 8.JPG"
-                                                                    data-to-process="true" />
-
-
-                                                            </div>
-
-
-                                                            <a class="NodeArticleTeaser-title" href="#"
-                                                                data-fl-mute="span">
-                                                                <span>Géoportail</span>
-                                                            </a>
-                                                        </article>
-
-                                                    </div>
+                                                   
                                                     <div class="ParagraphPagesSlider-item swiper-slide">
                                                         <article class="NodeArticleTeaser"
                                                             data-custom-cursor-component="target"
@@ -1829,12 +1682,14 @@ data-player-provider="hls" data-player-variant="autoplay"-->
                                             data-scroll-animate-snap>
                                             <!--<h2 class="ComponentHorizontalSlider-title subtitle">
                                                 Nos hébergements
-                                            </h2>-->
+                                            </h2>
+                                            data-custom-cursor-component="target"
+                                            -->
 
                                             <div class="ComponentHorizontalSlider-content swiper-wrapper"
-                                                data-custom-cursor-component="target"
+                                                
                                                 data-custom-cursor-label='<i class="icon icon-chevron-double-axis"></i>'
-                                                data-custom-cursor-drag="true"
+                                                data-custom-cursor-drag="false"
                                                 data-custom-cursor-navigation="custom-cursor-navigation-31">
 
                                                 <div class="ComponentHorizontalSliderItem swiper-slide"
@@ -1874,13 +1729,13 @@ data-player-provider="hls" data-player-variant="autoplay"-->
 
 
 
-                                                    <div class="button button--secondary button--secondary--light ComponentHorizontalSliderItem-cta"
+                                                   <!-- <div class="button button--secondary button--secondary--light ComponentHorizontalSliderItem-cta"
                                                         data-custom-cursor-prevent="true">
                                                         <a href="fr/organiser-mon-sejour/hebergements.html">
                                                             <span class="button-label"
                                                                 data-label="Découvrir">Découvrir</span>
                                                         </a>
-                                                    </div>
+                                                    </div>-->
 
                                                     <div class="ComponentHorizontalSliderItem-content">
                                                         <div class="ComponentHorizontalSliderItem-content-container">
@@ -1924,238 +1779,19 @@ data-player-provider="hls" data-player-variant="autoplay"-->
                                                             </div>
                                                             <div
                                                                 class="ComponentHorizontalSliderItem-text text-content">
-                                                                <p>L'ANDA vous offre un environnement exceptionnel pour
-                                                                    investir dans l'aquaculture, porté par une vision
-                                                                    stratégique et un dispositif réglementaire complet.
-                                                                    Nous vous accompagnons à chaque étape, de
-                                                                    l'identification des sites à la commercialisation.
-                                                                    Concession de longue durée, plans d'aménagement
-                                                                    dédiés et procédures transparentes vous garantissent
-                                                                    sécurité et rentabilité. Avec le soutien de l'INRH
-                                                                    et de l'ONSSA, nous faisons de l'aquaculture un
-                                                                    pilier de l'économie bleue marocaine : un cadre
-                                                                    fiable, durable et porteur de croissance.
-                                                                    <br><strong>L'investissement aquacole au Maroc :
-                                                                        notre engagement pour votre réussite</strong>
-                                                                </p>
+                                                                
                                                             </div>
                                                         </div>
                                                     </div>
                                                 </div>
 
 
-                                                <div class="ComponentHorizontalSliderItem swiper-slide"
-                                                    data-horizontal-slider-with-content>
-                                                    <div class="ComponentHorizontalSliderItem-media-wrapper media--1">
-                                                        <div class="ComponentHorizontalSliderItem-media-container"
-                                                            data-horizontal-slider-component="media-1-container">
-                                                            <div class="ComponentHorizontalSliderItem-media"
-                                                                data-horizontal-slider-component="media-1">
-                                                                <div class="MediaImage media" data-image-loader>
-
-                                                                    <img loading="lazy" alt="bungalows " width="200"
-                                                                        height="133" data-multiplier="1x" sizes="auto"
-                                                                        srcset="sites/default/files/styles/responsive_200w/public/2025-11/sundypraiaexteriorbynight2.jpg66fc.webp?itok=eRV2vTYC 200w,sites/default/files/styles/responsive_400w/public/2025-11/sundypraiaexteriorbynight2.jpgb818.webp?itok=mrCHTKVZ 400w,sites/default/files/styles/responsive_600w/public/2025-11/sundypraiaexteriorbynight2.jpgc31e.webp?itok=qRUkeLLl 600w,sites/default/files/styles/responsive_800w/public/2025-11/sundypraiaexteriorbynight2.jpgc34e.webp?itok=BSjC2Lmp 800w,sites/default/files/styles/responsive_1000w/public/2025-11/sundypraiaexteriorbynight2.jpg51ed.webp?itok=VAiK_bWj 1000w,sites/default/files/styles/responsive_1200w/public/2025-11/sundypraiaexteriorbynight2.jpgbfe5.webp?itok=BfS9tEd4 1200w,sites/default/files/styles/responsive_1400w/public/2025-11/sundypraiaexteriorbynight2.jpg964d.webp?itok=QqRAbmbY 1400w,sites/default/files/styles/responsive_1600w/public/2025-11/sundypraiaexteriorbynight2.jpg10e2.webp?itok=XhZDgXIC 1600w,sites/default/files/styles/responsive_1800w/public/2025-11/sundypraiaexteriorbynight2.jpgee05.webp?itok=l5c71-L4 1800w,sites/default/files/styles/responsive_2000w/public/2025-11/sundypraiaexteriorbynight2.jpg008b.webp?itok=UTMcZBLW 2000w,sites/default/files/styles/responsive_2200w/public/2025-11/sundypraiaexteriorbynight2.jpg474b.webp?itok=BYvyOEtr 2200w,sites/default/files/styles/responsive_2400w/public/2025-11/sundypraiaexteriorbynight2.jpgd4bb.webp?itok=chjXejil 2400w,sites/default/files/styles/responsive_2600w/public/2025-11/sundypraiaexteriorbynight2.jpg0869.webp?itok=6tXef5-C 2600w,sites/default/files/styles/responsive_2800w/public/2025-11/sundypraiaexteriorbynight2.jpg3be3.webp?itok=vaHWoXg8 2800w,sites/default/files/styles/responsive_3000w/public/2025-11/sundypraiaexteriorbynight2.jpgbd18.webp?itok=hxTYCT7U 3000w,sites/default/files/styles/responsive_3200w/public/2025-11/sundypraiaexteriorbynight2.jpg0afa.webp?itok=Ina0rXna 3200w,sites/default/files/styles/responsive_3400w/public/2025-11/sundypraiaexteriorbynight2.jpgb05f.webp?itok=HyAenkRW 3400w,sites/default/files/styles/responsive_3600w/public/2025-11/sundypraiaexteriorbynight2.jpg61ca.webp?itok=JWA5D4-8 3600w,sites/default/files/styles/responsive_3800w/public/2025-11/sundypraiaexteriorbynight2.jpg5ae4.webp?itok=b9usadYI 3800w,sites/default/files/styles/responsive_4000w/public/2025-11/sundypraiaexteriorbynight2.jpga82b.webp?itok=nFICx7Ag 4000w"
-                                                                        src="sites/default/files/styles/responsive_200w/public/2025-11/sundypraiaexteriorbynight2.jpg66fc.webp?itok=eRV2vTYC"
-                                                                        data-to-process="true" />
-
-
-                                                                </div>
-
-
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="ComponentHorizontalSliderItem-title-container"
-                                                        data-horizontal-slider-component="title-container">
-                                                        <div class="ComponentHorizontalSliderItem-title-inner title--1--immersive"
-                                                            data-horizontal-slider-component="title-inner">
-                                                            <h3 class="ComponentHorizontalSliderItem-title-content title--1--immersive"
-                                                                data-horizontal-slider-component="title"
-                                                                data-text-resizing-overflow>
-                                                                Bungalows
-                                                            </h3>
-                                                        </div>
-                                                    </div>
-
-
-
-
-
-                                                    <div class="button button--secondary button--secondary--light ComponentHorizontalSliderItem-cta"
-                                                        data-custom-cursor-prevent="true">
-                                                        <a href="fr/organiser-mon-sejour/hebergements.html">
-                                                            <span class="button-label"
-                                                                data-label="Découvrir">Découvrir</span>
-                                                        </a>
-                                                    </div>
-
-                                                    <div class="ComponentHorizontalSliderItem-content">
-                                                        <div class="ComponentHorizontalSliderItem-content-container">
-                                                            <div
-                                                                class="ComponentHorizontalSliderItem-media-wrapper media--2">
-                                                                <div class="ComponentHorizontalSliderItem-media-container"
-                                                                    data-horizontal-slider-component="media-2-container">
-                                                                    <div class="ComponentHorizontalSliderItem-media"
-                                                                        data-horizontal-slider-component="media-2">
-                                                                        <div class="MediaImage media" data-image-loader>
-
-                                                                            <img loading="lazy" alt="bungalows "
-                                                                                width="200" height="129"
-                                                                                data-multiplier="1x" sizes="auto"
-                                                                                srcset="sites/default/files/styles/responsive_200w/public/2025-11/sundypraiapoolvillaexterior.jpg4c16.webp?itok=_7PBnmUZ 200w,sites/default/files/styles/responsive_400w/public/2025-11/sundypraiapoolvillaexterior.jpga698.webp?itok=cY9FtAsw 400w,sites/default/files/styles/responsive_600w/public/2025-11/sundypraiapoolvillaexterior.jpg55b5.webp?itok=DCpzckoj 600w,sites/default/files/styles/responsive_800w/public/2025-11/sundypraiapoolvillaexterior.jpg5019.webp?itok=1HoEVL9q 800w,sites/default/files/styles/responsive_1000w/public/2025-11/sundypraiapoolvillaexterior.jpge3bc.webp?itok=2MITX3jQ 1000w,sites/default/files/styles/responsive_1200w/public/2025-11/sundypraiapoolvillaexterior.jpg1efb.webp?itok=uYeUth3R 1200w,sites/default/files/styles/responsive_1400w/public/2025-11/sundypraiapoolvillaexterior.jpg3651.webp?itok=FiDc0YLx 1400w,sites/default/files/styles/responsive_1600w/public/2025-11/sundypraiapoolvillaexterior.jpg67ab.webp?itok=ERm7CljD 1600w,sites/default/files/styles/responsive_1800w/public/2025-11/sundypraiapoolvillaexterior.jpg0f93.webp?itok=yu4AGkuR 1800w,sites/default/files/styles/responsive_2000w/public/2025-11/sundypraiapoolvillaexterior.jpgda50.webp?itok=4Axes_o4 2000w,sites/default/files/styles/responsive_2200w/public/2025-11/sundypraiapoolvillaexterior.jpg24e8.webp?itok=XDfNxdQ_ 2200w,sites/default/files/styles/responsive_2400w/public/2025-11/sundypraiapoolvillaexterior.jpgf5a0.webp?itok=zGHdlQ5Q 2400w,sites/default/files/styles/responsive_2600w/public/2025-11/sundypraiapoolvillaexterior.jpg5a55.webp?itok=va3YUOQX 2600w,sites/default/files/styles/responsive_2800w/public/2025-11/sundypraiapoolvillaexterior.jpg879d.webp?itok=OKM97Vpv 2800w,sites/default/files/styles/responsive_3000w/public/2025-11/sundypraiapoolvillaexterior.jpg80cc.webp?itok=PgiJ-6W- 3000w,sites/default/files/styles/responsive_3200w/public/2025-11/sundypraiapoolvillaexterior.jpg979a.webp?itok=I8aVQ4Cb 3200w,sites/default/files/styles/responsive_3400w/public/2025-11/sundypraiapoolvillaexterior.jpg2ea6.webp?itok=16bzA9UU 3400w,sites/default/files/styles/responsive_3600w/public/2025-11/sundypraiapoolvillaexterior.jpg8c4c.webp?itok=kokApwpP 3600w,sites/default/files/styles/responsive_3800w/public/2025-11/sundypraiapoolvillaexterior.jpgf08c.webp?itok=ZKM9hTEM 3800w,sites/default/files/styles/responsive_4000w/public/2025-11/sundypraiapoolvillaexterior.jpge76f.webp?itok=DjJZYCp9 4000w"
-                                                                                src="sites/default/files/styles/responsive_200w/public/2025-11/sundypraiapoolvillaexterior.jpg4c16.webp?itok=_7PBnmUZ"
-                                                                                data-to-process="true" />
-
-
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                            <div
-                                                                class="ComponentHorizontalSliderItem-media-wrapper media--3">
-                                                                <div class="ComponentHorizontalSliderItem-media-container"
-                                                                    data-horizontal-slider-component="media-3-container">
-                                                                    <div class="ComponentHorizontalSliderItem-media"
-                                                                        data-horizontal-slider-component="media-3">
-                                                                        <div class="MediaImage media" data-image-loader>
-
-                                                                            <img loading="lazy" alt="bungalow"
-                                                                                width="200" height="133"
-                                                                                data-multiplier="1x" sizes="auto"
-                                                                                srcset="sites/default/files/styles/responsive_200w/public/2025-11/sundypraiaair2.jpga020.webp?itok=KrPNOWXo 200w,sites/default/files/styles/responsive_400w/public/2025-11/sundypraiaair2.jpga3f8.webp?itok=wIkXrv04 400w,sites/default/files/styles/responsive_600w/public/2025-11/sundypraiaair2.jpga3c9.webp?itok=yPS4s3So 600w,sites/default/files/styles/responsive_800w/public/2025-11/sundypraiaair2.jpgcde2.webp?itok=2Xli7pCQ 800w,sites/default/files/styles/responsive_1000w/public/2025-11/sundypraiaair2.jpg70c8.webp?itok=db6S8hkl 1000w,sites/default/files/styles/responsive_1200w/public/2025-11/sundypraiaair2.jpg41ea.webp?itok=G4t8KnDs 1200w,sites/default/files/styles/responsive_1400w/public/2025-11/sundypraiaair2.jpg275b.webp?itok=2YK1CEst 1400w,sites/default/files/styles/responsive_1600w/public/2025-11/sundypraiaair2.jpge23f.webp?itok=yd9Fox_N 1600w,sites/default/files/styles/responsive_1800w/public/2025-11/sundypraiaair2.jpg4e48.webp?itok=L_S7_-Hs 1800w,sites/default/files/styles/responsive_2000w/public/2025-11/sundypraiaair2.jpge9be.webp?itok=LTyP76cz 2000w,sites/default/files/styles/responsive_2200w/public/2025-11/sundypraiaair2.jpg153f.webp?itok=0uWV1ywO 2200w,sites/default/files/styles/responsive_2400w/public/2025-11/sundypraiaair2.jpg49fe.webp?itok=uoA_y-wq 2400w,sites/default/files/styles/responsive_2600w/public/2025-11/sundypraiaair2.jpg8b20.webp?itok=VeTNAnoq 2600w,sites/default/files/styles/responsive_2800w/public/2025-11/sundypraiaair2.jpg85ab.webp?itok=7T0gA9ud 2800w,sites/default/files/styles/responsive_3000w/public/2025-11/sundypraiaair2.jpg7e54.webp?itok=-bvl-urF 3000w,sites/default/files/styles/responsive_3200w/public/2025-11/sundypraiaair2.jpgf206.webp?itok=XnhIf29U 3200w,sites/default/files/styles/responsive_3400w/public/2025-11/sundypraiaair2.jpg9e90.webp?itok=huUTkNXt 3400w,sites/default/files/styles/responsive_3600w/public/2025-11/sundypraiaair2.jpg9f04.webp?itok=yO8mtS2N 3600w,sites/default/files/styles/responsive_3800w/public/2025-11/sundypraiaair2.jpg57e0.webp?itok=67jeJlS2 3800w,sites/default/files/styles/responsive_4000w/public/2025-11/sundypraiaair2.jpgfe53.webp?itok=3e5YXE0w 4000w"
-                                                                                src="sites/default/files/styles/responsive_200w/public/2025-11/sundypraiaair2.jpga020.webp?itok=KrPNOWXo"
-                                                                                data-to-process="true" />
-
-
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                            <div
-                                                                class="ComponentHorizontalSliderItem-text text-content">
-                                                                <p><span style="white-space:pre-wrap;">Évadez-vous dans
-                                                                        des bungalows nichés au cœur de la nature, entre
-                                                                        jardins tropicaux, plages secrètes et forêts
-                                                                        équatoriales. Ces refuges intimistes, souvent
-                                                                        les pieds dans le sable ou perchés sur les
-                                                                        hauteurs, promettent calme, <strong>déconnexion
-                                                                            et immersion totale dans l’essence sauvage
-                                                                            de São Tomé et Príncipe.</strong></span></p>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-
-
-                                                <div class="ComponentHorizontalSliderItem swiper-slide"
-                                                    data-horizontal-slider-with-content>
-                                                    <div class="ComponentHorizontalSliderItem-media-wrapper media--1">
-                                                        <div class="ComponentHorizontalSliderItem-media-container"
-                                                            data-horizontal-slider-component="media-1-container">
-                                                            <div class="ComponentHorizontalSliderItem-media"
-                                                                data-horizontal-slider-component="media-1">
-                                                                <div class="MediaImage media" data-image-loader>
-
-                                                                    <img loading="lazy" alt="villas" width="200"
-                                                                        height="133" data-multiplier="1x" sizes="auto"
-                                                                        srcset="sites/default/files/styles/responsive_200w/public/2025-11/bombombeachfrontbungalow.jpgb1dc.webp?itok=AFZ3QeMh 200w,sites/default/files/styles/responsive_400w/public/2025-11/bombombeachfrontbungalow.jpgd3ad.webp?itok=dCbhNHOL 400w,sites/default/files/styles/responsive_600w/public/2025-11/bombombeachfrontbungalow.jpg927f.webp?itok=nfwAjooG 600w,sites/default/files/styles/responsive_800w/public/2025-11/bombombeachfrontbungalow.jpga169.webp?itok=7Hd2A-dL 800w,sites/default/files/styles/responsive_1000w/public/2025-11/bombombeachfrontbungalow.jpga49c.webp?itok=rxSd2e4y 1000w,sites/default/files/styles/responsive_1200w/public/2025-11/bombombeachfrontbungalow.jpgf93a.webp?itok=YuTwOz7R 1200w,sites/default/files/styles/responsive_1400w/public/2025-11/bombombeachfrontbungalow.jpg7015.webp?itok=tICjpQhJ 1400w,sites/default/files/styles/responsive_1600w/public/2025-11/bombombeachfrontbungalow.jpg7363.webp?itok=0K43iy2f 1600w,sites/default/files/styles/responsive_1800w/public/2025-11/bombombeachfrontbungalow.jpg2699.webp?itok=kdjYR2O9 1800w,sites/default/files/styles/responsive_2000w/public/2025-11/bombombeachfrontbungalow.jpg014e.webp?itok=YLEkjlFy 2000w,sites/default/files/styles/responsive_2200w/public/2025-11/bombombeachfrontbungalow.jpgd629.webp?itok=2AacIrtN 2200w,sites/default/files/styles/responsive_2400w/public/2025-11/bombombeachfrontbungalow.jpgbd72.webp?itok=g4CsEk4S 2400w,sites/default/files/styles/responsive_2600w/public/2025-11/bombombeachfrontbungalow.jpgda2f.webp?itok=e8X-whgw 2600w,sites/default/files/styles/responsive_2800w/public/2025-11/bombombeachfrontbungalow.jpga180.webp?itok=PqT9E5kZ 2800w,sites/default/files/styles/responsive_3000w/public/2025-11/bombombeachfrontbungalow.jpg22b9.webp?itok=VneNbozm 3000w,sites/default/files/styles/responsive_3200w/public/2025-11/bombombeachfrontbungalow.jpgdebc.webp?itok=-eWJvI6R 3200w,sites/default/files/styles/responsive_3400w/public/2025-11/bombombeachfrontbungalow.jpgd165.webp?itok=vhfvyrdK 3400w,sites/default/files/styles/responsive_3600w/public/2025-11/bombombeachfrontbungalow.jpgcbe1.webp?itok=uanoGWgv 3600w,sites/default/files/styles/responsive_3800w/public/2025-11/bombombeachfrontbungalow.jpg3359.webp?itok=oGNuu5Yk 3800w,sites/default/files/styles/responsive_4000w/public/2025-11/bombombeachfrontbungalow.jpgd9e0.webp?itok=d7qEgymf 4000w"
-                                                                        src="sites/default/files/styles/responsive_200w/public/2025-11/bombombeachfrontbungalow.jpgb1dc.webp?itok=AFZ3QeMh"
-                                                                        data-to-process="true" />
-
-
-                                                                </div>
-
-
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="ComponentHorizontalSliderItem-title-container"
-                                                        data-horizontal-slider-component="title-container">
-                                                        <div class="ComponentHorizontalSliderItem-title-inner title--1--immersive"
-                                                            data-horizontal-slider-component="title-inner">
-                                                            <h3 class="ComponentHorizontalSliderItem-title-content title--1--immersive"
-                                                                data-horizontal-slider-component="title"
-                                                                data-text-resizing-overflow>
-                                                                Villas privatives
-                                                            </h3>
-                                                        </div>
-                                                    </div>
-
-
-
-
-
-                                                    <div class="button button--secondary button--secondary--light ComponentHorizontalSliderItem-cta"
-                                                        data-custom-cursor-prevent="true">
-                                                        <a href="fr/organiser-mon-sejour/hebergements.html">
-                                                            <span class="button-label"
-                                                                data-label="Découvrir">Découvrir</span>
-                                                        </a>
-                                                    </div>
-
-                                                    <div class="ComponentHorizontalSliderItem-content">
-                                                        <div class="ComponentHorizontalSliderItem-content-container">
-                                                            <div
-                                                                class="ComponentHorizontalSliderItem-media-wrapper media--2">
-                                                                <div class="ComponentHorizontalSliderItem-media-container"
-                                                                    data-horizontal-slider-component="media-2-container">
-                                                                    <div class="ComponentHorizontalSliderItem-media"
-                                                                        data-horizontal-slider-component="media-2">
-                                                                        <div class="MediaImage media" data-image-loader>
-
-                                                                            <img loading="lazy" alt="villas" width="200"
-                                                                                height="266" data-multiplier="1x"
-                                                                                sizes="auto"
-                                                                                srcset="sites/default/files/styles/responsive_200w/public/2025-11/bombombungalowexterior.jpgec01.webp?itok=rENq4pPf 200w,sites/default/files/styles/responsive_400w/public/2025-11/bombombungalowexterior.jpgec4f.webp?itok=L_qlQJze 400w,sites/default/files/styles/responsive_600w/public/2025-11/bombombungalowexterior.jpg31ea.webp?itok=bHWls-Cr 600w,sites/default/files/styles/responsive_800w/public/2025-11/bombombungalowexterior.jpgbc12.webp?itok=E_27_-yL 800w,sites/default/files/styles/responsive_1000w/public/2025-11/bombombungalowexterior.jpg5364.webp?itok=S6FKfwf0 1000w,sites/default/files/styles/responsive_1200w/public/2025-11/bombombungalowexterior.jpgce72.webp?itok=GasXKmO4 1200w,sites/default/files/styles/responsive_1400w/public/2025-11/bombombungalowexterior.jpga41b.webp?itok=_CWz_t1V 1400w,sites/default/files/styles/responsive_1600w/public/2025-11/bombombungalowexterior.jpg1b88.webp?itok=huzE3Fc_ 1600w,sites/default/files/styles/responsive_1800w/public/2025-11/bombombungalowexterior.jpga861.webp?itok=Cov0I5Uz 1800w,sites/default/files/styles/responsive_2000w/public/2025-11/bombombungalowexterior.jpg2db4.webp?itok=LwVzswsr 2000w,sites/default/files/styles/responsive_2200w/public/2025-11/bombombungalowexterior.jpgbd5d.webp?itok=n7oBdGJF 2200w,sites/default/files/styles/responsive_2400w/public/2025-11/bombombungalowexterior.jpgda4f.webp?itok=yDgEyD39 2400w,sites/default/files/styles/responsive_2600w/public/2025-11/bombombungalowexterior.jpg0722.webp?itok=ZLCtioKn 2600w,sites/default/files/styles/responsive_2800w/public/2025-11/bombombungalowexterior.jpga81a.webp?itok=K5jp-H6n 2800w,sites/default/files/styles/responsive_3000w/public/2025-11/bombombungalowexterior.jpg6dbb.webp?itok=AG9Ajk-9 3000w,sites/default/files/styles/responsive_3200w/public/2025-11/bombombungalowexterior.jpg1ff1.webp?itok=kghs8rIv 3200w,sites/default/files/styles/responsive_3400w/public/2025-11/bombombungalowexterior.jpg6e00.webp?itok=JoP9n_hM 3400w,sites/default/files/styles/responsive_3600w/public/2025-11/bombombungalowexterior.jpg265e.webp?itok=1Ea762UT 3600w,sites/default/files/styles/responsive_3800w/public/2025-11/bombombungalowexterior.jpg37ee.webp?itok=ayTx1jdC 3800w,sites/default/files/styles/responsive_4000w/public/2025-11/bombombungalowexterior.jpgcd82.webp?itok=6t5HqNv6 4000w"
-                                                                                src="sites/default/files/styles/responsive_200w/public/2025-11/bombombungalowexterior.jpgec01.webp?itok=rENq4pPf"
-                                                                                data-to-process="true" />
-
-
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                            <div
-                                                                class="ComponentHorizontalSliderItem-media-wrapper media--3">
-                                                                <div class="ComponentHorizontalSliderItem-media-container"
-                                                                    data-horizontal-slider-component="media-3-container">
-                                                                    <div class="ComponentHorizontalSliderItem-media"
-                                                                        data-horizontal-slider-component="media-3">
-                                                                        <div class="MediaImage media" data-image-loader>
-
-                                                                            <img loading="lazy" alt="villas" width="200"
-                                                                                height="300" data-multiplier="1x"
-                                                                                sizes="auto"
-                                                                                srcset="sites/default/files/styles/responsive_200w/public/2025-11/bombombeachfrontbungalowview.jpgd4b5.webp?itok=vWVE_D0e 200w,sites/default/files/styles/responsive_400w/public/2025-11/bombombeachfrontbungalowview.jpg49c7.webp?itok=zrG1LqA0 400w,sites/default/files/styles/responsive_600w/public/2025-11/bombombeachfrontbungalowview.jpg2641.webp?itok=c0ZNjL4Y 600w,sites/default/files/styles/responsive_800w/public/2025-11/bombombeachfrontbungalowview.jpg043a.webp?itok=TrmEiHKk 800w,sites/default/files/styles/responsive_1000w/public/2025-11/bombombeachfrontbungalowview.jpg7730.webp?itok=W8RcAPkY 1000w,sites/default/files/styles/responsive_1200w/public/2025-11/bombombeachfrontbungalowview.jpg0104.webp?itok=1DP4bXQ3 1200w,sites/default/files/styles/responsive_1400w/public/2025-11/bombombeachfrontbungalowview.jpgb425.webp?itok=V3UbX3Px 1400w,sites/default/files/styles/responsive_1600w/public/2025-11/bombombeachfrontbungalowview.jpgb95d.webp?itok=KxedBaqK 1600w,sites/default/files/styles/responsive_1800w/public/2025-11/bombombeachfrontbungalowview.jpg382b.webp?itok=wvgUTmJO 1800w,sites/default/files/styles/responsive_2000w/public/2025-11/bombombeachfrontbungalowview.jpg677a.webp?itok=3tIMHBJb 2000w,sites/default/files/styles/responsive_2200w/public/2025-11/bombombeachfrontbungalowview.jpg0662.webp?itok=wuIhsqwQ 2200w,sites/default/files/styles/responsive_2400w/public/2025-11/bombombeachfrontbungalowview.jpg3902.webp?itok=4pa-kFem 2400w,sites/default/files/styles/responsive_2600w/public/2025-11/bombombeachfrontbungalowview.jpg894a.webp?itok=eYKGiGlj 2600w,sites/default/files/styles/responsive_2800w/public/2025-11/bombombeachfrontbungalowview.jpg5342.webp?itok=M69og8lJ 2800w,sites/default/files/styles/responsive_3000w/public/2025-11/bombombeachfrontbungalowview.jpge435.webp?itok=csn7Dx4N 3000w,sites/default/files/styles/responsive_3200w/public/2025-11/bombombeachfrontbungalowview.jpg4c4b.webp?itok=gjqhLTNQ 3200w,sites/default/files/styles/responsive_3400w/public/2025-11/bombombeachfrontbungalowview.jpg4e43.webp?itok=D9ZSwdXp 3400w,sites/default/files/styles/responsive_3600w/public/2025-11/bombombeachfrontbungalowview.jpgbf2b.webp?itok=MNiitGbY 3600w,sites/default/files/styles/responsive_3800w/public/2025-11/bombombeachfrontbungalowview.jpg0081.webp?itok=Onp4Q0B3 3800w,sites/default/files/styles/responsive_4000w/public/2025-11/bombombeachfrontbungalowview.jpg20f6.webp?itok=3xScZiBR 4000w"
-                                                                                src="sites/default/files/styles/responsive_200w/public/2025-11/bombombeachfrontbungalowview.jpgd4b5.webp?itok=vWVE_D0e"
-                                                                                data-to-process="true" />
-
-
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                            <div
-                                                                class="ComponentHorizontalSliderItem-text text-content">
-                                                                <p><span style="white-space:pre-wrap;">Pour une
-                                                                        expérience exclusive, optez pour des villas
-                                                                        privatives offrant espace, intimité et confort
-                                                                        absolu. Entourées de nature luxuriante et
-                                                                        ouvertes sur l’océan, elles permettent de vivre
-                                                                        l’archipel en toute liberté, comme dans une
-                                                                        maison tropicale rien qu’à vous. <strong>Le luxe
-                                                                            discret face à un décor
-                                                                            préservé.</strong></span></p>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
+                                               
 
 
                                             </div>
 
-                                            <div class="ComponentHorizontalSlider-buttons">
+                                            <div class="ComponentHorizontalSlider-buttons" >
                                                 <button class="ComponentHorizontalSlider-button-prev swiper-button-prev"
                                                     data-slider-animate-element="button-prev"
                                                     data-custom-cursor-navigation-control="custom-cursor-navigation-31"
@@ -2189,7 +1825,8 @@ data-player-provider="hls" data-player-variant="autoplay"-->
                                                             <h3 class="ComponentHeaderEdito-overtitle subtitle">
                                                                 Découvrir les territoires aquacoles</h3>
                                                             <h2 class="ComponentHeaderEdito-title title--2--display">
-                                                                <strong>Cinq territoires</strong><br></h2>
+                                                                <strong>Cinq territoires</strong><br>
+                                                            </h2>
                                                         </header>
 
                                                         <div class="ParagraphInteractiveMap-content"
@@ -2227,9 +1864,9 @@ data-player-provider="hls" data-player-variant="autoplay"-->
                                                                         </path>
                                                                     </g>
                                                                     <g class="islands">
-                                                                        <g class="regions" transform="translate(458.3135 323.3135) scale(0.003373)">
-                                                                            <path
-                                                                                d="M515.5 587.5l0.1 0 0.8 0.1 2.4 0.4 0.6 0 0 2.7 0 5.4 0 6.1 0 6.6 0 6.7 0.1 6.7 0 6.6 0 6 0 5.5 0 4.6 0 3.5 0 2.3 0
+                                                                        <g class="regions"
+                                                                            transform="translate(458.3135 323.3135) scale(0.003373)">
+                                                                            <path d="M515.5 587.5l0.1 0 0.8 0.1 2.4 0.4 0.6 0 0 2.7 0 5.4 0 6.1 0 6.6 0 6.7 0.1 6.7 0 6.6 0 6 0 5.5 0 4.6 0 3.5 0 2.3 0
 0.8 0 2.6-0.4 0.8-0.6 0-1.8 0-1.7 0-1.8 0-1.7 0-1.8 0-1.7 0-1.8 0-1.7 0-1.8 0-1.7 0-1.8 0-1.7 0-1.8 0-1.7 0-1.8
 0-1.7 0-1.8 0-1.8 0-1.7 0-1.8 0-1.7 0-1.8 0-1.7 0-1.8 0-1.7 0-1.8 0-1.7 0-1.8 0-1.7 0-1.8 0-1.7 0-1.8 0-1.7 0-1.8
 0-1.8 0-1.7 0-1.8 0-1.7 0-1.8 0-1.7 0-1.8 0-1.7 0-1.8 0-1.7 0-1.8 0-1.7 0-1.8 0-1 0-0.7 0-1.8 0-1.7 0-1.1 0-2.5
@@ -2424,12 +2061,9 @@ data-player-provider="hls" data-player-variant="autoplay"-->
 3.3-0.7 3.5-0.2 2.3-0.2 1.6-0.1 1.4 0.3 0.9 0.4 1 0.2 1.6 2.1 2.4 2.9 1.3 0.8 1-0.6 1.8 0.1 0.9 1.3 0.4 1 0.7 0.8
 0.1 0.2 1.7 0.9 1 0.2 1.5-0.3 1.2-0.5 0.3-0.6 0.5-0.9 1 0.1 1 0.6 0.2 0.2 0.4 0.5 0.6 0.9 1.2 1.3 0.1 1.3 0.9 1.3
 0.7 0.9 1.1 1.1 2.3 1.7 1.9 1.1 1.5 0.9 2.5 1.6 3.3 2.6 5-0.7 2.2-0.6 5.5-2.5 0.7-0.3 6.2 3.7 5.8 5.6 4.7 2.2 2.7
-2.7 2.4 2.9 3.4 1.3 2.8 0.8z"
-                                                                                id="MA11"
-                                                                                name="Laâyoune-Sakia El Hamra">
+2.7 2.4 2.9 3.4 1.3 2.8 0.8z" id="MA11" name="Laâyoune-Sakia El Hamra">
                                                                             </path>
-                                                                            <path
-                                                                                d="M774.8 92.2l0.5 0.9 0.6 0.7-0.1 0.2-0.1 0.4-0.3 0.3 0.3 0.6-0.2 1-0.1 0.2 0 0.1-0.1 0.8-0.1 1.3 0.1 0.2 0.2 1-0.1
+                                                                            <path d="M774.8 92.2l0.5 0.9 0.6 0.7-0.1 0.2-0.1 0.4-0.3 0.3 0.3 0.6-0.2 1-0.1 0.2 0 0.1-0.1 0.8-0.1 1.3 0.1 0.2 0.2 1-0.1
 0.1 0 0.1 0 0.1 0.1 0.1 0 0.1 0 0.1 0 0.1 0 0.1 0 0.1 0 0.1 0 0.1 0 0.1 0 0.1 0 0.2-0.1 0.1 0 0.1-0.1 0.2-0.1 0 0
 0.1 0 0.2-0.1 0.1 0 0.2 0 0.1 0.1 0.1 0 0.1 0 0.1-0.1 0.2 0 0.2 0 0.2 0 0.2 0 0.2 0.1 0 0 0.1 0 0.2 0 0.1 0 0.1 0.1
 0 0.1 0.1 0 0.1 0.1 0.1 0 0.1 0 0.1 0 0.1-0.1 0 0 0.1 0 0.1 0 0.1 0 0.1 0.1 0 0 0.1 0 0.1 0 0.1 0.1 0 0 0.1 0 0.1
@@ -2571,12 +2205,10 @@ data-player-provider="hls" data-player-variant="autoplay"-->
 0.1 0 0.1 0 0.1 0.1-0.1 0-0.1 0.1-0.1 0.1 0.1 0 0.1 0-0.1 0.1 0 0.1-0.1 0 0.1 0 0 0.1 0.1 0 0.1 0 0.1 0 0 0.1-0.1 0
 0 0.1 0 0.1 0.1 0 0 0.1 0.1-0.1 0 0.1 0 0.1 0 0.1 0 0.1 0.1 0.1 0.1 0 0-0.1 0.1 0.1 0 0.1-0.1 0 0.1 0 0 0.1 0.1 0.1
 0 0.1 0-0.1 0.1 0.1 0-0.1 0 0.1 0.1 0 0.1 0 0 0.1 0.2 0.1 0.2 0.1 0.2 0.1 0.3 0.1 0.3 0.1 0.3 0.1 0.1 0 0.1 0 0.1 0
-0.1 0.1 0.1 0 0.1 0.1 0.3 0.1 0.2 0 0.3 0 0.4 0 0.2 0 0.3-0.1 0.2 0 0.1 0z"
-                                                                                id="MA01"
+0.1 0.1 0.1 0 0.1 0.1 0.3 0.1 0.2 0 0.3 0 0.4 0 0.2 0 0.3-0.1 0.2 0 0.1 0z" id="MA01"
                                                                                 name="Tangier-Tetouan-Al Hoceima">
                                                                             </path>
-                                                                            <path
-                                                                                d="M804.8 311.8l0-0.1 0-0.2-0.2-0.6 1.2-1.1 0.8-0.7 1.1-0.9 2.1-1.5 2.3-2.7-3.6 0.5-0.1 1.1-0.5
+                                                                            <path d="M804.8 311.8l0-0.1 0-0.2-0.2-0.6 1.2-1.1 0.8-0.7 1.1-0.9 2.1-1.5 2.3-2.7-3.6 0.5-0.1 1.1-0.5
 0.1-0.4-0.9-0.7-1.6-1.6-3.3-1.3-4-0.1-2.5 0.5-5 3.6-5.3-2.1 1-1.8 0.9-1.3 0.8-0.9 0.5-1.3
 1.2-2.3-0.2-2.6-1.1-3-1-1.4-0.2-1.6 0.3-1.3 0.9-2.6 1.1-1-0.7-0.6-1 0.5-1 1.1-1.2 1.7-1.6-0.9-0.4-1.6 0.3-2.2
 0.2-4.3-0.3 0.2-1.5 0.2-1.1-0.4-1.1-1-0.2-0.8 0.2-0.5 0.1-0.8 0.2-0.2-0.5
@@ -2796,12 +2428,9 @@ data-player-provider="hls" data-player-variant="autoplay"-->
 0.2 0.1 0.1 0.3 0.1 0.1 0.2 0 0.1 0.1 0.1 0.1 0.5 0 0.5 0.2 0.7 0.3 0.7 0.4 0.6 0.1 0 0 0.1 0.3 0.5 0.1 0.1 0 0.2
 0.1 0.4 0.3 0.3 0.2 0.1 0 0.2 0.1 0.2 0 0.2 0 0.3 0.1 0.4 0.1 0.1 0 0.1 0 0.4 0 0.3-0.1 0.1-0.1 0.8 0 0.1 0.2 0.4
 0.2 0.1 0.1 0 0 0.1 0.2 0.1 0.2 0.3 0.1 0.3 0 0.3 0 0.2 0 0.1 0 0.2 0.1 0.5-0.9 0.1-1.7 0.2-1.2 0.3-1.1 0.2-1
-0.2-0.7 0.2-0.7 0.1-1.2 0.2-0.6 0.2-0.4 0.1-0.1 0.2 0.1 0.1-6.9 1.5-1.4 0.3-4.9 1z"
-                                                                                id="MA02"
-                                                                                name="Oriental">
+0.2-0.7 0.2-0.7 0.1-1.2 0.2-0.6 0.2-0.4 0.1-0.1 0.2 0.1 0.1-6.9 1.5-1.4 0.3-4.9 1z" id="MA02" name="Oriental">
                                                                             </path>
-                                                                            <path
-                                                                                d="M636.8 443l0.5-1.3 0.6-1.3 0.4-1.1 0.8-1.2-0.1-0.9-0.8-1.1-0.1-1.1 0.6-1.5 1.2-1.3-0.4-1.2-0.3-1.6 0-0.9-0.2-1.3
+                                                                            <path d="M636.8 443l0.5-1.3 0.6-1.3 0.4-1.1 0.8-1.2-0.1-0.9-0.8-1.1-0.1-1.1 0.6-1.5 1.2-1.3-0.4-1.2-0.3-1.6 0-0.9-0.2-1.3
 0-1.3-0.4-1.4-0.1-1.1-0.2-0.7 0-1.2-0.1-1.4-0.4-0.9 0-0.3-0.1-0.5 1.6-1.6 2.3-0.8 0.2-1.1-0.6-0.6-1.2 0-0.5-0.4-4.3
 1.3-1.5-3 1-3.3-0.7-1.2-4.6-4.9 1.7-1.8 2.4-1.9 0-1.6-1.9-1.5-1.5-2-2-2.4-1.3-0.1-0.3-0.7
 0.3-0.8-0.2-0.1-0.3-0.5-0.5-0.7-0.7 0-0.9 0.8-2.4 0.7-2.4 0.4-1.6 0.4-1.2-2.3-1.5 0.2 0.4 1.2-0.4 2.2 0.3 1.8 0
@@ -2877,12 +2506,9 @@ data-player-provider="hls" data-player-variant="autoplay"-->
 0.1-0.3 0.1-0.4 0.1-0.4 0.1-0.3 0.2-0.1 0-0.1-0.2-0.5 0.1-0.5 0.4-0.5-0.1-0.2 0-0.3 0.2-1.2
 0.5-1.7-0.2-0.4-0.1-0.3-0.1-2.5-0.7-0.1 0-0.5 0-1.6-0.2-1 0.5-0.2 0.1-0.6 0.2-0.3 0.1-0.1 0.1-1 0-1.1 0-0.2-0.1-0.3
 0-0.4 0-0.4 0.2-0.3-0.1-0.4-0.1-0.5 0.1-0.4 0-0.2 0-0.3 0.1-0.1 0-0.9-0.1-0.4-0.1-0.1 0.1-0.9 0.6 0
-0.1-0.4-0.2-0.1-0.1-0.2 0-0.3-0.1-0.5-0.1-0.5 0-0.6-0.1-0.5 0z"
-                                                                                id="MA08"
-                                                                                name="Drâa-Tafilalet">
+0.1-0.4-0.2-0.1-0.1-0.2 0-0.3-0.1-0.5-0.1-0.5 0-0.6-0.1-0.5 0z" id="MA08" name="Drâa-Tafilalet">
                                                                             </path>
-                                                                            <path
-                                                                                d="M520.1 518.4l-0.1-0.1-5.3-6.5-1.6-1.9-4.2-5.5-1.9-3.2-2.7-2.8
+                                                                            <path d="M520.1 518.4l-0.1-0.1-5.3-6.5-1.6-1.9-4.2-5.5-1.9-3.2-2.7-2.8
 0.1-1-0.3-1.4-1.4-1.7-3.5-0.2-3.6-0.6-1-1.3-1.3-1.9-1.4-0.9 0.2-2.8 1.1-0.7-1.8-0.4-0.6-2.1-0.4-1.9-0.2-0.8 0.7-0.9
 0.1-0.1-0.1-1 0-0.2-0.8-0.3-0.5-0.2 0.3-1.2 0.5-1.3 0-0.9-0.6-1.7 3.7-1.2-1.8 2.3 0.2 0.6 0.5 0.3 1.3-0.9 1.3-1.2
 0.4-0.6-1.2-1.3 0.1-0.5 1.6-1 2-1.6 0.3-0.4 0-0.7 0-0.7-0.5-2-0.2-0.2-0.6-0.9
@@ -3003,12 +2629,9 @@ data-player-provider="hls" data-player-variant="autoplay"-->
 0.5-1.2 1.3-1.5 1-0.9 0.7-1 0.8-0.1 0.2-1.1 0.9-0.3 0.3-1.3 1.2-0.5 0.6-1 1.2-0.1 0.1-0.8 0.8-0.8 1-0.1 0-0.9
 0.7-0.6 0.4-2 0.9-0.8 0.4-1 0.3-0.6 0.3-0.5 0.3-0.3 0.1-0.3 0.2-0.5 0.2-0.2 0.1-0.1 0.1-0.1 0.1-0.1 0.1-0.1 0.1-0.2
 0-0.5 0.2-0.4 0.2-0.7 0.3-0.1 0-0.1 0 0 0.1-0.1 0 0 0.1-0.1 0-0.1 0-0.1 0.1-0.1 0 0 0.1-0.1 0-0.3 0.2-0.3 0-0.1
-0.1-0.2 0-0.4 0.1-0.3 0.2 0 2.1 0 1.7 0 4.6 0 4.7 0.1 2-0.1 2 0 2.2 0 2.6 0 2.2z"
-                                                                                id="MA09"
-                                                                                name="Souss-Massa">
+0.1-0.2 0-0.4 0.1-0.3 0.2 0 2.1 0 1.7 0 4.6 0 4.7 0.1 2-0.1 2 0 2.2 0 2.6 0 2.2z" id="MA09" name="Souss-Massa">
                                                                             </path>
-                                                                            <path
-                                                                                d="M515.5 587.5l-2.8-0.8-3.4-1.3-2.4-2.9-2.7-2.7-4.7-2.2-5.8-5.6-6.2-3.7-0.7 0.3-5.5 2.5-2.2 0.6-5
+                                                                            <path d="M515.5 587.5l-2.8-0.8-3.4-1.3-2.4-2.9-2.7-2.7-4.7-2.2-5.8-5.6-6.2-3.7-0.7 0.3-5.5 2.5-2.2 0.6-5
 0.7-3.3-2.6-2.5-1.6-1.5-0.9-1.9-1.1-2.3-1.7-1.1-1.1-0.7-0.9-0.9-1.3-0.1-1.3-1.2-1.3-0.6-0.9-0.4-0.5-0.2-0.2-1-0.6-1-0.1-0.5
 0.9-0.3 0.6-1.2 0.5-1.5 0.3-1-0.2-1.7-0.9-0.1-0.2-0.7-0.8-0.4-1-0.9-1.3-1.8-0.1-1
 0.6-1.3-0.8-2.4-2.9-1.6-2.1-1-0.2-0.9-0.4-1.4-0.3-1.6 0.1-2.3 0.2-3.5 0.2-3.3 0.7-1.7 0.2-3.1 0.3-2 0.3-1.4 0-2.8
@@ -3096,12 +2719,10 @@ data-player-provider="hls" data-player-variant="autoplay"-->
 0.6 3.5 0.2 1.4 1.7 0.3 1.4-0.1 1 2.7 2.8 1.9 3.2 4.2 5.5 1.6 1.9 5.3 6.5 0.1 0.1 0 0.4 0 3.8 0 1.7 0 1.4 0 1.6 0
 2.3 0.1 3 0 1.8 0 2.5 0 0.3 0 0.3 0 0.5 0 0.5 0 0.6 0 0.4 0 0.2 0 0.2 0 0.4 0 0.5 0 0.1 0 0.4 0 0.3 0 0.3 0 0.2 0
 0.9 0 1.1 0 0.9 0 0.8 0 1.1 0 0.8 0 0.6 0 8.4 0 4.2 0 4.4 0 3.8 0 4.2 0 4.3 0 2.2-0.8-0.5 0-5.5 0-5.6 0-5.6
-0-5.5-3.7 0-3.3 0-0.1 0 0 0.1 0.2 2.7 1.6 4.9 0.5 4.2-0.7 2.6-0.8 3.3 0.3 3.1 1.2 3.4 1.1 3.5 0 2.4-0.2 0.2z"
-                                                                                id="MA10"
+0-5.5-3.7 0-3.3 0-0.1 0 0 0.1 0.2 2.7 1.6 4.9 0.5 4.2-0.7 2.6-0.8 3.3 0.3 3.1 1.2 3.4 1.1 3.5 0 2.4-0.2 0.2z" id="MA10"
                                                                                 name="Guelmim-Oued Noun">
                                                                             </path>
-                                                                            <path
-                                                                                d="M499.6 249.2l0.1 0 0-0.1 0.1-0.1-0.1 0 0.1-0.1 0-0.1 0.1 0 0-0.1 0.1 0 0-0.1 0.1 0 0-0.1 0.1 0 0.1-0.1 0-0.1-0.1 0.1
+                                                                            <path d="M499.6 249.2l0.1 0 0-0.1 0.1-0.1-0.1 0 0.1-0.1 0-0.1 0.1 0 0-0.1 0.1 0 0-0.1 0.1 0 0-0.1 0.1 0 0.1-0.1 0-0.1-0.1 0.1
 0-0.1 0.1 0-0.1 0 0.1 0 0-0.1 0 0.1 0-0.1 0 0.1 0-0.1 0.1 0-0.1 0 0.1 0-0.1 0 0.1 0 0-0.1 0.1 0 0-0.1 0 0.1 0
 0.1-0.1 0 0 0.1 0.1 0-0.1 0 0 0.1 0.1 0 0.1 0 0.1 0 0.1-0.1 0.1-0.1 0.1 0 0-0.1 0.1 0 0-0.1 0-0.1 0-0.1 0.1 0 0-0.1
 0.1 0 0.1 0 0.1 0 0-0.1 0-0.1 0-0.1 0.1 0 0-0.1 0-0.1 0.1 0 0.1 0 0.1 0 0.1 0 0.1 0 0.1-0.1 0-0.1 0.1 0 0-0.1 0.1 0
@@ -3247,11 +2868,9 @@ data-player-provider="hls" data-player-variant="autoplay"-->
 0.4-0.1 0-0.2 0-0.2 0.1-0.2 0 0-0.4 0.1-0.4-0.2 0.3-0.3 0.3-0.5 0.1-0.8-0.4-0.6 0.2-0.6-0.1-0.7 0.4-0.5
 0.4-0.6-0.1-0.2 0.3-0.6 0.1-1-0.4-0.4-0.1-0.5-0.1-0.8-0.4-0.5-0.2-1-0.6
 0-0.4-1-0.9-1.1-1.5-1.2-0.8-0.1-0.3-0.5-1.5-0.7 0.1 0.1-0.5 0.1-0.5 0.2-0.6 0.4-1.4 1.3-1.1-3.6-3-0.5 0-0.1 0z"
-                                                                                id="MA06"
-                                                                                name="Casablanca-Settat">
+                                                                                id="MA06" name="Casablanca-Settat">
                                                                             </path>
-                                                                            <path
-                                                                                d="M598.1 329.4l-0.4 0.2-1.1 0.6-0.2 0.1-1.1 1.3 0.2 1.1-1 1.6-2.7 1.9-0.4 0.2-0.4 0.3-0.5 0.2-0.5 0.3-0.4 0.2-0.3
+                                                                            <path d="M598.1 329.4l-0.4 0.2-1.1 0.6-0.2 0.1-1.1 1.3 0.2 1.1-1 1.6-2.7 1.9-0.4 0.2-0.4 0.3-0.5 0.2-0.5 0.3-0.4 0.2-0.3
 0.2-0.3 0-0.3 0.2-0.3 0.1-0.5 0.1-0.4 0.1-0.5 0.1-0.8-0.2-1.3-0.1 0 0.4-0.6 0.4-0.9 0.3-0.3 0.1-0.2 0-0.2 0-0.3
 0.4-0.3 0.3-0.5 0.5-0.7 0.1-3.8 0.3 0 0.2-0.1 0.2 0 0.3 0 0.3-0.2 0.3-0.1 0.2-0.1 0.3-0.2 0.3-0.1 0.1-0.1 0.1-0.2
 0-0.2 0.1-0.8 0.4-1.3 0.5-0.7 0.8-0.8 0.3-1 0.7-0.2 1.1-0.6 0.8-1-0.2-0.2-0.1-0.3-0.1-0.9-0.3-0.6 0-0.7-1.2-0.6
@@ -3377,12 +2996,10 @@ data-player-provider="hls" data-player-variant="autoplay"-->
 0.1-0.2-0.2-0.3-0.1-0.3-0.2-0.1-0.3-0.4 0-0.2-0.1 0-0.3-0.3 0-0.7 0-0.6-0.7 0 0.7-0.7-0.1-0.3 0.2-0.5-0.2-0.4 0.2
 0.1 0.6-0.1 0.7-0.4 0-0.1-0.5-0.4 0-0.2 0.9-0.6 0.5-0.6 0.4-0.5 0.4 0.2 0.2 0.4 0.3 0.2 0.6-0.6-0.1-0.1 0.1-0.2 0.1
 0 0.2 0.1 0.2 0 0.2 0 0.1 0.1 0.3 0 0.4 0.2 0 0.6 0 0.7-0.1 0.5 0 0.5-0.1 0.3 0.7-0.3 1.8 0.3 0.7 2.2 0.8 0.4 1.3
-0.2 0.6 0.9 1.1 3.1 0.1 0.2 1.3-0.5 0.5 0 0.3-0.2 0.9-0.3 1.7-0.4 0.9-0.7 0-0.2 0.9-0.4 0.7-0.2 0.8z"
-                                                                                id="MA07"
+0.2 0.6 0.9 1.1 3.1 0.1 0.2 1.3-0.5 0.5 0 0.3-0.2 0.9-0.3 1.7-0.4 0.9-0.7 0-0.2 0.9-0.4 0.7-0.2 0.8z" id="MA07"
                                                                                 name="Marrakech-Safi">
                                                                             </path>
-                                                                            <path
-                                                                                d="M192.4 731.5l0.3 0.5 0.3 0.8 0.3 1 1.1 1.2 2.1 1.9 2.2 2 1.9 0.6 2.3 0.4 2.1 0.7 2.3 1.6 0.6 1.3 1 1.2 1.4 1.3 3 0.9
+                                                                            <path d="M192.4 731.5l0.3 0.5 0.3 0.8 0.3 1 1.1 1.2 2.1 1.9 2.2 2 1.9 0.6 2.3 0.4 2.1 0.7 2.3 1.6 0.6 1.3 1 1.2 1.4 1.3 3 0.9
 8.7-2.8 1.1-0.3 0.8-0.2 0.8 0 2.7-0.2 3.5-0.1 5-0.3 4.4 0.8 5.4 1.4 4.1 1 4.1 1.7 2.4 0.5 2.5-0.7 6.7-1.8 4-1.9
 2.7-0.9 4.8-1.8 4.7-0.4 4.5-0.4 3.6 0.7 5.3 1.2 0.8 0.2 0.8 0.2 1.7 0.3 1.7 0.8 6.6 2.4 2.3 1.1 2.7 1.1 1.2 0.3 1.6
 0.2 2.2-0.2 1.6-0.3 7.8-1.8 2.2-0.7 2.9-0.4 3.2 0.4 1.3 0.3 3.4 0.6 5.1 1.6 0 3.3 0 4.3 0 4.4 0 4.4 0 4.3 0 4.4 0
@@ -3637,12 +3254,9 @@ data-player-provider="hls" data-player-variant="autoplay"-->
 0.1 0 0.1-0.1 0.1 0 0.1 0 0-0.1 0.1 0 0.1 0 0-0.1 0.1 0 0.1 0 0-0.1 0.1 0 0.1 0 0-0.1 0.1 0 0.1 0 0.1 0 0-0.1 0.1 0
 0-0.1 0.1 0 0.1 0 0-0.1 0.1 0 0.1 0 0-0.1 0.1 0 0-0.1 0.1 0 0.1-0.1 0.1-0.1 0.1-0.1 0-0.1 0.1 0 0.1 0 0-0.1 0-0.1
 0.1 0 0.1 0 0-0.1 0.1 0 0-0.1 0.1 0 0.1-0.1 0.1-0.1 0-0.1 0.1 0 0-0.1 0.1 0 0-0.1 0.1 0 0-0.1 0.1 0 0-0.1 0.1 0 0.1
-0 0-0.1 0.1 0 0-0.1 0.1 0z"
-                                                                                id="MA12"
-                                                                                name="Dakhla-Oued Ed-Dahab">
+0 0-0.1 0.1 0 0-0.1 0.1 0z" id="MA12" name="Dakhla-Oued Ed-Dahab">
                                                                             </path>
-                                                                            <path
-                                                                                d="M647.6 104.9l0.5 0.2 0.8 0.2 0.2-0.1 0.4 0.1 0.2 0.2 0.4 0 0.1 0 0.2 0.1 0.2 0.1 0.2 0 0.9-0.2 0.7-0.2 0.7-0.1
+                                                                            <path d="M647.6 104.9l0.5 0.2 0.8 0.2 0.2-0.1 0.4 0.1 0.2 0.2 0.4 0 0.1 0 0.2 0.1 0.2 0.1 0.2 0 0.9-0.2 0.7-0.2 0.7-0.1
 0.6-0.9 0.8-0.1 0.6-0.2 0.5 0.2 0.3 0.1 0.6 0.2 0.8 0.6-0.4 0.5 0.3 0.4 0.4 0.5 1.4 0 1-1 2.1 1.2 0.3 0.2 1.3 1.3
 0.9 0.6 1.9 0.4 0.3 0 1.1-0.2 1.3-0.4 1.3 0.4 1.1 0.4 0.3 0.2 0 0.4 0 0.2-0.1 0.3-0.3 0.3 0.1 0.6-0.2 0.8 0.3 0.6
 0.5 0.2-0.3 0.9-0.2 0.5-0.3 0.1 0.2 0.7-0.2 0.3 0.2 0.3 0.1 0.4 0 0.4 0 0.2 0 0.2-0.1 0.2 0 0.2 0.1 0.1 0 0.2-0.1
@@ -3760,12 +3374,9 @@ data-player-provider="hls" data-player-variant="autoplay"-->
 0.1 0 0.1-0.1 0 0-0.1 0.1-0.1 0-0.1 0.1 0 0-0.1 0-0.1 0-0.1 0.1-0.1 0-0.1 0-0.1 0.3-0.6 0.2-0.6 0-0.2 0.1 0 0.1-0.5
 0-0.1 0.1 0 0.1-0.3 0-0.2 0.1 0 0.1-0.4 0-0.1 0.1-0.1 0-0.3 0.1 0 0-0.2 0.1-0.2 0.1-0.2 0-0.1 0-0.1 0.1-0.1 0-0.1
 0-0.1 0.1-0.1 0-0.1 0.1-0.2 0.1-0.1 0.1-0.3 0-0.1 0-0.1 0.1-0.3 0.1 0 0-0.1 0-0.1 0.1-0.1 0-0.1 0.1-0.2 0.1-0.3
-0-0.1 0.1-0.1 0.1-0.1 0-0.2 0.1-0.2 0-0.1z"
-                                                                                id="MA04"
-                                                                                name="Rabat-Salé-Kenitra">
+0-0.1 0.1-0.1 0.1-0.1 0-0.2 0.1-0.2 0-0.1z" id="MA04" name="Rabat-Salé-Kenitra">
                                                                             </path>
-                                                                            <path
-                                                                                d="M696.4 135.9l1.8 0.1 1.1-1 0.2-0.1-0.2-0.1-0.3-0.2-0.1-0.3 0.1-0.5 0.3-0.3 0.1-0.1 2.7-0.2 0.5 0 0.2-0.7 0.4-0.8
+                                                                            <path d="M696.4 135.9l1.8 0.1 1.1-1 0.2-0.1-0.2-0.1-0.3-0.2-0.1-0.3 0.1-0.5 0.3-0.3 0.1-0.1 2.7-0.2 0.5 0 0.2-0.7 0.4-0.8
 0.1-0.1 0.1-0.4-0.1-0.2-0.3-0.2-0.4-0.1 0.3-0.1 0.5-0.5 0-0.4 0-1.1 0-1.1-0.1-0.7-0.1-0.4-0.2-0.3 0.1-0.4 0.1-0.6
 0.1-0.2 0.1-0.2-0.1-0.5-0.1-0.4 0.2-0.2-0.2-0.2 0-0.5 0.2-1.2 0.8-0.7 0.7-0.7 0.4-0.3 1.1-0.1 0.6-0.6 1.2-0.2 0.3
 0.3 0.2-0.5 2.9-1 0.2-0.2 0.3 0.1 0.1 0.1-0.1 0.2-0.1 0.1 0 0.1 0.3-0.1 0.2 0 0.2 0 0.5 0 0.4 0 0.2 0 0.1 0.2 0.2 0
@@ -3841,12 +3452,9 @@ data-player-provider="hls" data-player-variant="autoplay"-->
 0.1-0.1 0.1-0.4 0-0.3 0.2-0.1 0.3-0.1 0.3 0 0.2 0.1 0.2 0.4 0.1-0.1 0.1 0 0.1 0.1 0.1 0.1 0.2-0.1 0.2-0.2 0.4-0.2
 0.3-0.1 0.4-0.3 0.4-0.3 0.4-0.4 2-0.5 1.2-0.7 0.3-0.8 0.1-0.3 0.2-0.3 0.2-0.3 0.1-0.1 0.2 0.2 0.1 0 0.3 0 0.3-0.2
 0.2-0.1 0.2-0.3 0.3-0.2 0.2-0.3 0.1-0.3 0-0.2-0.2-0.2 0-0.1 0.3-0.4 0.2-0.4-0.4-0.1-0.1 0 0.1-0.4 0.3-0.4 0.3-0.6
-0.4-0.4 0.3-0.2 0.2-0.2z"
-                                                                                id="MA03"
-                                                                                name="Fez-Meknes">
+0.4-0.4 0.3-0.2 0.2-0.2z" id="MA03" name="Fez-Meknes">
                                                                             </path>
-                                                                            <path
-                                                                                d="M699.6 240l0.1 0.3 0.1 0.3 0 0.2-0.7 0.1-0.2 0.2-0.4 0.3-0.3 0.2-0.4 0.2-0.1 0.3-0.1 0.3-0.1 0.3-0.2 0.3-0.1 0.2-0.2
+                                                                            <path d="M699.6 240l0.1 0.3 0.1 0.3 0 0.2-0.7 0.1-0.2 0.2-0.4 0.3-0.3 0.2-0.4 0.2-0.1 0.3-0.1 0.3-0.1 0.3-0.2 0.3-0.1 0.2-0.2
 0.1-0.2 0.2-0.1 0.2-0.1 0.2 0 0.1 0.1 0.2 0.2 0.2 0.2 0 0.1 0.2-0.3 0.2-0.3 0.3-0.3 0.5 0 0.1-0.1 0.8 0.2 0.5 0.1
 0.7 0 0.9-0.1 0.7-0.3 0.5 0 0.8 0.2 0.4 0.1 0.8 0.1 0.5 0 0.3-0.2 0.6-0.2 1.1-0.2 0.6 0.1 0.8-0.3 0.2-1 0.7 0.3 0.6
 0.1 0.4 0 0.8-0.2 0.7-0.3 0.5-0.2 0.9 0 0.7-0.1 0.9-0.1 0-0.7-0.2-0.5-0.1-0.5-0.1-0.5-0.2-0.3 0.6 0.5 1-0.1 1-0.3
@@ -3896,9 +3504,7 @@ data-player-provider="hls" data-player-variant="autoplay"-->
 0.6-0.1 0.3 0.2 0.3 0.5-0.3-0.1 0.5 0.1 0.4 0.3 0.1 0.1 0.3-0.7 3 1.2 1.3 0.2 2.6 0.9 0.8 0.6 0.6 0.2 0.1 0.3 0.4
 0.4 0.1 0.6 0.2 0.4 0.1 0.2 0.1 1.4 0.1 1.2 0.1 1.4-0.5 2.3-0.9 0.5 0 0.3 0.4 0.1 0.4-0.2 2.1-0.8 2-1.6 0.9 0.6 3
 1.5 0.3 0 1.2 0.1 0.4-1 0.8 0.1 0.4 0.5 0.4 0.7 0.5 0.5 0.3 1.1 1.6 0.6 1-0.4 1.3-0.3 0.5-0.3 0.7-0.4 0.6-0.3
-0.6-0.1 0.3 0.1 0 0.7-0.3 0.3-0.2z"
-                                                                                id="MA05"
-                                                                                name="Béni Mellal-Khénifra">
+0.6-0.1 0.3 0.1 0 0.7-0.3 0.3-0.2z" id="MA05" name="Béni Mellal-Khénifra">
                                                                             </path>
                                                                         </g>
                                                                     </g>
@@ -3950,7 +3556,8 @@ data-player-provider="hls" data-player-variant="autoplay"-->
                                                             <div class="ParagraphInteractiveMap-markers"
                                                                 data-interactive-map-component="markers"
                                                                 style="opacity: 0;">
-                                                                <div style="display: none;" class="ParagraphInteractiveMap-markers-principe">
+                                                                <div style="display: none;"
+                                                                    class="ParagraphInteractiveMap-markers-principe">
 
                                                                     <button data-dialog-component="opener"
                                                                         data-dialog-marker-id="2847"
@@ -4027,11 +3634,12 @@ data-player-provider="hls" data-player-variant="autoplay"-->
                                                                         <span class="visually-hidden">Voir</span>
                                                                     </button>
 
-                                                                   
+
                                                                 </div>
 
                                                                 <span class="label-container">
-                                                                    <span class="label--sao-tome title--2--display">Maroc</span>
+                                                                    <span
+                                                                        class="label--sao-tome title--2--display">Maroc</span>
                                                                 </span>
 
                                                             </div>
@@ -4886,83 +4494,6 @@ data-player-provider="hls" data-player-variant="autoplay"-->
                                             </dialog>
 
                                         </section>
-
-                                        
-
-                                        <section class="ParagraphMeshBlock paragraph" data-count="2"
-                                            data-scroll-animate-snap>
-
-                                            <ul class="ParagraphMeshBlock-list">
-                                                <li class="ParagraphMeshBlock-item"
-                                                    data-custom-cursor-component="target"
-                                                    data-custom-cursor-label="Découvrir">
-                                                    <article class="NodeMeshCard"
-                                                        data-fl-href="/fr/guide-pratique/quand-visiter-sao-tome-et-principe">
-                                                        <div class="NodeMeshCard-wrapper">
-                                                            <div class="NodeMeshCard-media media">
-                                                                <div class="MediaImage MediaImage--5-2 media"
-                                                                    data-image-loader>
-
-                                                                    <img loading="lazy" alt="sao tome et principe"
-                                                                        width="200" height="80" data-multiplier="1x"
-                                                                        data-ratio="5:2" sizes="auto"
-                                                                        srcset="sites/default/files/styles/responsive_5_2_200w/public/2025-11/jc0c1306.jpg7663.webp?h=76146bbd&amp;itok=ZZcq8GPj 200w,sites/default/files/styles/responsive_5_2_400w/public/2025-11/jc0c1306.jpg3248.webp?h=76146bbd&amp;itok=JEz2Wq5n 400w,sites/default/files/styles/responsive_5_2_600w/public/2025-11/jc0c1306.jpga599.webp?h=76146bbd&amp;itok=-_gPEqUl 600w,sites/default/files/styles/responsive_5_2_800w/public/2025-11/jc0c1306.jpgc7e1.webp?h=76146bbd&amp;itok=ryaxDU4R 800w,sites/default/files/styles/responsive_5_2_1000w/public/2025-11/jc0c1306.jpgc32c.webp?h=76146bbd&amp;itok=1v6lUrN5 1000w,sites/default/files/styles/responsive_5_2_1200w/public/2025-11/jc0c1306.jpg2408.webp?h=76146bbd&amp;itok=Lcnr2xAl 1200w,sites/default/files/styles/responsive_5_2_1400w/public/2025-11/jc0c1306.jpg2865.webp?h=76146bbd&amp;itok=iIVpApPU 1400w,sites/default/files/styles/responsive_5_2_1600w/public/2025-11/jc0c1306.jpgc02d.webp?h=76146bbd&amp;itok=QjNhLRWn 1600w,sites/default/files/styles/responsive_5_2_1800w/public/2025-11/jc0c1306.jpg4833.webp?h=76146bbd&amp;itok=7dEWmk_c 1800w,sites/default/files/styles/responsive_5_2_2000w/public/2025-11/jc0c1306.jpgdb0b.webp?h=76146bbd&amp;itok=zF5SXiFY 2000w,sites/default/files/styles/responsive_5_2_2200w/public/2025-11/jc0c1306.jpgf160.webp?h=76146bbd&amp;itok=Iv8nBAhQ 2200w,sites/default/files/styles/responsive_5_2_2400w/public/2025-11/jc0c1306.jpg54ed.webp?h=76146bbd&amp;itok=i6ELH4uH 2400w,sites/default/files/styles/responsive_5_2_2600w/public/2025-11/jc0c1306.jpgb4fc.webp?h=76146bbd&amp;itok=NedlKAEZ 2600w,sites/default/files/styles/responsive_5_2_2800w/public/2025-11/jc0c1306.jpg932c.webp?h=76146bbd&amp;itok=Ow9jlT9S 2800w,sites/default/files/styles/responsive_5_2_3000w/public/2025-11/jc0c1306.jpg54a5.webp?h=76146bbd&amp;itok=cSAMZZ7B 3000w,sites/default/files/styles/responsive_5_2_3200w/public/2025-11/jc0c1306.jpg5fff.webp?h=76146bbd&amp;itok=gHo3FYM5 3200w,sites/default/files/styles/responsive_5_2_3400w/public/2025-11/jc0c1306.jpg5129.webp?h=76146bbd&amp;itok=oerMYhbV 3400w,sites/default/files/styles/responsive_5_2_3600w/public/2025-11/jc0c1306.jpg8fe7.webp?h=76146bbd&amp;itok=5HMi7Fef 3600w,sites/default/files/styles/responsive_5_2_3800w/public/2025-11/jc0c1306.jpg603e.webp?h=76146bbd&amp;itok=ay9S2q_t 3800w,sites/default/files/styles/responsive_5_2_4000w/public/2025-11/jc0c1306.jpg79de.webp?h=76146bbd&amp;itok=QhXvSmPy 4000w"
-                                                                        src="sites/default/files/styles/responsive_5_2_200w/public/2025-11/jc0c1306.jpg7663.webp?h=76146bbd&amp;itok=ZZcq8GPj"
-                                                                        data-to-process="true" />
-
-
-                                                                </div>
-
-
-                                                            </div>
-                                                            <a class="NodeMeshCard-title"
-                                                                href="fr/guide-pratique/quand-visiter-sao-tome-et-principe.html"
-                                                                data-fl-mute="h2">
-
-                                                                <span>Quand visiter São Tomé et Príncipe ? </span>
-
-                                                            </a>
-                                                        </div>
-                                                    </article>
-
-                                                </li>
-                                                <li class="ParagraphMeshBlock-item"
-                                                    data-custom-cursor-component="target"
-                                                    data-custom-cursor-label="Découvrir">
-                                                    <article class="NodeMeshCard"
-                                                        data-fl-href="/fr/guide-pratique/comment-venir">
-                                                        <div class="NodeMeshCard-wrapper">
-                                                            <div class="NodeMeshCard-media media">
-                                                                <div class="MediaImage MediaImage--5-2 media"
-                                                                    data-image-loader>
-
-                                                                    <img loading="lazy" alt="plage principe sao tome"
-                                                                        width="200" height="80" data-multiplier="1x"
-                                                                        data-ratio="5:2" sizes="auto"
-                                                                        srcset="sites/default/files/styles/responsive_5_2_200w/public/2025-11/par_0564.jpg209e.webp?h=fb21c537&amp;itok=tQ-7T1r2 200w,sites/default/files/styles/responsive_5_2_400w/public/2025-11/par_0564.jpg2a46.webp?h=fb21c537&amp;itok=J4Mx9Wi8 400w,sites/default/files/styles/responsive_5_2_600w/public/2025-11/par_0564.jpgb528.webp?h=fb21c537&amp;itok=6bQbs3bR 600w,sites/default/files/styles/responsive_5_2_800w/public/2025-11/par_0564.jpg745a.webp?h=fb21c537&amp;itok=uhzjNvVR 800w,sites/default/files/styles/responsive_5_2_1000w/public/2025-11/par_0564.jpg4e1a.webp?h=fb21c537&amp;itok=sn6jFFL7 1000w,sites/default/files/styles/responsive_5_2_1200w/public/2025-11/par_0564.jpg6e4b.webp?h=fb21c537&amp;itok=FjTJv2QM 1200w,sites/default/files/styles/responsive_5_2_1400w/public/2025-11/par_0564.jpgf8ee.webp?h=fb21c537&amp;itok=wJvXuZ13 1400w,sites/default/files/styles/responsive_5_2_1600w/public/2025-11/par_0564.jpg4a16.webp?h=fb21c537&amp;itok=7XbHlVft 1600w,sites/default/files/styles/responsive_5_2_1800w/public/2025-11/par_0564.jpgff93.webp?h=fb21c537&amp;itok=zqdNsSAl 1800w,sites/default/files/styles/responsive_5_2_2000w/public/2025-11/par_0564.jpgffeb.webp?h=fb21c537&amp;itok=biIxDPgg 2000w,sites/default/files/styles/responsive_5_2_2200w/public/2025-11/par_0564.jpgb82f.webp?h=fb21c537&amp;itok=tciYe3G7 2200w,sites/default/files/styles/responsive_5_2_2400w/public/2025-11/par_0564.jpg23f4.webp?h=fb21c537&amp;itok=H1xsRpvQ 2400w,sites/default/files/styles/responsive_5_2_2600w/public/2025-11/par_0564.jpgf6af.webp?h=fb21c537&amp;itok=WBx35V2z 2600w,sites/default/files/styles/responsive_5_2_2800w/public/2025-11/par_0564.jpg94d8.webp?h=fb21c537&amp;itok=z1hdryK4 2800w,sites/default/files/styles/responsive_5_2_3000w/public/2025-11/par_0564.jpgea74.webp?h=fb21c537&amp;itok=EYoIit6G 3000w,sites/default/files/styles/responsive_5_2_3200w/public/2025-11/par_0564.jpgce35.webp?h=fb21c537&amp;itok=XnwU1J9f 3200w,sites/default/files/styles/responsive_5_2_3400w/public/2025-11/par_0564.jpg52b8.webp?h=fb21c537&amp;itok=USVgfAk3 3400w,sites/default/files/styles/responsive_5_2_3600w/public/2025-11/par_0564.jpg37b6.webp?h=fb21c537&amp;itok=yk6KVSRR 3600w,sites/default/files/styles/responsive_5_2_3800w/public/2025-11/par_0564.jpg941b.webp?h=fb21c537&amp;itok=JULfxzGw 3800w,sites/default/files/styles/responsive_5_2_4000w/public/2025-11/par_0564.jpgfb3b.webp?h=fb21c537&amp;itok=rCGzdujD 4000w"
-                                                                        src="sites/default/files/styles/responsive_5_2_200w/public/2025-11/par_0564.jpg209e.webp?h=fb21c537&amp;itok=tQ-7T1r2"
-                                                                        data-to-process="true" />
-
-
-                                                                </div>
-
-
-                                                            </div>
-                                                            <a class="NodeMeshCard-title"
-                                                                href="fr/guide-pratique/comment-venir.html"
-                                                                data-fl-mute="h2">
-
-                                                                <span>Comment venir ?</span>
-
-                                                            </a>
-                                                        </div>
-                                                    </article>
-
-                                                </li>
-                                            </ul>
-                                        </section>
-
-                                        
 
 
                                     </div>

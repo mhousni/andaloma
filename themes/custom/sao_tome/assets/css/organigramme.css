@@ -111,13 +111,13 @@
 
         .pv-dept-header {
             background-color: var(--pv-color-blue-dark);
-            width: 100%;
-            height: auto;
-            min-height: 55px;
-            margin-bottom: 10px;
-            font-size: 0.9rem; /* Taille augmentée */
-            color: var(--pv-text-dark);
-            font-weight: 700;
+    width: 100%;
+    height: auto;
+    min-height: 55px;
+    margin-bottom: 10px;
+    font-size: 1.9rem;
+    color: #ffffff;
+    font-weight: 700;
         }
 
         /* --- Niveau 3 : Services --- */
