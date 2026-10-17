@@ -40,6 +40,9 @@
     <link rel="stylesheet" media="all" href="../../../themes/contrib/gin/dist/css/components/ajaxda5a.css?tmlhth" />
 
 
+    <link rel="stylesheet" href="/themes/custom/sao_tome/assets/css/charty.css">
+
+
 
 
     <style>
@@ -1155,34 +1158,7 @@
                                                     <p data-path-to-node="3">Créée en 2011 dans le cadre de la stratégie nationale Halieutis, l’Agence Nationale pour le Développement de l’Aquaculture (ANDA) est l’établissement public chargé d’accompagner le développement de l’aquaculture marine au Maroc.
 Placée sous la tutelle de l’autorité gouvernementale chargée de la Pêche maritime, l’ANDA œuvre à construire une aquaculture durable, compétitive et créatrice de valeur, capable de contribuer pleinement à la croissance de l’économie bleue, à la création d’emplois et au développement des territoires.
 </p>
-                                                    <p data-path-to-node="4"><b data-path-to-node="4"
-                                                            data-index-in-node="0"><strong>Praia das Conchas (Île de São
-                                                                Tomé)</strong></b> Sable clair et mer calme, excellente
-                                                        pour se détendre. Entourée d'une végétation luxuriante.</p>
-                                                    <p data-path-to-node="5"><b data-path-to-node="5"
-                                                            data-index-in-node="0"><strong>Praia dos Tamarindos (Île de
-                                                                São Tomé)</strong></b> Possède du sable doré et des eaux
-                                                        transparentes, idéale pour la baignade.</p>
-                                                    <p data-path-to-node="6"><b data-path-to-node="6"
-                                                            data-index-in-node="0"><strong>Praia Jalé (Île de São
-                                                                Tomé)</strong></b> En plus de son sable clair, c'est
-                                                        l'un des lieux les plus importants pour l'observation de la
-                                                        ponte des tortues marines.</p>
-                                                    <p data-path-to-node="7"><b data-path-to-node="7"
-                                                            data-index-in-node="0"><strong>Praia Inhame (Île de São
-                                                                Tomé)</strong></b> Proche de l'îlot das Rolas. Sable
-                                                        doré, environnement préservé et éco-lodge au bord de la mer.</p>
-                                                    <p data-path-to-node="8"><b data-path-to-node="8"
-                                                            data-index-in-node="0"><strong>Praia Café (Ilhéu das
-                                                                Rolas)</strong></b> Possède du sable doré et des eaux
-                                                        transparentes bleu turquoise, idéale pour la baignade et la
-                                                        plongée.</p>
-                                                    <p data-path-to-node="9"><b data-path-to-node="9"
-                                                            data-index-in-node="0"><strong>Praia Café et Praia Banana
-                                                                (Île de Principe)</strong></b> À Principe, certaines des
-                                                        plages les plus célèbres possèdent un sable doré clair. La plage
-                                                        Banana, avec sa forme de banane vue du ciel, est l'une des plus
-                                                        photographiées de toute l'Afrique.</p>
+                                                   
 
                                                 </div>
                                                 <div class="ParagraphEdito-buttons">
@@ -1190,19 +1166,201 @@ Placée sous la tutelle de l’autorité gouvernementale chargée de la Pêche m
                                             </div>
                                         </div>
 
-                                        <div class="ParagraphMedia">
-                                            <div class="ParagraphMedia-container paragraph">
-                                                <figure class="ParagraphMedia-content">
-                                                    <div class="MediaImage media" data-image-loader>
-                                                        <img loading="eager"
-                                                            src="../../../sites/default/files/styles/native_webp/public/2025-10/jc0c1253-1.jpg.webp?itok=MAXjjjyJ"
-                                                            alt="sao tome et principe" />
-                                                    </div>
+                                       
 
+                                                                    <div class="dashboard">
 
-                                                </figure>
-                                            </div>
-                                        </div>
+                                                                        <!-- Card 1: Total Production Value & Bar Chart -->
+                                                                        <div class="card col-4">
+                                                                            <div class="kpi-title">Production totale en
+                                                                                valeur</div>
+                                                                            <!-- data-target holds the final number -->
+                                                                            <div class="kpi-value"><span class="counter"
+                                                                                    data-target="268">0</span> M dh
+                                                                            </div>
+                                                                            <div class="chart-container">
+                                                                                <canvas id="productionChart"></canvas>
+                                                                            </div>
+                                                                        </div>
+
+                                                                        <!-- Card 2: Growth Metrics -->
+                                                                        <div class="card col-4">
+                                                                            <div class="kpi-title">TCAM prévu 2025-2030
+                                                                            </div>
+
+                                                                            <div class="growth-item">
+                                                                                <div class="growth-icon">📈</div>
+                                                                                <div class="growth-text">
+                                                                                    <div class="kpi-value"
+                                                                                        style="margin-bottom: 5px !important;">
+                                                                                        +<span class="counter"
+                                                                                            data-target="26">0</span> %
+                                                                                    </div>
+                                                                                    <!--<h4>+<span class="counter" data-target="26">0</span>%</h4>-->
+                                                                                    <p>Croissance annuelle volume</p>
+                                                                                </div>
+                                                                            </div>
+
+                                                                            <div class="growth-item"
+                                                                                style="margin-top: 30px;">
+                                                                                <div class="growth-icon">💰</div>
+                                                                                <div class="growth-text">
+                                                                                    <!--<h4>+<span class="counter" data-target="40">0</span>%</h4>-->
+                                                                                    <div class="kpi-value"
+                                                                                        style="margin-bottom: 5px !important">
+                                                                                        +<span class="counter"
+                                                                                            data-target="40">0</span> %
+                                                                                    </div>
+                                                                                    <p>Croissance annuelle valeur</p>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+
+                                                                        <!-- Card 3: Regional Leadership -->
+                                                                        <div class="card col-4"
+                                                                            style="background-color: #ffb702">
+                                                                            <div class="kpi-title"
+                                                                                style=" text-transform: uppercase;">
+                                                                                Maroc :</div>
+                                                                            <h3
+                                                                                style="margin-bottom: 15px; font-size: 2.2rem;">
+                                                                                L'essor de la conchyliculture dans en
+                                                                                Afrique et dans la région MENA</h3>
+                                                                            <ul
+                                                                                style="padding-left: 20px; line-height: 1.6; font-size: 1.9rem; color: var(--primary-dark);">
+                                                                                <li><strong>1er</strong> Producteur et
+                                                                                    exportateur de la palourde en
+                                                                                    Afrique</li>
+                                                                                <li><strong>1er</strong> producteur des
+                                                                                    huîtres en Afrique et la région MENA
+                                                                                </li>
+                                                                            </ul>
+                                                                        </div>
+
+                                                                        <!-- Card 4: Employment -->
+                                                                        <div class="card col-4">
+                                                                            <div class="kpi-title">Emploi</div>
+                                                                            <div class="kpi-value"
+                                                                                style="font-size: 3rem;">
+                                                                                <span class="counter"
+                                                                                    data-target="4400">0</span>*
+                                                                            </div>
+                                                                            <div class="employment-split">
+                                                                                <div class="kpi-value emp-item ">
+                                                                                    <h4><span class="counter"
+                                                                                            data-target="3000">0</span>*
+                                                                                    </h4>
+                                                                                    <p>Emploi permanent</p>
+                                                                                </div>
+                                                                                <div class="kpi-value emp-item">
+                                                                                    <h4><span class="counter"
+                                                                                            data-target="1400">0</span>*
+                                                                                    </h4>
+                                                                                    <p>Emploi saisonnier</p>
+                                                                                </div>
+                                                                            </div>
+                                                                            <p
+                                                                                style="font-size: 1.7rem; color: #888; margin-top: 15px;">
+                                                                                * Déclaration des porteurs de projets
+                                                                            </p>
+                                                                        </div>
+
+                                                                        <!-- Card 5: Infrastructure -->
+                                                                        <div class="card col-4">
+                                                                            <div class="kpi-title">Infrastructures</div>
+
+                                                                            <div class="growth-item">
+                                                                                <div class="growth-icon">🏠</div>
+                                                                                <div class="growth-text">
+                                                                                    <!--<h4 class="kpi-value"><span class="counter" data-target="323">0</span></h4>-->
+                                                                                    <div class="kpi-value"
+                                                                                        style="margin-bottom: 5px;">
+                                                                                        <span class="counter"
+                                                                                            data-target="323">0</span>
+                                                                                    </div>
+                                                                                    <p class="kpi-value">Fermes
+                                                                                        Autorisées</p>
+                                                                                </div>
+                                                                            </div>
+
+                                                                            <div class="growth-item"
+                                                                                style="margin-top: 25px;">
+                                                                                <div class="growth-icon">🏭</div>
+                                                                                <div class="growth-text">
+                                                                                    <!--<h4 class="kpi-value"><span class="counter" data-target="187">0</span></h4>-->
+                                                                                    <div class="kpi-value"
+                                                                                        style="margin-bottom: 5px;">
+                                                                                        <span class="counter"
+                                                                                            data-target="187">0</span>
+                                                                                    </div>
+                                                                                    <p class="kpi-value">Fermes
+                                                                                        Installées</p>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+
+                                                                        <!-- Card 6: Top Products -->
+                                                                        <div class="card col-4">
+                                                                            <div class="kpi-title">Les produits phares
+                                                                                de l’aquaculture marocaine, Dh</div>
+
+                                                                            <div
+                                                                                style="display: flex; gap: 15px; margin-top: 10px;">
+                                                                                <!-- By Species -->
+                                                                                <div style="flex: 1;">
+                                                                                    <h4
+                                                                                        style="font-size: 1.85rem; color: var(--primary-blue); margin-bottom: 5px;">
+                                                                                        Espèces</h4>
+                                                                                    <ul class="data-list">
+                                                                                        <li><span
+                                                                                                style="color: #38492A;">Palourde</span>
+                                                                                            <span><span class="counter"
+                                                                                                    data-target="96">0</span>
+                                                                                                M</span></li>
+                                                                                        <li><span
+                                                                                                style="color: #38492A;">Huître
+                                                                                                Creuse</span>
+                                                                                            <span><span class="counter"
+                                                                                                    data-target="59">0</span>
+                                                                                                M</span></li>
+                                                                                        <li><span
+                                                                                                style="color: #38492A;">Daurade
+                                                                                                Royale</span>
+                                                                                            <span><span class="counter"
+                                                                                                    data-target="50">0</span>
+                                                                                                M</span></li>
+                                                                                        <li><span
+                                                                                                style="color: #38492A;">Loup
+                                                                                                Bar</span> <span><span
+                                                                                                    class="counter"
+                                                                                                    data-target="38">0</span>
+                                                                                                M</span></li>
+                                                                                    </ul>
+                                                                                </div>
+
+                                                                                <!-- By Sector -->
+                                                                                <div
+                                                                                    style="flex: 1; border-left: 1px solid #eee; padding-left: 15px;">
+                                                                                    <h4
+                                                                                        style="font-size: 1.85rem; color: var(--primary-blue); margin-bottom: 5px;">
+                                                                                        Par Filière</h4>
+                                                                                    <ul class="data-list">
+                                                                                        <li><span
+                                                                                                style="color: #38492A;">Conchyliculture</span>
+                                                                                            <span><span class="counter"
+                                                                                                    data-target="155">0</span>
+                                                                                                M</span></li>
+                                                                                        <li><span
+                                                                                                style="color: #38492A;">Pisciculture</span>
+                                                                                            <span><span class="counter"
+                                                                                                    data-target="88">0</span>
+                                                                                                M</span></li>
+                                                                                    </ul>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+
+                                                                    </div>
 
                                     </div>
                                 </div>
@@ -2713,6 +2871,138 @@ Placée sous la tutelle de l’autorité gouvernementale chargée de la Pêche m
     <script src="../../../core/misc/statesc1fc.js?v=11.4.7"></script>
     <script src="../../../modules/contrib/webform/js/webform.statesda5a.js?tmlhth"></script>
     <script src="../../../modules/contrib/webform/js/webform.formda5a.js?tmlhth"></script>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+
+            // ==========================================
+            // 1. NUMBER COUNTER ANIMATION LOGIC
+            // ==========================================
+            const counters = document.querySelectorAll('.counter');
+
+            // We use an IntersectionObserver so the animation triggers when the cards appear
+            const observerOptions = {
+                threshold: 0.1, // Trigger when 10% of the element is visible
+                rootMargin: "0px"
+            };
+
+            const counterObserver = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const counter = entry.target;
+                        const target = +counter.getAttribute('data-target'); // Get final number
+                        const duration = 1500; // Animation duration in ms (1.5s)
+                        const increment = target / (duration / 16); // Assuming ~60fps
+
+                        let current = 0;
+
+                        const updateCounter = () => {
+                            current += increment;
+                            if (current < target) {
+                                // Math.ceil makes it count in whole numbers, preventing decimals
+                                counter.innerText = Math.ceil(current);
+                                requestAnimationFrame(updateCounter);
+                            } else {
+                                counter.innerText = target; // Ensure it lands exactly on target
+                            }
+                        };
+
+                        updateCounter();
+                        // Stop observing once animated
+                        observer.unobserve(counter);
+                    }
+                });
+            }, observerOptions);
+
+            // Attach observer to all counter elements
+            counters.forEach(counter => {
+                counterObserver.observe(counter);
+            });
+
+
+            // ==========================================
+            // 2. CHART.JS CONFIGURATION
+            // ==========================================
+            Chart.defaults.font.family = "'Segoe UI', sans-serif";
+            Chart.defaults.color = '#555';
+
+            const ctxBar = document.getElementById('productionChart').getContext('2d');
+
+            const barChart = new Chart(ctxBar, {
+                type: 'bar',
+                data: {
+                    labels: ['2023', '2024', '2025'],
+                    datasets: [{
+                        label: 'Production (M dh)',
+                        data: [138, 308, 268],
+                        backgroundColor: [
+                            // '#9ecae1', // Lighter blue for past
+                            // '#3b82f6', // Accent blue for peak
+                            // '#1c5596'  // Darker blue for current
+                            '#d9a86e', // Lighter blue for past
+                            '#013741', // Accent blue for peak
+                            '#05b4d9'  // Darker blue for current
+                        ],
+                        borderRadius: 4,
+                        barPercentage: 0.6
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    animation: {
+                        duration: 1500,
+                        easing: 'easeOutQuart',
+                        delay: 500 // Wait for card fade-in before drawing bars
+                    },
+                    plugins: {
+                        legend: { display: false },
+                        tooltip: {
+                            callbacks: {
+                                label: function (context) {
+                                    return context.parsed.y + ' M dh';
+                                }
+                            }
+                        }
+                    },
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            display: false, // Hide Y axis
+                            max: 350
+                        },
+                        x: {
+                            grid: { display: false },
+                            ticks: { font: { weight: 'bold' } }
+                        }
+                    },
+                    // Draw exact value on top of bars after chart animation
+                    animation: {
+                        onComplete: function () {
+                            const chartInstance = this;
+                            const ctx = chartInstance.ctx;
+                            ctx.font = Chart.helpers.fontString(12, 'bold', Chart.defaults.font.family);
+                            ctx.textAlign = 'center';
+                            ctx.textBaseline = 'bottom';
+                            ctx.fillStyle = '#1c5596';
+
+                            this.data.datasets.forEach(function (dataset, i) {
+                                const meta = chartInstance.getDatasetMeta(i);
+                                meta.data.forEach(function (bar, index) {
+                                    const data = dataset.data[index];
+                                    ctx.fillText(data, bar.x, bar.y - 5);
+                                });
+                            });
+                        }
+                    }
+                }
+            });
+
+        });
+    </script>
 
 </body>
 

@@ -21,111 +21,108 @@
         href="../../../de/pourquoi-sao-tome-et-principe/nature/ein-inselparadies.html" />
 
     <title>Agence nationale pour le développement de l'aquaculture | ANDA</title>
-            <link rel="stylesheet" media="all"
-                href="../../../modules/contrib/webform/css/webform.element.flexboxda5a.css?tmlhth" />
-            <link rel="stylesheet" media="all" href="../../../core/misc/components/item-list.moduleda5a.css?tmlhth" />
-            <link rel="stylesheet" media="all" href="../../../core/misc/components/resize.moduleda5a.css?tmlhth" />
-            <link rel="stylesheet" media="all" href="../../../core/misc/components/progress.moduleda5a.css?tmlhth" />
-            <link rel="stylesheet" media="all"
-                href="../../../core/misc/components/ajax-progress.moduleda5a.css?tmlhth" />
-            <link rel="stylesheet" media="all"
-                href="../../../modules/contrib/webform/css/webform.element.details.toggleda5a.css?tmlhth" />
-            <link rel="stylesheet" media="all"
-                href="../../../modules/contrib/webform/css/webform.element.messageda5a.css?tmlhth" />
-            <link rel="stylesheet" media="all"
-                href="../../../modules/contrib/webform/css/webform.formda5a.css?tmlhth" />
-            <link rel="stylesheet" media="all"
-                href="../../../modules/contrib/paragraphs/css/paragraphs.unpublishedda5a.css?tmlhth" />
-            <link rel="stylesheet" media="all"
-                href="../../../modules/contrib/webform/css/webform.ajaxda5a.css?tmlhth" />
-            <link rel="stylesheet" media="all"
-                href="../../../themes/custom/sao_tome/assets/css/screenda5a.css?tmlhth" />
-            <link rel="stylesheet" media="print"
-                href="../../../themes/custom/sao_tome/assets/css/printda5a.css?tmlhth" />
-            <link rel="stylesheet" media="all"
-                href="../../../themes/contrib/gin/dist/css/components/ajaxda5a.css?tmlhth" />
+    <link rel="stylesheet" media="all"
+        href="../../../modules/contrib/webform/css/webform.element.flexboxda5a.css?tmlhth" />
+    <link rel="stylesheet" media="all" href="../../../core/misc/components/item-list.moduleda5a.css?tmlhth" />
+    <link rel="stylesheet" media="all" href="../../../core/misc/components/resize.moduleda5a.css?tmlhth" />
+    <link rel="stylesheet" media="all" href="../../../core/misc/components/progress.moduleda5a.css?tmlhth" />
+    <link rel="stylesheet" media="all" href="../../../core/misc/components/ajax-progress.moduleda5a.css?tmlhth" />
+    <link rel="stylesheet" media="all"
+        href="../../../modules/contrib/webform/css/webform.element.details.toggleda5a.css?tmlhth" />
+    <link rel="stylesheet" media="all"
+        href="../../../modules/contrib/webform/css/webform.element.messageda5a.css?tmlhth" />
+    <link rel="stylesheet" media="all" href="../../../modules/contrib/webform/css/webform.formda5a.css?tmlhth" />
+    <link rel="stylesheet" media="all"
+        href="../../../modules/contrib/paragraphs/css/paragraphs.unpublishedda5a.css?tmlhth" />
+    <link rel="stylesheet" media="all" href="../../../modules/contrib/webform/css/webform.ajaxda5a.css?tmlhth" />
+    <link rel="stylesheet" media="all" href="../../../themes/custom/sao_tome/assets/css/screenda5a.css?tmlhth" />
+    <link rel="stylesheet" media="print" href="../../../themes/custom/sao_tome/assets/css/printda5a.css?tmlhth" />
+    <link rel="stylesheet" media="all" href="../../../themes/contrib/gin/dist/css/components/ajaxda5a.css?tmlhth" />
+
+
+    <link rel="stylesheet" href="/themes/custom/sao_tome/assets/css/tabs.css">
 
 
 
-            <style>
-                html.is-app-loading,
-                html.is-app-loading body {
-                    overflow: hidden !important;
-                    overscroll-behavior: none;
-                    /* iOS : overflow hidden seul ne suffit pas toujours à bloquer
+    <style>
+        html.is-app-loading,
+        html.is-app-loading body {
+            overflow: hidden !important;
+            overscroll-behavior: none;
+            /* iOS : overflow hidden seul ne suffit pas toujours à bloquer
                    le scroll tactile. */
-                    touch-action: none;
-                }
+            touch-action: none;
+        }
 
-                #AppLoader {
-                    position: fixed;
-                    inset: 0;
-                    z-index: 10000;
-                    display: flex;
-                    align-items: center;
-                    justify-content: center;
-                    background-color: #38492A;
-                    opacity: 1;
-                    transition: opacity .5s ease-out;
-                }
+        #AppLoader {
+            position: fixed;
+            inset: 0;
+            z-index: 10000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #38492A;
+            opacity: 1;
+            transition: opacity .5s ease-out;
+        }
 
-                html:not(.is-app-loading) #AppLoader {
-                    opacity: 0;
-                    pointer-events: none;
-                }
+        html:not(.is-app-loading) #AppLoader {
+            opacity: 0;
+            pointer-events: none;
+        }
 
-                .AppLoader-logo {
-                    position: relative;
-                    width: 165px;
-                    max-width: 45vw;
-                    aspect-ratio: 165 / 65;
-                    -webkit-mask: url("../../../themes/custom/sao_tome/assets/img/anda.png") center / contain no-repeat;
-                    mask: url("../../../themes/custom/sao_tome/assets/img/anda.png") center / contain no-repeat;
-                }
+        .AppLoader-logo {
+            position: relative;
+            width: 165px;
+            max-width: 45vw;
+            aspect-ratio: 165 / 65;
+            -webkit-mask: url("../../../themes/custom/sao_tome/assets/img/anda.png") center / contain no-repeat;
+            mask: url("../../../themes/custom/sao_tome/assets/img/anda.png") center / contain no-repeat;
+        }
 
-                .AppLoader-logo>span {
-                    position: absolute;
-                    inset: 0;
-                    background-color: #fff;
-                }
+        .AppLoader-logo>span {
+            position: absolute;
+            inset: 0;
+            background-color: #fff;
+        }
 
-                .AppLoader-logo-base {
-                    opacity: .2;
-                }
+        .AppLoader-logo-base {
+            opacity: .2;
+        }
 
-                /* Remplissage bas -> haut, piloté par AppLoader. */
-                .AppLoader-logo-fill {
-                    clip-path: inset(calc(100% - var(--app-loader-progress, 0) * 100%) 0 0 0);
-                }
+        /* Remplissage bas -> haut, piloté par AppLoader. */
+        .AppLoader-logo-fill {
+            clip-path: inset(calc(100% - var(--app-loader-progress, 0) * 100%) 0 0 0);
+        }
 
-                /* Fallback si mask-image n'est pas supporté : logo plein. */
-                @supports not ((mask: url("")) or (-webkit-mask: url(""))) {
-                    .AppLoader-logo {
-                        background: url("../../../themes/custom/sao_tome/assets/img/anda.png") center / contain no-repeat;
-                    }
+        /* Fallback si mask-image n'est pas supporté : logo plein. */
+        @supports not ((mask: url("")) or (-webkit-mask: url(""))) {
+            .AppLoader-logo {
+                background: url("../../../themes/custom/sao_tome/assets/img/anda.png") center / contain no-repeat;
+            }
 
-                    .AppLoader-logo>span {
-                        display: none;
-                    }
-                }
-            </style>
-            <script>
-                (function (d) {
-                    var root = d.documentElement;
-                    if ('scrollRestoration' in history) {
-                        history.scrollRestoration = 'manual';
-                    }
-                    root.classList.add('is-app-loading');
-                    // Filet de sécurité si main.js ne s'exécute jamais (erreur JS,
-                    // asset KO) : AppLoader a son propre kill switch à 10s, celui-ci
-                    // ne sert que s'il n'a jamais tourné.
-                    setTimeout(function () {
-                        root.classList.remove('is-app-loading');
-                        var el = d.getElementById('AppLoader');
-                        if (el) el.remove();
-                    }, 12000);
-                })(document);
-            </script>
+            .AppLoader-logo>span {
+                display: none;
+            }
+        }
+    </style>
+    <script>
+        (function (d) {
+            var root = d.documentElement;
+            if ('scrollRestoration' in history) {
+                history.scrollRestoration = 'manual';
+            }
+            root.classList.add('is-app-loading');
+            // Filet de sécurité si main.js ne s'exécute jamais (erreur JS,
+            // asset KO) : AppLoader a son propre kill switch à 10s, celui-ci
+            // ne sert que s'il n'a jamais tourné.
+            setTimeout(function () {
+                root.classList.remove('is-app-loading');
+                var el = d.getElementById('AppLoader');
+                if (el) el.remove();
+            }, 12000);
+        })(document);
+    </script>
 </head>
 
 <body class="node-type-article" data-barba="wrapper">
@@ -162,7 +159,7 @@
                                         <div class="Navbar-navigations" data-burger-component="navigations">
                                             <nav id="block-sao-tome-main-menu" aria-label="Menu principal">
 
-                                                            
+
 
 
 
@@ -224,7 +221,7 @@
 
 
 
-                                                           <ul class="menu-main" data-drupal-selector="menu-main"
+                                                            <ul class="menu-main" data-drupal-selector="menu-main"
                                                                 data-menu-burger-component="container">
                                                                 <li class="menu-main__item menu-main__item--section">
                                                                     <!--<span class="menu-main__title">AGENCE</span>-->
@@ -263,7 +260,8 @@
                                                                                         <a href="/fr/agence.html#paragraph-553"
                                                                                             class="menu-main__link body--bold"
                                                                                             data-label="Une flore exceptionnelle"
-                                                                                            data-drupal-link-system-path="node/40">Filières aquacoles</a>
+                                                                                            data-drupal-link-system-path="node/40">Filières
+                                                                                            aquacoles</a>
                                                                                     </li>
 
                                                                                     <li
@@ -1048,16 +1046,13 @@
 
                                                                         <ul>
                                                                             <li>
-                                                                                <a
-                                                                                    href="#">Facebook</a>
+                                                                                <a href="#">Facebook</a>
                                                                             </li>
                                                                             <li>
-                                                                                <a
-                                                                                    href="#">Instagram</a>
+                                                                                <a href="#">Instagram</a>
                                                                             </li>
                                                                             <li>
-                                                                                <a
-                                                                                    href="#">Youtube</a>
+                                                                                <a href="#">Youtube</a>
                                                                             </li>
                                                                         </ul>
 
@@ -1087,7 +1082,7 @@
                             <div id="Breadcrumb">
                                 <nav>
                                     <ul>
-                                         <li>
+                                        <li>
                                             <a href="">Accueil</a>
                                         </li>
                                         <li>
@@ -1116,7 +1111,7 @@
                             <section class="Article node"
                                 style="--color-category: #80802B;--color-category--30: #80802B30;">
                                 <header class="Article-header">
-                                    
+
                                     <h1 class="Article-header-title title--1">
                                         <span class="Article-header-title-container" data-text-resizing-overflow>
 
@@ -1125,8 +1120,8 @@
                                         </span>
                                     </h1>
                                     <br>
-                                    
-                                   
+
+
                                 </header>
                                 <div class="Article-wrapper">
                                     <div class="Article-summary" data-collapsable-component="container"
@@ -1141,18 +1136,22 @@
                                                 style="--items:5">
                                                 <li>
                                                     <a href="#paragraph-2818" data-anchor-component="link">
-Pisciculture marine
-                                                     </a>
-                                                <button data-collapsable-component="opener"
+                                                        Pisciculture marine
+                                                    </a>
+                                                    <button data-collapsable-component="opener"
                                                         data-collapsable-state="closed" type="button"><i
                                                             class="icon-chevron-bottom" aria-hidden="true"></i><span
                                                             class="visually-hidden">Ouvrir le sommaire</span></button>
                                                 </li>
-                                                <li><a href="#paragraph-883" data-anchor-component="link">Mytiliculture</a>
+                                                <li><a href="#paragraph-883"
+                                                        data-anchor-component="link">Mytiliculture</a>
                                                 </li>
-                                                <li><a href="#paragraph-888" data-anchor-component="link">Ostréiculture</a></li>
-                                                <li><a href="#paragraph-895" data-anchor-component="link">Algoculture</a></li>
-                                                <li><a href="#paragraph-899" data-anchor-component="link">Crevetticulture</a></li>
+                                                <li><a href="#paragraph-888"
+                                                        data-anchor-component="link">Ostréiculture</a></li>
+                                                <li><a href="#paragraph-895"
+                                                        data-anchor-component="link">Algoculture</a></li>
+                                                <li><a href="#paragraph-899"
+                                                        data-anchor-component="link">Crevetticulture</a></li>
                                             </ul>
                                         </div>
                                     </div>
@@ -1184,19 +1183,188 @@ Pisciculture marine
                                                     <h2>
                                                         Comprendre la filière
                                                     </h2>
-                                                    <p>La pisciculture marine consiste à élever des poissons marins dans des installations conçues pour répondre à leurs besoins biologiques. Elle se pratique principalement dans des cages installées en mer, mais peut aussi recourir à des unités à terre utilisant des systèmes de circulation et de traitement de l'eau. Parmi les espèces couramment élevées figurent la daurade royale et le bar, la courbine, la sériole. </p>
-<h2>Comment fonctionne la production</h2>
-<h2>Ce qui caractérise la filière</h2>
-<h2>Des atouts pour les territoires et les consommateurs</h2>
-<ul>
-    <li>Le choix du site tient compte de la profondeur, des courants, de la qualité de l'eau, du vent et de la houle.</li>
-    <li>L'alimentation est ajustée à l'espèce, à la taille des poissons et aux conditions d'élevage afin de limiter les pertes.</li>
-    <li>Des observations régulières et, de plus en plus, des capteurs et des caméras facilitent le suivi des élevages.</li>
-    <li>La prévention sanitaire, la biosécurité et la traçabilité accompagnent toutes les étapes de</li>
-</ul>
-<p>
-    La pisciculture marine contribue à diversifier l'offre en produits de la mer, à créer des emplois et à développer des activités associées : écloseries, fabrication d'équipements, alimentation, logistique, transformation et services de suivi. Elle permet également de proposer des volumes plus prévisibles et des produits dont l'origine et le parcours sont documentés.
-</p>
+                                                    <p>La pisciculture marine consiste à élever des poissons marins dans
+                                                        des installations conçues pour répondre à leurs besoins
+                                                        biologiques. Elle se pratique principalement dans des cages
+                                                        installées en mer, mais peut aussi recourir à des unités à terre
+                                                        utilisant des systèmes de circulation et de traitement de l'eau.
+                                                        Parmi les espèces couramment élevées figurent la daurade royale
+                                                        et le bar, la courbine, la sériole. </p>
+                                                    <h2>Comment fonctionne la production</h2>
+                                                    <div class="pvtb-faq-container">
+                                                        <h2 class="pvtb-faq-title"><span>🦪</span>
+                                                            Étapes de la Pisciculture marine</h2>
+                                                        <p class="pvtb-faq-subtitle">Cliquez sur
+                                                            chaque étape pour découvrir ce qui se
+                                                            passe.</p>
+
+                                                        <!-- FAQ list : 5 étapes -->
+                                                        <ul class="pvtb-faq-list" role="list">
+
+                                                            <!-- Étape 1 -->
+                                                            <li class="pvtb-faq-item pvtb-active" id="pvtb-faq-item-1">
+                                                                <button class="pvtb-faq-btn" id="pvtb-faq-btn-1"
+                                                                    aria-expanded="true"
+                                                                    aria-controls="pvtb-faq-panel-1">
+                                                                    <span class="pvtb-faq-label">
+                                                                        <span class="pvtb-step-num">1</span>
+                                                                        <span class="pvtb-step-title">Écloserie</span>
+                                                                    </span>
+                                                                    <span class="pvtb-chevron" aria-hidden="true">
+                                                                        <svg viewBox="0 0 24 24" fill="none"
+                                                                            stroke="currentColor" stroke-width="2.5"
+                                                                            stroke-linecap="round"
+                                                                            stroke-linejoin="round">
+                                                                            <polyline points="6 9 12 15 18 9">
+                                                                            </polyline>
+                                                                        </svg>
+                                                                    </span>
+                                                                </button>
+                                                                <div class="pvtb-faq-panel" id="pvtb-faq-panel-1"
+                                                                    role="region" aria-labelledby="pvtb-faq-btn-1">
+                                                                    <p>Les œufs éclosent dans des installations spécialisées. Les larves y reçoivent des soins adaptés jusqu'à devenir de jeunes poissons appelés alevins.
+                                                                    </p>
+                                                                    <p class="pvtb-badge">Étape 1
+                                                                    </p>
+                                                                </div>
+                                                            </li>
+
+                                                            <!-- Étape 2 -->
+                                                            <li class="pvtb-faq-item" id="pvtb-faq-item-2">
+                                                                <button class="pvtb-faq-btn" id="pvtb-faq-btn-2"
+                                                                    aria-expanded="false"
+                                                                    aria-controls="pvtb-faq-panel-2">
+                                                                    <span class="pvtb-faq-label">
+                                                                        <span class="pvtb-step-num">2</span>
+                                                                        <span class="pvtb-step-title">Nurserie</span>
+                                                                    </span>
+                                                                    <span class="pvtb-chevron" aria-hidden="true">
+                                                                        <svg viewBox="0 0 24 24" fill="none"
+                                                                            stroke="currentColor" stroke-width="2.5"
+                                                                            stroke-linecap="round"
+                                                                            stroke-linejoin="round">
+                                                                            <polyline points="6 9 12 15 18 9">
+                                                                            </polyline>
+                                                                        </svg>
+                                                                    </span>
+                                                                </button>
+                                                                <div class="pvtb-faq-panel" id="pvtb-faq-panel-2"
+                                                                    role="region" aria-labelledby="pvtb-faq-btn-2">
+                                                                    <p>Les alevins poursuivent leur croissance dans un environnement contrôlé avant leur transfert vers les unités de grossissement.
+                                                                    </p>
+                                                                    <p class="pvtb-badge">Étape 2
+                                                                    </p>
+                                                                </div>
+                                                            </li>
+
+                                                            <!-- Étape 3 -->
+                                                            <li class="pvtb-faq-item" id="pvtb-faq-item-3">
+                                                                <button class="pvtb-faq-btn" id="pvtb-faq-btn-3"
+                                                                    aria-expanded="false"
+                                                                    aria-controls="pvtb-faq-panel-3">
+                                                                    <span class="pvtb-faq-label">
+                                                                        <span class="pvtb-step-num">3</span>
+                                                                        <span class="pvtb-step-title">Grossissement</span>
+                                                                    </span>
+                                                                    <span class="pvtb-chevron" aria-hidden="true">
+                                                                        <svg viewBox="0 0 24 24" fill="none"
+                                                                            stroke="currentColor" stroke-width="2.5"
+                                                                            stroke-linecap="round"
+                                                                            stroke-linejoin="round">
+                                                                            <polyline points="6 9 12 15 18 9">
+                                                                            </polyline>
+                                                                        </svg>
+                                                                    </span>
+                                                                </button>
+                                                                <div class="pvtb-faq-panel" id="pvtb-faq-panel-3"
+                                                                    role="region" aria-labelledby="pvtb-faq-btn-3">
+                                                                    <p>Les poissons sont élevés en cages marines ou dans des bassins à terre. Leur alimentation, leur croissance et leur état sanitaire sont suivis régulièrement.</p>
+                                                                    <p class="pvtb-badge">Étape 3
+                                                                    </p>
+                                                                </div>
+                                                            </li>
+
+                                                            <!-- Étape 4 -->
+                                                            <li class="pvtb-faq-item" id="pvtb-faq-item-4">
+                                                                <button class="pvtb-faq-btn" id="pvtb-faq-btn-4"
+                                                                    aria-expanded="false"
+                                                                    aria-controls="pvtb-faq-panel-4">
+                                                                    <span class="pvtb-faq-label">
+                                                                        <span class="pvtb-step-num">4</span>
+                                                                        <span class="pvtb-step-title">Récolte</span>
+                                                                    </span>
+                                                                    <span class="pvtb-chevron" aria-hidden="true">
+                                                                        <svg viewBox="0 0 24 24" fill="none"
+                                                                            stroke="currentColor" stroke-width="2.5"
+                                                                            stroke-linecap="round"
+                                                                            stroke-linejoin="round">
+                                                                            <polyline points="6 9 12 15 18 9">
+                                                                            </polyline>
+                                                                        </svg>
+                                                                    </span>
+                                                                </button>
+                                                                <div class="pvtb-faq-panel" id="pvtb-faq-panel-4"
+                                                                    role="region" aria-labelledby="pvtb-faq-btn-4">
+                                                                    <p>Lorsque la taille commerciale est atteinte, la récolte est organisée de manière à limiter le stress et à préserver la qualité du poisson.</p>
+                                                                    <p class="pvtb-badge">Étape 4
+                                                                    </p>
+                                                                </div>
+                                                            </li>
+
+                                                            <!-- Étape 5 -->
+                                                            <li class="pvtb-faq-item" id="pvtb-faq-item-5">
+                                                                <button class="pvtb-faq-btn" id="pvtb-faq-btn-5"
+                                                                    aria-expanded="false"
+                                                                    aria-controls="pvtb-faq-panel-5">
+                                                                    <span class="pvtb-faq-label">
+                                                                        <span class="pvtb-step-num">5</span>
+                                                                        <span class="pvtb-step-title">Conditionnement</span>
+                                                                    </span>
+                                                                    <span class="pvtb-chevron" aria-hidden="true">
+                                                                        <svg viewBox="0 0 24 24" fill="none"
+                                                                            stroke="currentColor" stroke-width="2.5"
+                                                                            stroke-linecap="round"
+                                                                            stroke-linejoin="round">
+                                                                            <polyline points="6 9 12 15 18 9">
+                                                                            </polyline>
+                                                                        </svg>
+                                                                    </span>
+                                                                </button>
+                                                                <div class="pvtb-faq-panel" id="pvtb-faq-panel-5"
+                                                                    role="region" aria-labelledby="pvtb-faq-btn-5">
+                                                                    <p>Le refroidissement, le tri, le conditionnement et le transport sous température maîtrisée assurent la fraîcheur jusqu'au consommateur.</p>
+                                                                    <p class="pvtb-badge">Étape 5
+                                                                    </p>
+                                                                </div>
+                                                            </li>
+
+                                                        </ul>
+                                                    </div>
+                                                    <h3 class="ParagraphVerticalSliderItem-title">Ce qui caractérise la
+                                                        filière</h3>
+
+                                                    <ul>
+                                                        <li>Le choix du site tient compte de la profondeur, des
+                                                            courants, de la qualité de l'eau, du vent et de la houle.
+                                                        </li>
+                                                        <li>L'alimentation est ajustée à l'espèce, à la taille des
+                                                            poissons et aux conditions d'élevage afin de limiter les
+                                                            pertes.</li>
+                                                        <li>Des observations régulières et, de plus en plus, des
+                                                            capteurs et des caméras facilitent le suivi des élevages.
+                                                        </li>
+                                                        <li>La prévention sanitaire, la biosécurité et la traçabilité
+                                                            accompagnent toutes les étapes de</li>
+                                                    </ul>
+                                                    <h2>Des atouts pour les territoires et les consommateurs</h2>
+                                                    <p>
+                                                        La pisciculture marine contribue à diversifier l'offre en
+                                                        produits de la mer, à créer des emplois et à développer des
+                                                        activités associées : écloseries, fabrication d'équipements,
+                                                        alimentation, logistique, transformation et services de suivi.
+                                                        Elle permet également de proposer des volumes plus prévisibles
+                                                        et des produits dont l'origine et le parcours sont documentés.
+                                                    </p>
 
 
 
@@ -1234,19 +1402,214 @@ Pisciculture marine
                                                     <h2>
                                                         Comprendre la filière
                                                     </h2>
-                                                    <p>La mytiliculture désigne l'élevage des moules. Elle peut être pratiquée dans des baies, des lagunes ou en mer ouverte, lorsque les conditions du site le permettent. Les moules se nourrissent en filtrant le plancton et les particules naturellement présents dans l'eau de mer : elles ne nécessitent pas d'aliment. 
-En mer ouverte, elles sont généralement élevées sur des cordes suspendues à des filières flottantes ou submergées, solidement ancrées au fond.
-</p>
+                                                    <p>La mytiliculture désigne l'élevage des moules. Elle peut être
+                                                        pratiquée dans des baies, des lagunes ou en mer ouverte, lorsque
+                                                        les conditions du site le permettent. Les moules se nourrissent
+                                                        en filtrant le plancton et les particules naturellement présents
+                                                        dans l'eau de mer : elles ne nécessitent pas d'aliment.
+                                                        En mer ouverte, elles sont généralement élevées sur des cordes
+                                                        suspendues à des filières flottantes ou submergées, solidement
+                                                        ancrées au fond.
+                                                    </p>
                                                     <h2>Comment fonctionne la production</h2>
-<h2>Ce qui caractérise la filière</h2>
-<ul>
-    <li>Les filières sont dimensionnées en fonction de la profondeur, des courants, de la houle et de la capacité du site.</li>
-    <li>La production dépend de la disponibilité du naissain et de la richesse naturelle des eaux.</li>
-    <li>Le suivi des zones de production est indispensable pour prévenir les risques microbiologiques et ceux liés aux biotoxines marines.</li>
-    <li>Les opérations en mer exigent des équipements fiables, des navires adaptés et une maintenance régulière.</li>
-</ul>
-<h2>Des atouts pour les territoires et les consommateurs</h2>
-<p>Parce qu'elle n'utilise pas d'aliment composé, la mytiliculture valorise directement la productivité naturelle du milieu. Elle peut soutenir des emplois côtiers, diversifier les activités des territoires littoraux et approvisionner la restauration, le commerce de détail et les unités de transformation. Les moules peuvent être commercialisées vivantes, décoquillées, cuites, congelées ou intégrées à des produits élaborés.</p>
+                                                    <div class="pvtb-faq-container">
+                                                        <h2 class="pvtb-faq-title"><span>🦪</span>
+                                                            Étapes de la mytiliculture</h2>
+                                                        <p class="pvtb-faq-subtitle">Cliquez sur
+                                                            chaque étape pour découvrir ce qui se
+                                                            passe.</p>
+
+                                                        <!-- FAQ list : 5 étapes -->
+                                                        <ul class="pvtb-faq-list" role="list">
+
+                                                            <!-- Étape 1 -->
+                                                            <li class="pvtb-faq-item pvtb-active" id="pvtb-faq-item-1">
+                                                                <button class="pvtb-faq-btn" id="pvtb-faq-btn-1"
+                                                                    aria-expanded="true"
+                                                                    aria-controls="pvtb-faq-panel-1">
+                                                                    <span class="pvtb-faq-label">
+                                                                        <span class="pvtb-step-num">1</span>
+                                                                        <span class="pvtb-step-title">Naissain</span>
+                                                                    </span>
+                                                                    <span class="pvtb-chevron" aria-hidden="true">
+                                                                        <svg viewBox="0 0 24 24" fill="none"
+                                                                            stroke="currentColor" stroke-width="2.5"
+                                                                            stroke-linecap="round"
+                                                                            stroke-linejoin="round">
+                                                                            <polyline points="6 9 12 15 18 9">
+                                                                            </polyline>
+                                                                        </svg>
+                                                                    </span>
+                                                                </button>
+                                                                <div class="pvtb-faq-panel" id="pvtb-faq-panel-1"
+                                                                    role="region" aria-labelledby="pvtb-faq-btn-1">
+                                                                    <p>Les jeunes moules, appelées
+                                                                        <strong>naissains</strong>,
+                                                                        sont collectées dans le
+                                                                        milieu naturel lorsque le
+                                                                        captage est autorisé et
+                                                                        maîtrisé, ou produites par
+                                                                        des structures spécialisées.
+                                                                    </p>
+                                                                    <p class="pvtb-badge">Étape 1
+                                                                    </p>
+                                                                </div>
+                                                            </li>
+
+                                                            <!-- Étape 2 -->
+                                                            <li class="pvtb-faq-item" id="pvtb-faq-item-2">
+                                                                <button class="pvtb-faq-btn" id="pvtb-faq-btn-2"
+                                                                    aria-expanded="false"
+                                                                    aria-controls="pvtb-faq-panel-2">
+                                                                    <span class="pvtb-faq-label">
+                                                                        <span class="pvtb-step-num">2</span>
+                                                                        <span class="pvtb-step-title">Mise
+                                                                            en élevage</span>
+                                                                    </span>
+                                                                    <span class="pvtb-chevron" aria-hidden="true">
+                                                                        <svg viewBox="0 0 24 24" fill="none"
+                                                                            stroke="currentColor" stroke-width="2.5"
+                                                                            stroke-linecap="round"
+                                                                            stroke-linejoin="round">
+                                                                            <polyline points="6 9 12 15 18 9">
+                                                                            </polyline>
+                                                                        </svg>
+                                                                    </span>
+                                                                </button>
+                                                                <div class="pvtb-faq-panel" id="pvtb-faq-panel-2"
+                                                                    role="region" aria-labelledby="pvtb-faq-btn-2">
+                                                                    <p>Le naissain est réparti sur
+                                                                        des cordes ou placé dans des
+                                                                        supports adaptés, puis
+                                                                        installé sur les
+                                                                        <strong>filières
+                                                                            mytilicoles</strong>.
+                                                                    </p>
+                                                                    <p class="pvtb-badge">Étape 2
+                                                                    </p>
+                                                                </div>
+                                                            </li>
+
+                                                            <!-- Étape 3 -->
+                                                            <li class="pvtb-faq-item" id="pvtb-faq-item-3">
+                                                                <button class="pvtb-faq-btn" id="pvtb-faq-btn-3"
+                                                                    aria-expanded="false"
+                                                                    aria-controls="pvtb-faq-panel-3">
+                                                                    <span class="pvtb-faq-label">
+                                                                        <span class="pvtb-step-num">3</span>
+                                                                        <span class="pvtb-step-title">Croissance</span>
+                                                                    </span>
+                                                                    <span class="pvtb-chevron" aria-hidden="true">
+                                                                        <svg viewBox="0 0 24 24" fill="none"
+                                                                            stroke="currentColor" stroke-width="2.5"
+                                                                            stroke-linecap="round"
+                                                                            stroke-linejoin="round">
+                                                                            <polyline points="6 9 12 15 18 9">
+                                                                            </polyline>
+                                                                        </svg>
+                                                                    </span>
+                                                                </button>
+                                                                <div class="pvtb-faq-panel" id="pvtb-faq-panel-3"
+                                                                    role="region" aria-labelledby="pvtb-faq-btn-3">
+                                                                    <p>Les moules grandissent grâce
+                                                                        aux ressources naturelles de
+                                                                        l'eau. Le producteur
+                                                                        contrôle leur fixation, leur
+                                                                        densité et l'état des
+                                                                        équipements.</p>
+                                                                    <p class="pvtb-badge">Étape 3
+                                                                    </p>
+                                                                </div>
+                                                            </li>
+
+                                                            <!-- Étape 4 -->
+                                                            <li class="pvtb-faq-item" id="pvtb-faq-item-4">
+                                                                <button class="pvtb-faq-btn" id="pvtb-faq-btn-4"
+                                                                    aria-expanded="false"
+                                                                    aria-controls="pvtb-faq-panel-4">
+                                                                    <span class="pvtb-faq-label">
+                                                                        <span class="pvtb-step-num">4</span>
+                                                                        <span class="pvtb-step-title">Entretien
+                                                                            et tri</span>
+                                                                    </span>
+                                                                    <span class="pvtb-chevron" aria-hidden="true">
+                                                                        <svg viewBox="0 0 24 24" fill="none"
+                                                                            stroke="currentColor" stroke-width="2.5"
+                                                                            stroke-linecap="round"
+                                                                            stroke-linejoin="round">
+                                                                            <polyline points="6 9 12 15 18 9">
+                                                                            </polyline>
+                                                                        </svg>
+                                                                    </span>
+                                                                </button>
+                                                                <div class="pvtb-faq-panel" id="pvtb-faq-panel-4"
+                                                                    role="region" aria-labelledby="pvtb-faq-btn-4">
+                                                                    <p>Les cordes sont entretenues
+                                                                        et les moules peuvent être
+                                                                        triées ou réparties de
+                                                                        nouveau pour favoriser une
+                                                                        croissance homogène.</p>
+                                                                    <p class="pvtb-badge">Étape 4
+                                                                    </p>
+                                                                </div>
+                                                            </li>
+
+                                                            <!-- Étape 5 -->
+                                                            <li class="pvtb-faq-item" id="pvtb-faq-item-5">
+                                                                <button class="pvtb-faq-btn" id="pvtb-faq-btn-5"
+                                                                    aria-expanded="false"
+                                                                    aria-controls="pvtb-faq-panel-5">
+                                                                    <span class="pvtb-faq-label">
+                                                                        <span class="pvtb-step-num">5</span>
+                                                                        <span class="pvtb-step-title">Récolte
+                                                                            et préparation</span>
+                                                                    </span>
+                                                                    <span class="pvtb-chevron" aria-hidden="true">
+                                                                        <svg viewBox="0 0 24 24" fill="none"
+                                                                            stroke="currentColor" stroke-width="2.5"
+                                                                            stroke-linecap="round"
+                                                                            stroke-linejoin="round">
+                                                                            <polyline points="6 9 12 15 18 9">
+                                                                            </polyline>
+                                                                        </svg>
+                                                                    </span>
+                                                                </button>
+                                                                <div class="pvtb-faq-panel" id="pvtb-faq-panel-5"
+                                                                    role="region" aria-labelledby="pvtb-faq-btn-5">
+                                                                    <p>Les moules sont récoltées,
+                                                                        nettoyées, calibrées et,
+                                                                        lorsque cela est requis,
+                                                                        purifiées avant leur
+                                                                        conditionnement et leur
+                                                                        expédition.</p>
+                                                                    <p class="pvtb-badge">Étape 5
+                                                                    </p>
+                                                                </div>
+                                                            </li>
+
+                                                        </ul>
+                                                    </div>
+                                                    <h2>Ce qui caractérise la filière</h2>
+                                                    <ul>
+                                                        <li>Les filières sont dimensionnées en fonction de la
+                                                            profondeur, des courants, de la houle et de la capacité du
+                                                            site.</li>
+                                                        <li>La production dépend de la disponibilité du naissain et de
+                                                            la richesse naturelle des eaux.</li>
+                                                        <li>Le suivi des zones de production est indispensable pour
+                                                            prévenir les risques microbiologiques et ceux liés aux
+                                                            biotoxines marines.</li>
+                                                        <li>Les opérations en mer exigent des équipements fiables, des
+                                                            navires adaptés et une maintenance régulière.</li>
+                                                    </ul>
+                                                    <h2>Des atouts pour les territoires et les consommateurs</h2>
+                                                    <p>Parce qu'elle n'utilise pas d'aliment composé, la mytiliculture
+                                                        valorise directement la productivité naturelle du milieu. Elle
+                                                        peut soutenir des emplois côtiers, diversifier les activités des
+                                                        territoires littoraux et approvisionner la restauration, le
+                                                        commerce de détail et les unités de transformation. Les moules
+                                                        peuvent être commercialisées vivantes, décoquillées, cuites,
+                                                        congelées ou intégrées à des produits élaborés.</p>
 
                                                 </div>
                                                 <div class="ParagraphEdito-buttons">
@@ -1268,7 +1631,7 @@ En mer ouverte, elles sont généralement élevées sur des cordes suspendues à
                                             </div>
                                         </div>
 
-                                        
+
                                         <div class="ParagraphSectionTitle">
                                             <h2 id="paragraph-888"
                                                 class="ParagraphSectionTitle-container paragraph title--2--display">
@@ -1278,27 +1641,193 @@ En mer ouverte, elles sont généralement élevées sur des cordes suspendues à
 
                                         <div class="ParagraphEdito" data-has-background="false">
                                             <div class="ParagraphEdito-container paragraph">
-                                                
+
 
                                                 <div class="ParagraphEdito-content text-content">
-                                                   <h2>
+                                                    <h2>
                                                         Comprendre la filière
                                                     </h2>
                                                     <p>
-                                                        L'ostréiculture est l'élevage des huîtres. Ces coquillages filtrent l'eau pour capter leur nourriture naturelle et ne nécessitent pas d'aliment. Selon la configuration du site, les huîtres peuvent être élevées dans des poches posées sur des tables, dans des paniers ou des lanternes suspendus en mer, ou au moyen de structures adaptées. Leur cycle demande des manipulations régulières et un suivi attentif afin d'obtenir des huîtres résistantes, bien formées et homogènes.
+                                                        L'ostréiculture est l'élevage des huîtres. Ces coquillages
+                                                        filtrent l'eau pour capter leur nourriture naturelle et ne
+                                                        nécessitent pas d'aliment. Selon la configuration du site, les
+                                                        huîtres peuvent être élevées dans des poches posées sur des
+                                                        tables, dans des paniers ou des lanternes suspendus en mer, ou
+                                                        au moyen de structures adaptées. Leur cycle demande des
+                                                        manipulations régulières et un suivi attentif afin d'obtenir des
+                                                        huîtres résistantes, bien formées et homogènes.
                                                     </p>
                                                     <h2>Comment fonctionne la production</h2>
-<h2>Ce qui caractérise la filière</h2>
-<ul>
-    <li>L'élevage s'inscrit dans un cycle relativement long qui demande anticipation et régularité.</li>
-    <li>La forme, la taille, le remplissage de la chair et l'aspect de la coquille participent à la qualité commerciale.</li>
-    <li>Les manipulations sont adaptées aux saisons, à la croissance et aux conditions marines.</li>
-    <li>La qualité sanitaire des eaux et la traçabilité des lots sont déterminantes pour la mise sur le marché.</li>
-</ul>
-<h2>Des atouts pour les territoires et les consommateurs</h2>
-<p>
-    L'ostréiculture crée une valeur élevée à partir des ressources naturelles du milieu marin. Elle peut soutenir des emplois spécialisés, contribuer à l'attractivité gastronomique des territoires et stimuler des activités complémentaires comme les écloseries, les nurseries, la purification, le conditionnement, la logistique et la commercialisation. Une offre différenciée par l'origine, la taille ou le mode d'élevage peut répondre à plusieurs segments de marché.
-</p>
+                                                    <div class="pvtb-faq-container">
+                                                        <h2 class="pvtb-faq-title"><span>🦪</span>
+                                                            Étapes de l'Ostréiculture</h2>
+                                                        <p class="pvtb-faq-subtitle">Cliquez sur
+                                                            chaque étape pour découvrir ce qui se
+                                                            passe.</p>
+
+                                                        <!-- FAQ list : 5 étapes -->
+                                                        <ul class="pvtb-faq-list" role="list">
+
+                                                            <!-- Étape 1 -->
+                                                            <li class="pvtb-faq-item pvtb-active" id="pvtb-faq-item-1">
+                                                                <button class="pvtb-faq-btn" id="pvtb-faq-btn-1"
+                                                                    aria-expanded="true"
+                                                                    aria-controls="pvtb-faq-panel-1">
+                                                                    <span class="pvtb-faq-label">
+                                                                        <span class="pvtb-step-num">1</span>
+                                                                        <span class="pvtb-step-title">Naissain</span>
+                                                                    </span>
+                                                                    <span class="pvtb-chevron" aria-hidden="true">
+                                                                        <svg viewBox="0 0 24 24" fill="none"
+                                                                            stroke="currentColor" stroke-width="2.5"
+                                                                            stroke-linecap="round"
+                                                                            stroke-linejoin="round">
+                                                                            <polyline points="6 9 12 15 18 9">
+                                                                            </polyline>
+                                                                        </svg>
+                                                                    </span>
+                                                                </button>
+                                                                <div class="pvtb-faq-panel" id="pvtb-faq-panel-1"
+                                                                    role="region" aria-labelledby="pvtb-faq-btn-1">
+                                                                    <p>Les jeunes huîtres, appelées naissains, proviennent d'écloseries spécialisées qui maîtrisent la reproduction.
+                                                                    </p>
+                                                                    <p class="pvtb-badge">Étape 1
+                                                                    </p>
+                                                                </div>
+                                                            </li>
+
+                                                            <!-- Étape 2 -->
+                                                            <li class="pvtb-faq-item" id="pvtb-faq-item-2">
+                                                                <button class="pvtb-faq-btn" id="pvtb-faq-btn-2"
+                                                                    aria-expanded="false"
+                                                                    aria-controls="pvtb-faq-panel-2">
+                                                                    <span class="pvtb-faq-label">
+                                                                        <span class="pvtb-step-num">2</span>
+                                                                        <span class="pvtb-step-title">Prégrossissement</span>
+                                                                    </span>
+                                                                    <span class="pvtb-chevron" aria-hidden="true">
+                                                                        <svg viewBox="0 0 24 24" fill="none"
+                                                                            stroke="currentColor" stroke-width="2.5"
+                                                                            stroke-linecap="round"
+                                                                            stroke-linejoin="round">
+                                                                            <polyline points="6 9 12 15 18 9">
+                                                                            </polyline>
+                                                                        </svg>
+                                                                    </span>
+                                                                </button>
+                                                                <div class="pvtb-faq-panel" id="pvtb-faq-panel-2"
+                                                                    role="region" aria-labelledby="pvtb-faq-btn-2">
+                                                                    <p>Une phase de nurserie ou de prégrossissement permet aux jeunes huîtres d'atteindre une taille suffisante avant leur installation définitive.</p>
+                                                                    <p class="pvtb-badge">Étape 2
+                                                                    </p>
+                                                                </div>
+                                                            </li>
+
+                                                            <!-- Étape 3 -->
+                                                            <li class="pvtb-faq-item" id="pvtb-faq-item-3">
+                                                                <button class="pvtb-faq-btn" id="pvtb-faq-btn-3"
+                                                                    aria-expanded="false"
+                                                                    aria-controls="pvtb-faq-panel-3">
+                                                                    <span class="pvtb-faq-label">
+                                                                        <span class="pvtb-step-num">3</span>
+                                                                        <span class="pvtb-step-title">Grossissement</span>
+                                                                    </span>
+                                                                    <span class="pvtb-chevron" aria-hidden="true">
+                                                                        <svg viewBox="0 0 24 24" fill="none"
+                                                                            stroke="currentColor" stroke-width="2.5"
+                                                                            stroke-linecap="round"
+                                                                            stroke-linejoin="round">
+                                                                            <polyline points="6 9 12 15 18 9">
+                                                                            </polyline>
+                                                                        </svg>
+                                                                    </span>
+                                                                </button>
+                                                                <div class="pvtb-faq-panel" id="pvtb-faq-panel-3"
+                                                                    role="region" aria-labelledby="pvtb-faq-btn-3">
+                                                                    <p>Les huîtres grandissent dans des poches, des paniers ou des lanternes. La technique dépend de la profondeur, de l'exposition et des conditions du milieu.</p>
+                                                                    <p class="pvtb-badge">Étape 3
+                                                                    </p>
+                                                                </div>
+                                                            </li>
+
+                                                            <!-- Étape 4 -->
+                                                            <li class="pvtb-faq-item" id="pvtb-faq-item-4">
+                                                                <button class="pvtb-faq-btn" id="pvtb-faq-btn-4"
+                                                                    aria-expanded="false"
+                                                                    aria-controls="pvtb-faq-panel-4">
+                                                                    <span class="pvtb-faq-label">
+                                                                        <span class="pvtb-step-num">4</span>
+                                                                        <span class="pvtb-step-title">Travail d'élevage</span>
+                                                                    </span>
+                                                                    <span class="pvtb-chevron" aria-hidden="true">
+                                                                        <svg viewBox="0 0 24 24" fill="none"
+                                                                            stroke="currentColor" stroke-width="2.5"
+                                                                            stroke-linecap="round"
+                                                                            stroke-linejoin="round">
+                                                                            <polyline points="6 9 12 15 18 9">
+                                                                            </polyline>
+                                                                        </svg>
+                                                                    </span>
+                                                                </button>
+                                                                <div class="pvtb-faq-panel" id="pvtb-faq-panel-4"
+                                                                    role="region" aria-labelledby="pvtb-faq-btn-4">
+                                                                    <p>Les lots sont régulièrement triés, nettoyés, calibrés et parfois retournés afin de maîtriser la densité et d'améliorer la forme des coquilles.</p>
+                                                                    <p class="pvtb-badge">Étape 4
+                                                                    </p>
+                                                                </div>
+                                                            </li>
+
+                                                            <!-- Étape 5 -->
+                                                            <li class="pvtb-faq-item" id="pvtb-faq-item-5">
+                                                                <button class="pvtb-faq-btn" id="pvtb-faq-btn-5"
+                                                                    aria-expanded="false"
+                                                                    aria-controls="pvtb-faq-panel-5">
+                                                                    <span class="pvtb-faq-label">
+                                                                        <span class="pvtb-step-num">5</span>
+                                                                        <span class="pvtb-step-title">Préparation à la vente</span>
+                                                                    </span>
+                                                                    <span class="pvtb-chevron" aria-hidden="true">
+                                                                        <svg viewBox="0 0 24 24" fill="none"
+                                                                            stroke="currentColor" stroke-width="2.5"
+                                                                            stroke-linecap="round"
+                                                                            stroke-linejoin="round">
+                                                                            <polyline points="6 9 12 15 18 9">
+                                                                            </polyline>
+                                                                        </svg>
+                                                                    </span>
+                                                                </button>
+                                                                <div class="pvtb-faq-panel" id="pvtb-faq-panel-5"
+                                                                    role="region" aria-labelledby="pvtb-faq-btn-5">
+                                                                    <p>Après récolte, les huîtres sont contrôlées, purifiées lorsque cela est requis, conditionnées et maintenues dans des conditions préservant leur fraîcheur.</p>
+                                                                    <p class="pvtb-badge">Étape 5
+                                                                    </p>
+                                                                </div>
+                                                            </li>
+
+                                                        </ul>
+                                                    </div>
+                                                    <h2>Ce qui caractérise la filière</h2>
+                                                    <ul>
+                                                        <li>L'élevage s'inscrit dans un cycle relativement long qui
+                                                            demande anticipation et régularité.</li>
+                                                        <li>La forme, la taille, le remplissage de la chair et l'aspect
+                                                            de la coquille participent à la qualité commerciale.</li>
+                                                        <li>Les manipulations sont adaptées aux saisons, à la croissance
+                                                            et aux conditions marines.</li>
+                                                        <li>La qualité sanitaire des eaux et la traçabilité des lots
+                                                            sont déterminantes pour la mise sur le marché.</li>
+                                                    </ul>
+                                                    <h2>Des atouts pour les territoires et les consommateurs</h2>
+                                                    <p>
+                                                        L'ostréiculture crée une valeur élevée à partir des ressources
+                                                        naturelles du milieu marin. Elle peut soutenir des emplois
+                                                        spécialisés, contribuer à l'attractivité gastronomique des
+                                                        territoires et stimuler des activités complémentaires comme les
+                                                        écloseries, les nurseries, la purification, le conditionnement,
+                                                        la logistique et la commercialisation. Une offre différenciée
+                                                        par l'origine, la taille ou le mode d'élevage peut répondre à
+                                                        plusieurs segments de marché.
+                                                    </p>
 
                                                 </div>
                                                 <div class="ParagraphEdito-buttons">
@@ -1322,7 +1851,7 @@ En mer ouverte, elles sont généralement élevées sur des cordes suspendues à
                                         </div>
 
 
-                                        
+
                                         <div class="ParagraphSectionTitle">
                                             <h2 id="paragraph-895"
                                                 class="ParagraphSectionTitle-container paragraph title--2--display">
@@ -1338,19 +1867,185 @@ En mer ouverte, elles sont généralement élevées sur des cordes suspendues à
                                                         Comprendre la filière
                                                     </h2>
                                                     <p>
-                                                        L'algoculture est la culture d'algues marines. Elle se distingue de la récolte d'algues sauvages, car le producteur choisit l'espèce, prépare le matériel de culture et suit la croissance jusqu'à la récolte. Selon l'espèce et le site, la production peut être réalisée sur des cordes, des filets, dans des bassins, en lagune ou dans des fermes en mer.
+                                                        L'algoculture est la culture d'algues marines. Elle se distingue
+                                                        de la récolte d'algues sauvages, car le producteur choisit
+                                                        l'espèce, prépare le matériel de culture et suit la croissance
+                                                        jusqu'à la récolte. Selon l'espèce et le site, la production
+                                                        peut être réalisée sur des cordes, des filets, dans des bassins,
+                                                        en lagune ou dans des fermes en mer.
                                                     </p>
-                                                    <p>Les algues constituent une matière première renouvelable qui peut être utilisée sous forme fraîche, séchée ou transformée.</p>
+                                                    <p>Les algues constituent une matière première renouvelable qui peut
+                                                        être utilisée sous forme fraîche, séchée ou transformée.</p>
                                                     <h2>Comment fonctionne la production</h2>
-<h2>Ce qui caractérise la filière</h2>
-<ul>
-    <li>Chaque espèce possède des exigences propres et des usages commerciaux différents.</li>
-    <li>La qualité du lavage, du séchage et du stockage influence fortement la couleur, la composition et la valeur du produit.</li>
-    <li>La traçabilité, l'hygiène et le contrôle des contaminants sont indispensables pour les usages alimentaires et les marchés exigeants.</li>
-    <li>La planification de la récolte doit tenir compte des saisons et de la variabilité naturelle du milieu.</li>
-</ul>
-<h2>Des atouts pour les territoires et les consommateurs</h2>
-<p>Les algues offrent de nombreux débouchés : alimentation humaine, alimentation animale, biostimulants pour l'agriculture, hydrocolloïdes, cosmétique, pharmacie, textile, biomatériaux et autres applications industrielles. Leur culture peut créer de nouvelles chaînes de valeur dans les territoires côtiers. Elle peut également être associée à certains élevages de poissons ou de coquillages dans des systèmes intégrés, lorsque les conditions techniques et environnementales sont réunies.</p>
+                                                    <div class="pvtb-faq-container">
+                                                        <h2 class="pvtb-faq-title"><span>🦪</span>
+                                                            Étapes de l'Algoculture</h2>
+                                                        <p class="pvtb-faq-subtitle">Cliquez sur
+                                                            chaque étape pour découvrir ce qui se
+                                                            passe.</p>
+
+                                                        <!-- FAQ list : 5 étapes -->
+                                                        <ul class="pvtb-faq-list" role="list">
+
+                                                            <!-- Étape 1 -->
+                                                            <li class="pvtb-faq-item pvtb-active" id="pvtb-faq-item-1">
+                                                                <button class="pvtb-faq-btn" id="pvtb-faq-btn-1"
+                                                                    aria-expanded="true"
+                                                                    aria-controls="pvtb-faq-panel-1">
+                                                                    <span class="pvtb-faq-label">
+                                                                        <span class="pvtb-step-num">1</span>
+                                                                        <span class="pvtb-step-title">Choix de l'espèce</span>
+                                                                    </span>
+                                                                    <span class="pvtb-chevron" aria-hidden="true">
+                                                                        <svg viewBox="0 0 24 24" fill="none"
+                                                                            stroke="currentColor" stroke-width="2.5"
+                                                                            stroke-linecap="round"
+                                                                            stroke-linejoin="round">
+                                                                            <polyline points="6 9 12 15 18 9">
+                                                                            </polyline>
+                                                                        </svg>
+                                                                    </span>
+                                                                </button>
+                                                                <div class="pvtb-faq-panel" id="pvtb-faq-panel-1"
+                                                                    role="region" aria-labelledby="pvtb-faq-btn-1">
+                                                                    <p>L'espèce est sélectionnée en fonction de la température, de la salinité, de la lumière, des nutriments disponibles et du marché visé.</p>
+                                                                    <p class="pvtb-badge">Étape 1
+                                                                    </p>
+                                                                </div>
+                                                            </li>
+
+                                                            <!-- Étape 2 -->
+                                                            <li class="pvtb-faq-item" id="pvtb-faq-item-2">
+                                                                <button class="pvtb-faq-btn" id="pvtb-faq-btn-2"
+                                                                    aria-expanded="false"
+                                                                    aria-controls="pvtb-faq-panel-2">
+                                                                    <span class="pvtb-faq-label">
+                                                                        <span class="pvtb-step-num">2</span>
+                                                                        <span class="pvtb-step-title">Préparation des plantules</span>
+                                                                    </span>
+                                                                    <span class="pvtb-chevron" aria-hidden="true">
+                                                                        <svg viewBox="0 0 24 24" fill="none"
+                                                                            stroke="currentColor" stroke-width="2.5"
+                                                                            stroke-linecap="round"
+                                                                            stroke-linejoin="round">
+                                                                            <polyline points="6 9 12 15 18 9">
+                                                                            </polyline>
+                                                                        </svg>
+                                                                    </span>
+                                                                </button>
+                                                                <div class="pvtb-faq-panel" id="pvtb-faq-panel-2"
+                                                                    role="region" aria-labelledby="pvtb-faq-btn-2">
+                                                                    <p>Des fragments ou de jeunes algues sont préparés en écloserie, en nurserie ou à partir de matériel biologique sélectionné et sain.</p>
+                                                                    <p class="pvtb-badge">Étape 2
+                                                                    </p>
+                                                                </div>
+                                                            </li>
+
+                                                            <!-- Étape 3 -->
+                                                            <li class="pvtb-faq-item" id="pvtb-faq-item-3">
+                                                                <button class="pvtb-faq-btn" id="pvtb-faq-btn-3"
+                                                                    aria-expanded="false"
+                                                                    aria-controls="pvtb-faq-panel-3">
+                                                                    <span class="pvtb-faq-label">
+                                                                        <span class="pvtb-step-num">3</span>
+                                                                        <span class="pvtb-step-title">Mise en culture</span>
+                                                                    </span>
+                                                                    <span class="pvtb-chevron" aria-hidden="true">
+                                                                        <svg viewBox="0 0 24 24" fill="none"
+                                                                            stroke="currentColor" stroke-width="2.5"
+                                                                            stroke-linecap="round"
+                                                                            stroke-linejoin="round">
+                                                                            <polyline points="6 9 12 15 18 9">
+                                                                            </polyline>
+                                                                        </svg>
+                                                                    </span>
+                                                                </button>
+                                                                <div class="pvtb-faq-panel" id="pvtb-faq-panel-3"
+                                                                    role="region" aria-labelledby="pvtb-faq-btn-3">
+                                                                    <p>Les plantules sont fixées sur des supports ou installées dans des bassins. La densité et la profondeur sont adaptées aux besoins de l'espèce.</p>
+                                                                    <p class="pvtb-badge">Étape 3
+                                                                    </p>
+                                                                </div>
+                                                            </li>
+
+                                                            <!-- Étape 4 -->
+                                                            <li class="pvtb-faq-item" id="pvtb-faq-item-4">
+                                                                <button class="pvtb-faq-btn" id="pvtb-faq-btn-4"
+                                                                    aria-expanded="false"
+                                                                    aria-controls="pvtb-faq-panel-4">
+                                                                    <span class="pvtb-faq-label">
+                                                                        <span class="pvtb-step-num">4</span>
+                                                                        <span class="pvtb-step-title">Suivi et récolte</span>
+                                                                    </span>
+                                                                    <span class="pvtb-chevron" aria-hidden="true">
+                                                                        <svg viewBox="0 0 24 24" fill="none"
+                                                                            stroke="currentColor" stroke-width="2.5"
+                                                                            stroke-linecap="round"
+                                                                            stroke-linejoin="round">
+                                                                            <polyline points="6 9 12 15 18 9">
+                                                                            </polyline>
+                                                                        </svg>
+                                                                    </span>
+                                                                </button>
+                                                                <div class="pvtb-faq-panel" id="pvtb-faq-panel-4"
+                                                                    role="region" aria-labelledby="pvtb-faq-btn-4">
+                                                                    <p>La croissance, l'état des supports et la qualité du milieu sont surveillés. La récolte intervient au moment offrant le meilleur équilibre entre rendement et qualité.</p>
+                                                                    <p class="pvtb-badge">Étape 4
+                                                                    </p>
+                                                                </div>
+                                                            </li>
+
+                                                            <!-- Étape 5 -->
+                                                            <li class="pvtb-faq-item" id="pvtb-faq-item-5">
+                                                                <button class="pvtb-faq-btn" id="pvtb-faq-btn-5"
+                                                                    aria-expanded="false"
+                                                                    aria-controls="pvtb-faq-panel-5">
+                                                                    <span class="pvtb-faq-label">
+                                                                        <span class="pvtb-step-num">5</span>
+                                                                        <span class="pvtb-step-title">Préparation et transformation</span>
+                                                                    </span>
+                                                                    <span class="pvtb-chevron" aria-hidden="true">
+                                                                        <svg viewBox="0 0 24 24" fill="none"
+                                                                            stroke="currentColor" stroke-width="2.5"
+                                                                            stroke-linecap="round"
+                                                                            stroke-linejoin="round">
+                                                                            <polyline points="6 9 12 15 18 9">
+                                                                            </polyline>
+                                                                        </svg>
+                                                                    </span>
+                                                                </button>
+                                                                <div class="pvtb-faq-panel" id="pvtb-faq-panel-5"
+                                                                    role="region" aria-labelledby="pvtb-faq-btn-5">
+                                                                    <p>Les algues sont triées, lavées, séchées ou stabilisées, puis conditionnées ou transformées en ingrédients et produits à plus forte valeur ajoutée.</p>
+                                                                    <p class="pvtb-badge">Étape 5
+                                                                    </p>
+                                                                </div>
+                                                            </li>
+
+                                                        </ul>
+                                                    </div>
+                                                    <h2>Ce qui caractérise la filière</h2>
+                                                    <ul>
+                                                        <li>Chaque espèce possède des exigences propres et des usages
+                                                            commerciaux différents.</li>
+                                                        <li>La qualité du lavage, du séchage et du stockage influence
+                                                            fortement la couleur, la composition et la valeur du
+                                                            produit.</li>
+                                                        <li>La traçabilité, l'hygiène et le contrôle des contaminants
+                                                            sont indispensables pour les usages alimentaires et les
+                                                            marchés exigeants.</li>
+                                                        <li>La planification de la récolte doit tenir compte des saisons
+                                                            et de la variabilité naturelle du milieu.</li>
+                                                    </ul>
+                                                    <h2>Des atouts pour les territoires et les consommateurs</h2>
+                                                    <p>Les algues offrent de nombreux débouchés : alimentation humaine,
+                                                        alimentation animale, biostimulants pour l'agriculture,
+                                                        hydrocolloïdes, cosmétique, pharmacie, textile, biomatériaux et
+                                                        autres applications industrielles. Leur culture peut créer de
+                                                        nouvelles chaînes de valeur dans les territoires côtiers. Elle
+                                                        peut également être associée à certains élevages de poissons ou
+                                                        de coquillages dans des systèmes intégrés, lorsque les
+                                                        conditions techniques et environnementales sont réunies.</p>
 
                                                 </div>
                                                 <div class="ParagraphEdito-buttons">
@@ -1388,19 +2083,185 @@ En mer ouverte, elles sont généralement élevées sur des cordes suspendues à
                                                         Comprendre la filière
                                                     </h2>
                                                     <p>
-                                                        La crevetticulture est l'élevage de crevettes dans des bassins aménagés à terre. Les installations peuvent être placées sous serre et intégrer des dispositifs d'aération, de filtration, de chauffage ou de recirculation de l'eau. La crevette blanche du Pacifique est l'une des espèces les plus utilisées dans les élevages modernes. Sa production exige une maîtrise précise de la température, de l'oxygène, de la qualité de l'eau, de l'alimentation et de la biosécurité.
-                                                     </p>
+                                                        La crevetticulture est l'élevage de crevettes dans des bassins
+                                                        aménagés à terre. Les installations peuvent être placées sous
+                                                        serre et intégrer des dispositifs d'aération, de filtration, de
+                                                        chauffage ou de recirculation de l'eau. La crevette blanche du
+                                                        Pacifique est l'une des espèces les plus utilisées dans les
+                                                        élevages modernes. Sa production exige une maîtrise précise de
+                                                        la température, de l'oxygène, de la qualité de l'eau, de
+                                                        l'alimentation et de la biosécurité.
+                                                    </p>
                                                     <h2>Comment fonctionne la production</h2>
-<h2>Ce qui caractérise la filière</h2>
-<ul>
-    <li>La qualité sanitaire des postlarves est un point de départ essentiel pour sécuriser l'élevage.</li>
-    <li>Les paramètres de l'eau doivent rester dans des plages adaptées à l'espèce pendant tout le cycle.</li>
-    <li>La biosécurité limite l'entrée et la propagation d'agents pathogènes entre les unités de production.</li>
-    <li>Les systèmes en recirculation ou de type biofloc peuvent réduire les renouvellements d'eau. Ils demandent une conduite technique rigoureuse.</li>
-    <li>L'énergie représente un enjeu important pour l'aération, le pompage et le maintien de la température.</li>
-</ul>
-<h2>Des atouts pour les territoires et les consommateurs</h2>
-<p>La crevetticulture peut fournir au marché une crevette locale, fraîche et traçable, tout en développant des compétences dans l'écloserie, la gestion de l'eau, la nutrition, la santé animale, l'énergie et la transformation. Elle ouvre aussi la voie à plusieurs présentations commerciales : crevettes entières, décortiquées, réfrigérées, congelées ou prêtes à cuisiner.</p>
+                                                    <div class="pvtb-faq-container">
+                                                        <h2 class="pvtb-faq-title"><span>🦪</span>
+                                                            Étapes de la Crevetticulture</h2>
+                                                        <p class="pvtb-faq-subtitle">Cliquez sur
+                                                            chaque étape pour découvrir ce qui se
+                                                            passe.</p>
+
+                                                        <!-- FAQ list : 5 étapes -->
+                                                        <ul class="pvtb-faq-list" role="list">
+
+                                                            <!-- Étape 1 -->
+                                                            <li class="pvtb-faq-item pvtb-active" id="pvtb-faq-item-1">
+                                                                <button class="pvtb-faq-btn" id="pvtb-faq-btn-1"
+                                                                    aria-expanded="true"
+                                                                    aria-controls="pvtb-faq-panel-1">
+                                                                    <span class="pvtb-faq-label">
+                                                                        <span class="pvtb-step-num">1</span>
+                                                                        <span class="pvtb-step-title">Postlarves</span>
+                                                                    </span>
+                                                                    <span class="pvtb-chevron" aria-hidden="true">
+                                                                        <svg viewBox="0 0 24 24" fill="none"
+                                                                            stroke="currentColor" stroke-width="2.5"
+                                                                            stroke-linecap="round"
+                                                                            stroke-linejoin="round">
+                                                                            <polyline points="6 9 12 15 18 9">
+                                                                            </polyline>
+                                                                        </svg>
+                                                                    </span>
+                                                                </button>
+                                                                <div class="pvtb-faq-panel" id="pvtb-faq-panel-1"
+                                                                    role="region" aria-labelledby="pvtb-faq-btn-1">
+                                                                    <p>De très jeunes crevettes, appelées postlarves, sont produites dans des écloseries spécialisées et contrôlées sur le plan sanitaire.</p>
+                                                                    <p class="pvtb-badge">Étape 1
+                                                                    </p>
+                                                                </div>
+                                                            </li>
+
+                                                            <!-- Étape 2 -->
+                                                            <li class="pvtb-faq-item" id="pvtb-faq-item-2">
+                                                                <button class="pvtb-faq-btn" id="pvtb-faq-btn-2"
+                                                                    aria-expanded="false"
+                                                                    aria-controls="pvtb-faq-panel-2">
+                                                                    <span class="pvtb-faq-label">
+                                                                        <span class="pvtb-step-num">2</span>
+                                                                        <span class="pvtb-step-title">Nurserie</span>
+                                                                    </span>
+                                                                    <span class="pvtb-chevron" aria-hidden="true">
+                                                                        <svg viewBox="0 0 24 24" fill="none"
+                                                                            stroke="currentColor" stroke-width="2.5"
+                                                                            stroke-linecap="round"
+                                                                            stroke-linejoin="round">
+                                                                            <polyline points="6 9 12 15 18 9">
+                                                                            </polyline>
+                                                                        </svg>
+                                                                    </span>
+                                                                </button>
+                                                                <div class="pvtb-faq-panel" id="pvtb-faq-panel-2"
+                                                                    role="region" aria-labelledby="pvtb-faq-btn-2">
+                                                                    <p>Une phase de nurserie permet d'acclimater les animaux, de renforcer leur robustesse et de préparer leur transfert vers les bassins de grossissement.</p>
+                                                                    <p class="pvtb-badge">Étape 2
+                                                                    </p>
+                                                                </div>
+                                                            </li>
+
+                                                            <!-- Étape 3 -->
+                                                            <li class="pvtb-faq-item" id="pvtb-faq-item-3">
+                                                                <button class="pvtb-faq-btn" id="pvtb-faq-btn-3"
+                                                                    aria-expanded="false"
+                                                                    aria-controls="pvtb-faq-panel-3">
+                                                                    <span class="pvtb-faq-label">
+                                                                        <span class="pvtb-step-num">3</span>
+                                                                        <span class="pvtb-step-title">Grossissement</span>
+                                                                    </span>
+                                                                    <span class="pvtb-chevron" aria-hidden="true">
+                                                                        <svg viewBox="0 0 24 24" fill="none"
+                                                                            stroke="currentColor" stroke-width="2.5"
+                                                                            stroke-linecap="round"
+                                                                            stroke-linejoin="round">
+                                                                            <polyline points="6 9 12 15 18 9">
+                                                                            </polyline>
+                                                                        </svg>
+                                                                    </span>
+                                                                </button>
+                                                                <div class="pvtb-faq-panel" id="pvtb-faq-panel-3"
+                                                                    role="region" aria-labelledby="pvtb-faq-btn-3">
+                                                                    <p>Les crevettes sont élevées à une densité adaptée. L'alimentation, l'oxygène, la température et les paramètres de l'eau sont suivis quotidiennement.</p>
+                                                                    <p class="pvtb-badge">Étape 3
+                                                                    </p>
+                                                                </div>
+                                                            </li>
+
+                                                            <!-- Étape 4 -->
+                                                            <li class="pvtb-faq-item" id="pvtb-faq-item-4">
+                                                                <button class="pvtb-faq-btn" id="pvtb-faq-btn-4"
+                                                                    aria-expanded="false"
+                                                                    aria-controls="pvtb-faq-panel-4">
+                                                                    <span class="pvtb-faq-label">
+                                                                        <span class="pvtb-step-num">4</span>
+                                                                        <span class="pvtb-step-title"> Gestion de l'eau</span>
+                                                                    </span>
+                                                                    <span class="pvtb-chevron" aria-hidden="true">
+                                                                        <svg viewBox="0 0 24 24" fill="none"
+                                                                            stroke="currentColor" stroke-width="2.5"
+                                                                            stroke-linecap="round"
+                                                                            stroke-linejoin="round">
+                                                                            <polyline points="6 9 12 15 18 9">
+                                                                            </polyline>
+                                                                        </svg>
+                                                                    </span>
+                                                                </button>
+                                                                <div class="pvtb-faq-panel" id="pvtb-faq-panel-4"
+                                                                    role="region" aria-labelledby="pvtb-faq-btn-4">
+                                                                    <p>Selon le système, l'eau est renouvelée, traitée ou partiellement réutilisée. L'aération et le contrôle des matières organiques maintiennent un milieu favorable.</p>
+                                                                    <p class="pvtb-badge">Étape 4
+                                                                    </p>
+                                                                </div>
+                                                            </li>
+
+                                                            <!-- Étape 5 -->
+                                                            <li class="pvtb-faq-item" id="pvtb-faq-item-5">
+                                                                <button class="pvtb-faq-btn" id="pvtb-faq-btn-5"
+                                                                    aria-expanded="false"
+                                                                    aria-controls="pvtb-faq-panel-5">
+                                                                    <span class="pvtb-faq-label">
+                                                                        <span class="pvtb-step-num">5</span>
+                                                                        <span class="pvtb-step-title">Récolte et froid</span>
+                                                                    </span>
+                                                                    <span class="pvtb-chevron" aria-hidden="true">
+                                                                        <svg viewBox="0 0 24 24" fill="none"
+                                                                            stroke="currentColor" stroke-width="2.5"
+                                                                            stroke-linecap="round"
+                                                                            stroke-linejoin="round">
+                                                                            <polyline points="6 9 12 15 18 9">
+                                                                            </polyline>
+                                                                        </svg>
+                                                                    </span>
+                                                                </button>
+                                                                <div class="pvtb-faq-panel" id="pvtb-faq-panel-5"
+                                                                    role="region" aria-labelledby="pvtb-faq-btn-5">
+                                                                    <p>À la taille commerciale, les crevettes sont récoltées rapidement, refroidies, triées et conditionnées afin de préserver leur fraîcheur et leur texture.</p>
+                                                                    <p class="pvtb-badge">Étape 5
+                                                                    </p>
+                                                                </div>
+                                                            </li>
+
+                                                        </ul>
+                                                    </div>
+                                                    <h2>Ce qui caractérise la filière</h2>
+                                                    <ul>
+                                                        <li>La qualité sanitaire des postlarves est un point de départ
+                                                            essentiel pour sécuriser l'élevage.</li>
+                                                        <li>Les paramètres de l'eau doivent rester dans des plages
+                                                            adaptées à l'espèce pendant tout le cycle.</li>
+                                                        <li>La biosécurité limite l'entrée et la propagation d'agents
+                                                            pathogènes entre les unités de production.</li>
+                                                        <li>Les systèmes en recirculation ou de type biofloc peuvent
+                                                            réduire les renouvellements d'eau. Ils demandent une
+                                                            conduite technique rigoureuse.</li>
+                                                        <li>L'énergie représente un enjeu important pour l'aération, le
+                                                            pompage et le maintien de la température.</li>
+                                                    </ul>
+                                                    <h2>Des atouts pour les territoires et les consommateurs</h2>
+                                                    <p>La crevetticulture peut fournir au marché une crevette locale,
+                                                        fraîche et traçable, tout en développant des compétences dans
+                                                        l'écloserie, la gestion de l'eau, la nutrition, la santé
+                                                        animale, l'énergie et la transformation. Elle ouvre aussi la
+                                                        voie à plusieurs présentations commerciales : crevettes
+                                                        entières, décortiquées, réfrigérées, congelées ou prêtes à
+                                                        cuisiner.</p>
                                                 </div>
                                                 <div class="ParagraphEdito-buttons">
                                                 </div>
@@ -1421,11 +2282,11 @@ En mer ouverte, elles sont généralement élevées sur des cordes suspendues à
                                             </div>
                                         </div>
 
-                                       
 
-                                        
 
-                                        
+
+
+
 
 
                                     </div>
@@ -2937,6 +3798,79 @@ En mer ouverte, elles sont généralement élevées sur des cordes suspendues à
     <script src="../../../core/misc/statesc1fc.js?v=11.4.7"></script>
     <script src="../../../modules/contrib/webform/js/webform.statesda5a.js?tmlhth"></script>
     <script src="../../../modules/contrib/webform/js/webform.formda5a.js?tmlhth"></script>
+
+
+    <script>
+        (function () {
+            const faqItems = document.querySelectorAll('.pvtb-faq-item');
+
+            // close all items except optionally one
+            function closeAll(exceptItem = null) {
+                faqItems.forEach(item => {
+                    if (item === exceptItem) return;
+                    item.classList.remove('pvtb-active');
+                    const btn = item.querySelector('.pvtb-faq-btn');
+                    if (btn) btn.setAttribute('aria-expanded', 'false');
+                });
+            }
+
+            // toggle a specific item
+            function toggleItem(item) {
+                const btn = item.querySelector('.pvtb-faq-btn');
+                const isActive = item.classList.contains('pvtb-active');
+
+                if (isActive) {
+                    // collapse it
+                    item.classList.remove('pvtb-active');
+                    if (btn) btn.setAttribute('aria-expanded', 'false');
+                } else {
+                    // close others first (accordion behaviour)
+                    closeAll(item);
+                    // open this one
+                    item.classList.add('pvtb-active');
+                    if (btn) {
+                        btn.setAttribute('aria-expanded', 'true');
+                        btn.focus();
+                    }
+                }
+            }
+
+            // attach event listeners to each FAQ button
+            faqItems.forEach(item => {
+                const btn = item.querySelector('.pvtb-faq-btn');
+                if (!btn) return;
+
+                btn.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    toggleItem(item);
+                });
+
+                // keyboard navigation: Up / Down arrows to move between steps
+                btn.addEventListener('keydown', (e) => {
+                    const key = e.key;
+                    if (key !== 'ArrowUp' && key !== 'ArrowDown') return;
+
+                    e.preventDefault();
+                    const itemsArray = Array.from(faqItems);
+                    const currentIndex = itemsArray.indexOf(item);
+                    let nextIndex;
+
+                    if (key === 'ArrowDown') {
+                        nextIndex = (currentIndex + 1) % itemsArray.length;
+                    } else {
+                        // ArrowUp
+                        nextIndex = (currentIndex - 1 + itemsArray.length) % itemsArray.length;
+                    }
+
+                    const nextItem = itemsArray[nextIndex];
+                    if (nextItem) {
+                        const nextBtn = nextItem.querySelector('.pvtb-faq-btn');
+                        if (nextBtn) nextBtn.focus();
+                    }
+                });
+            });
+        })();
+    </script>
 
 </body>
 
