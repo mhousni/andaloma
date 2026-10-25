@@ -1,0 +1,33 @@
+TODO — fix scrolling when opening anda-aquaculture.html#anda-chiffres
+
+1. Fix the hash-scroll helper in anda-aquaculture.html (around line 4058).
+   - Do not temporarily remove and then re-add the `is-app-loading` class around
+     `scrollIntoView()`.
+   - Wait until the AppLoader has actually released: the root must no longer
+     have `is-app-loading`, and `#AppLoader` must be removed, before jumping to
+     the hash target.
+   - Keep one retry path after loader release. Avoid polling or retry callbacks
+     that can perform the jump while the scroll lock is still active.
+
+2. Remove the separate 3-second hash-scroll script near the end of
+   anda-aquaculture.html (around line 4325). It independently calls
+   `scrollIntoView()` and can race the loader-aware hash handler.
+
+3. Verify both ways of reaching the section:
+   - Open /anda-aquaculture.html#anda-chiffres directly.
+   - Follow the page menu link to #anda-chiffres.
+   In both cases, wait for the loader to disappear, then confirm normal page
+   scrolling works and the target section remains in view.
+
+4. If scrolling is still locked after steps 1–3, check the browser console:
+   - If `document.documentElement.classList.contains('is-app-loading')` is true,
+     the loader lock has not been released.
+   - If `window.lenis?.isStopped` is true while the loading class is absent,
+     inspect the `SCROLL_STOP` / `SCROLL_START` event handling in mainda5a.js
+     and ensure each stop has a corresponding start.
+
+Notes from the current page inspection:
+- mainda5a.js is active once (around line 3981); the other two references are
+  commented out. Do not remove another copy as the initial fix.
+- The likely conflict is the hash-scroll helper re-locking during AppLoader
+  startup, plus the second independent delayed hash jump.
