@@ -1,0 +1,1634 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr" prefix="og: https://ogp.me/ns#">
+
+<head>
+    <meta charset="utf-8" />
+    <link rel="shortlink" href="index.html" />
+    <link rel="canonical" href="index.html" />
+    <meta name="MobileOptimized" content="width" />
+    <meta name="HandheldFriendly" content="true" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script
+        type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Homepage"}]}</script>
+    <link rel="icon" href="themes/custom/sao_tome/favicon.svg" type="image/png" />
+    <link rel="alternate" hreflang="fr" href="index.html" />
+    <link rel="alternate" hreflang="ar" href="ar.html" />
+    <link rel="alternate" hreflang="en" href="en.html" />
+
+    <title>Agence nationale pour le développement de l'aquaculture | ANDA</title>
+    <link rel="stylesheet" media="all" href="modules/contrib/webform/css/webform.element.flexboxda5a.css?tmlhth" />
+    <link rel="stylesheet" media="all" href="core/misc/components/resize.moduleda5a.css?tmlhth" />
+    <link rel="stylesheet" media="all" href="core/misc/components/progress.moduleda5a.css?tmlhth" />
+    <link rel="stylesheet" media="all" href="core/misc/components/ajax-progress.moduleda5a.css?tmlhth" />
+    <link rel="stylesheet" media="all"
+        href="modules/contrib/webform/css/webform.element.details.toggleda5a.css?tmlhth" />
+    <link rel="stylesheet" media="all" href="modules/contrib/webform/css/webform.element.messageda5a.css?tmlhth" />
+    <link rel="stylesheet" media="all" href="modules/contrib/webform/css/webform.formda5a.css?tmlhth" />
+    <link rel="stylesheet" media="all" href="modules/contrib/paragraphs/css/paragraphs.unpublishedda5a.css?tmlhth" />
+    <link rel="stylesheet" media="all" href="modules/contrib/webform/css/webform.ajaxda5a.css?tmlhth" />
+    <link rel="stylesheet" media="all" href="themes/custom/sao_tome/assets/css/screenda5a.css?tmlhth" />
+    <link rel="stylesheet" media="print" href="themes/custom/sao_tome/assets/css/printda5a.css?tmlhth" />
+    <link rel="stylesheet" media="all" href="themes/contrib/gin/dist/css/components/ajaxda5a.css?tmlhth" />
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="/themes/custom/sao_tome/assets/css/terry.css">
+
+    <link rel="stylesheet" href="themes/custom/sao_tome/assets/css/slidey.css">
+     <link rel="stylesheet" href="themes/custom/sao_tome/assets/css/gal.css">
+
+<link rel="stylesheet" href="themes/custom/sao_tome/assets/css/staty.css">
+
+
+    <style>
+        html.is-app-loading,
+        html.is-app-loading body {
+            overflow: hidden !important;
+            overscroll-behavior: none;
+            /* iOS : overflow hidden seul ne suffit pas toujours à bloquer
+                   le scroll tactile. */
+            touch-action: none;
+        }
+
+        #AppLoader {
+            position: fixed;
+            inset: 0;
+            z-index: 10000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #38492A;
+            opacity: 1;
+            transition: opacity .5s ease-out;
+        }
+
+        html:not(.is-app-loading) #AppLoader {
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        .AppLoader-logo {
+            position: relative;
+            width: 600px;
+            max-width: 45vw;
+            aspect-ratio: 165 / 65;
+            -webkit-mask: url("themes/custom/sao_tome/assets/img/anda.png") center / contain no-repeat;
+            mask: url("themes/custom/sao_tome/assets/img/anda.png") center / contain no-repeat;
+        }
+
+        .AppLoader-logo>span {
+            position: absolute;
+            inset: 0;
+            background-color: #fff;
+        }
+
+        .AppLoader-logo-base {
+            opacity: .2;
+        }
+
+        /* Remplissage bas -> haut, piloté par AppLoader. */
+        .AppLoader-logo-fill {
+            clip-path: inset(calc(100% - var(--app-loader-progress, 0) * 100%) 0 0 0);
+        }
+
+        /* Fallback si mask-image n'est pas supporté : logo plein. */
+        @supports not ((mask: url("")) or (-webkit-mask: url(""))) {
+            .AppLoader-logo {
+                background: url("themes/custom/sao_tome/assets/img/logo%402x.png") center / contain no-repeat;
+            }
+
+            .AppLoader-logo>span {
+                display: none;
+            }
+        }
+    </style>
+    <script>
+        (function (d) {
+            var root = d.documentElement;
+            if ('scrollRestoration' in history) {
+                history.scrollRestoration = 'manual';
+            }
+            root.classList.add('is-app-loading');
+            // Filet de sécurité si main.js ne s'exécute jamais (erreur JS,
+            // asset KO) : AppLoader a son propre kill switch à 10s, celui-ci
+            // ne sert que s'il n'a jamais tourné.
+            setTimeout(function () {
+                root.classList.remove('is-app-loading');
+                var el = d.getElementById('AppLoader');
+                if (el) el.remove();
+            }, 12000);
+        })(document);
+    </script>
+    <style>
+        .ScrollButton {
+            position: absolute;
+            bottom: -50px;
+            font-size: 19px;
+            left: 50%;
+            opacity: 1;
+            pointer-events: auto;
+            -webkit-transform: translate(-50%, 0);
+            -ms-transform: translate(-50%, 0);
+            transform: translate(-50%, 0);
+            color: var(--color-white);
+            padding-bottom: calc(8rem + var(--gap-s));
+            -webkit-transition: opacity 0.2s cubic-bezier(0.4, 0.64, 0.68, 1);
+            transition: opacity 0.2s cubic-bezier(0.4, 0.64, 0.68, 1);
+        }
+    </style>
+
+    <style>
+        #block-sao-tome-main-menu .menu-main li button::before {
+            content: none;
+        }
+    </style>
+<style>
+        #block-sao-tome-main-menu .menu-main li button::before {
+            content: none;
+        }
+    </style>
+</head>
+
+<body class="is-front node-type-homepage" data-barba="wrapper">
+
+
+    <div id="AppLoader" aria-hidden="true">
+        <div class="AppLoader-logo">
+            <span class="AppLoader-logo-base"></span>
+            <span class="AppLoader-logo-fill"></span>
+        </div>
+    </div>
+
+    <div class="dialog-off-canvas-main-canvas" data-off-canvas-main-canvas>
+
+
+        <div id="Page">
+            <div id="Page-body">
+
+                <header class="Header" data-header-component="main">
+                    <div class="Header-container" data-header-component="container">
+                        <div class="Header-content" data-header-component="content">
+                            <div class="Navbar" data-navbar-component="outer">
+                                <div class="Navbar-inner" data-navbar-component="inner">
+                                    <div id="block-sao-tome-site-branding">
+
+
+                                        <a href="/index.html" rel="home" class="logo">
+                                            <img src="themes/custom/sao_tome/assets/img/anda.png" alt="site branding"
+                                                width="200" height="65">
+
+                                        </a>
+                                    </div>
+
+                                    <div class="Navbar-content" data-burger-component="root">
+                                        <div class="Navbar-navigations" data-burger-component="navigations">
+
+                                            <nav id="block-sao-tome-main-menu" aria-label="Menu principal">
+
+
+
+
+
+                                                <ul class="menu-main" >
+
+
+
+                                                    <li class="menu-item">
+                                                        <button class="menu-link" aria-controls="10">
+                                                            <span>Géoportail</span>
+                                                        </button>
+                                                    </li>
+
+
+
+                                                    <li class="menu-item">
+                                                        <button class="menu-link" aria-expanded="false"
+                                                            aria-controls="11">
+                                                            <span>AquaInvest</span>
+                                                        </button>
+                                                    </li>
+
+
+
+                                                    <li class="menu-item">
+                                                        <button class="menu-link" aria-expanded="false"
+                                                            aria-controls="12">
+                                                            <span>Réseau professionnel</span>
+                                                        </button>
+                                                    </li>
+
+                                                   
+
+
+                                                </ul>
+
+
+
+                                            </nav>
+
+                                            <div class="language-switcher-language-url"
+                                                id="block-sao-tome-selecteurdelangue" role="navigation"
+                                                data-language-switcher-component="container"
+                                                data-burger-component="selector-language">
+                                                <button id="language-switcher" type="button" aria-haspopup="true"
+                                                    aria-controls="language-menu" aria-expanded="false"
+                                                    aria-label="Changer de langue"
+                                                    data-language-switcher-component="button">
+                                                    fr
+                                                </button>
+                                                <ul id="language-menu" role="menu" aria-labelledby="language-switcher">
+                                                    <li role="none">
+                                                        <a href="/index.html" class="language-link is-active"
+                                                            hreflang="fr" data-drupal-link-system-path="&lt;front&gt;"
+                                                            aria-current="page">fr</a>
+                                                    </li>
+                                                    <li role="none">
+                                                        <a class="language-link" hreflang="ar"
+                                                            data-drupal-link-system-path="&lt;front&gt;">ar</a>
+                                                    </li>
+                                                    <li role="none">
+                                                        <a  class="language-link" hreflang="en"
+                                                            data-drupal-link-system-path="&lt;front&gt;">en</a>
+                                                    </li>
+                                                    
+
+                                                </ul>
+
+                                            </div>
+                                            <div class="icon" style="margin-left: 20px; z-index: 3;">
+                                                <img width="25px" src="themes/custom/sao_tome/assets/img/profil.png"  alt="">
+                                            </div>
+
+                                        </div>
+                                        <button data-burger-component="trigger" class="Burger-trigger"
+                                            aria-expanded="false" aria-controls="burger-content" aria-haspopup="true"
+                                            aria-label="Ouvrir le menu">
+                                        </button>
+                                        <div id="burger-content" class="Burger-content" data-burger-component="content"
+                                            aria-hidden="true" inert aria-labelledby="burger-title">
+                                            <div class="Burger-content-body">
+                                                <h2 id="burger-title" class="visually-hidden">Menu</h2>
+                                                <button data-burger-component="close" class="Burger-close"
+                                                    aria-label="Fermer le menu"></button>
+                                                <div class="Burger-content-body-inner"
+                                                    data-burger-component="inner-container">
+                                                    <div class="Burger-content-body-inner-container" data-lenis-prevent
+                                                        data-scroll-animate-component="content">
+                                                        <nav id="block-sao-tome-main-menu-burger"
+                                                            aria-label="Menu principal">
+
+
+
+
+                                                            <ul class="menu-main" data-drupal-selector="menu-main"
+                                                                data-menu-burger-component="container">
+                                                                <li class="menu-main__item menu-main__item--section">
+                                                                    <!--<span class="menu-main__title">AGENCE</span>-->
+                                                                    <ul class="menu-submenu menu-submenu--level-1">
+                                                                        <li
+                                                                            class="menu-main__item menu-item--level-1 has-children">
+                                                                            <button
+                                                                                class="menu-main__link menu-main__title"
+                                                                                aria-expanded="false"
+                                                                                aria-controls="burger-16">
+                                                                                AGENCE
+                                                                            </button>
+                                                                            <div data-a11y-disclosure-navigation-component="panel"
+                                                                                class="menu-burger-panel" id="burger-16"
+                                                                                aria-hidden="true">
+                                                                                <ul
+                                                                                    class="menu-submenu menu-submenu--level-2">
+                                                                                    <li
+                                                                                        class="menu-main__item menu-item--level-2 menu-item--self-link">
+                                                                                        <a href="/anda-about.html#anda-presentation"
+                                                                                            class="menu-main__link body--bold"
+                                                                                            data-label="Nature"
+                                                                                            data-drupal-link-system-path="node/3">Présentation
+                                                                                            de l’ANDA</a>
+                                                                                    </li>
+                                                                                    <li
+                                                                                        class="menu-main__item menu-item--level-2">
+                                                                                        <a href="/anda-about.html#anda-missions"
+                                                                                            class="menu-main__link body--bold"
+                                                                                            data-label="Un éden insulaire"
+                                                                                            data-drupal-link-system-path="node/38">Missions</a>
+                                                                                    </li>
+
+                                                                                    <li
+                                                                                        class="menu-main__item menu-item--level-2">
+                                                                                        <a href="/anda-about.html#anda-governance"
+                                                                                            class="menu-main__link body--bold"
+                                                                                            data-label="Une flore exceptionnelle"
+                                                                                            data-drupal-link-system-path="node/40">Gouvernance</a>
+                                                                                    </li>
+
+                                                                                    <li
+                                                                                        class="menu-main__item menu-item--level-2">
+                                                                                        <a href="/anda-about.html#anda-equipe"
+                                                                                            class="menu-main__link body--bold"
+                                                                                            data-label="Une flore luxuriante"
+                                                                                            data-drupal-link-system-path="node/39">Equipe</a>
+                                                                                    </li>
+
+                                                                                    <li
+                                                                                        class="menu-main__item menu-item--level-2">
+                                                                                        <a href="#"
+                                                                                            class="menu-main__link body--bold"
+                                                                                            data-label="Un trésor bleu du golfe de Guinée"
+                                                                                            data-drupal-link-system-path="node/44">Carrière</a>
+                                                                                    </li>
+
+
+
+                                                                                </ul>
+                                                                            </div>
+                                                                        </li>
+
+
+                                                                    </ul>
+
+                                                                </li>
+                                                                <li class="menu-main__item menu-main__item--section">
+                                                                    <!--<span class="menu-main__title">AQUACULTURE AU MAROC</span>-->
+                                                                    <ul class="menu-submenu menu-submenu--level-1">
+                                                                        <li
+                                                                            class="menu-main__item menu-item--level-1 has-children">
+                                                                            <button
+                                                                                class="menu-main__link menu-main__title"
+                                                                                aria-expanded="false"
+                                                                                aria-controls="burger-17">
+                                                                                AQUACULTURE AU MAROC
+                                                                            </button>
+                                                                            <div data-a11y-disclosure-navigation-component="panel"
+                                                                                class="menu-burger-panel" id="burger-17"
+                                                                                aria-hidden="true">
+                                                                                <ul
+                                                                                    class="menu-submenu menu-submenu--level-2">
+                                                                                    <li
+                                                                                        class="menu-main__item menu-item--level-2 menu-item--self-link">
+                                                                                        <a href="/anda-aquaculture.html#anda-chiffres"
+                                                                                            class="menu-main__link body--bold"
+                                                                                            data-label="Culture et patrimoine"
+                                                                                            data-drupal-link-system-path="node/4">Secteur
+                                                                                            en chiffres</a>
+                                                                                    </li>
+                                                                                    <li
+                                                                                        class="menu-main__item menu-item--level-2">
+                                                                                        <a href="/anda-aquaculture.html#anda-filieres"
+                                                                                            class="menu-main__link body--bold"
+                                                                                            data-label="Un voyage de saveurs tropicales"
+                                                                                            data-drupal-link-system-path="node/43">Filières
+                                                                                            aquacoles</a>
+                                                                                    </li>
+
+                                                                                    <li
+                                                                                        class="menu-main__item menu-item--level-2">
+                                                                                        <a href="/anda-aquaculture.html#anda-territoires"
+                                                                                            class="menu-main__link body--bold"
+                                                                                            data-label="Les ingrédients locaux"
+                                                                                            data-drupal-link-system-path="node/41">Territoires
+                                                                                            aquacoles </a>
+                                                                                    </li>
+
+                                                                                    <li
+                                                                                        class="menu-main__item menu-item--level-2">
+                                                                                        <a href="#"
+                                                                                            class="menu-main__link body--bold"
+                                                                                            data-label="Les plats traditionnels"
+                                                                                            data-drupal-link-system-path="node/42">Programmes
+                                                                                            et partenariats</a>
+                                                                                    </li>
+
+
+                                                                                </ul>
+                                                                            </div>
+                                                                        </li>
+
+                                                                    </ul>
+
+                                                                </li>
+                                                                <li class="menu-main__item menu-main__item--section">
+                                                                    <!--<span class="menu-main__title">AQUACULTURE AU MAROC</span>-->
+                                                                    <ul class="menu-submenu menu-submenu--level-1">
+                                                                        <li
+                                                                            class="menu-main__item menu-item--level-1 ">
+                                                                            <button
+                                                                                class="menu-main__link menu-main__title title-3"
+                                                                                aria-expanded="false"
+                                                                                aria-controls="burger-17">
+                                                                                INVESTIR
+                                                                            </button>
+                                                                            
+                                                                        </li>
+
+                                                                    </ul>
+
+                                                                </li>
+                                                                <li class="menu-main__item menu-main__item--section">
+                                                                    <!--<span class="menu-main__title">AQUACULTURE AU MAROC</span>-->
+                                                                    <ul class="menu-submenu menu-submenu--level-1">
+                                                                        <li
+                                                                            class="menu-main__item menu-item--level-1">
+                                                                            <button
+                                                                                class="menu-main__link menu-main__title title-3"
+                                                                                aria-expanded="false"
+                                                                                aria-controls="burger-17">
+                                                                                SERVICES EN LIGNE
+                                                                            </button>
+                                                                           
+                                                                        </li>
+
+                                                                    </ul>
+
+                                                                </li>
+                                                                <li class="menu-main__item menu-main__item--section">
+                                                                    <!--<span class="menu-main__title">AQUACULTURE AU MAROC</span>-->
+                                                                    <ul class="menu-submenu menu-submenu--level-1">
+                                                                        <li
+                                                                            class="menu-main__item menu-item--level-1">
+                                                                            <button
+                                                                                class="menu-main__link menu-main__title title-3"
+                                                                                aria-expanded="false"
+                                                                                aria-controls="burger-17">
+                                                                                PUBLICATIONS
+                                                                            </button>
+                                                                            
+                                                                        </li>
+
+                                                                    </ul>
+
+                                                                </li>
+                                                                <li class="menu-main__item menu-main__item--section">
+                                                                    <!--<span class="menu-main__title">AQUACULTURE AU MAROC</span>-->
+                                                                    <ul class="menu-submenu menu-submenu--level-1">
+                                                                        <li
+                                                                            class="menu-main__item menu-item--level-1">
+                                                                            <button
+                                                                                class="menu-main__link menu-main__title title-3"
+                                                                                aria-expanded="false"
+                                                                                aria-controls="burger-17">
+                                                                                ACTUALITÉS & AGENDA
+                                                                            </button>
+                                                                           
+                                                                        </li>
+
+                                                                    </ul>
+
+                                                                </li>
+                                                                <li class="menu-main__item menu-main__item--section">
+                                                                    <!--<span class="menu-main__title">AQUACULTURE AU MAROC</span>-->
+                                                                    <ul class="menu-submenu menu-submenu--level-1">
+                                                                        <li
+                                                                            class="menu-main__item menu-item--level-1">
+                                                                            <button
+                                                                                class="menu-main__link menu-main__title title-3"
+                                                                                aria-expanded="false"
+                                                                                aria-controls="burger-17">
+                                                                                CONTACT
+                                                                            </button>
+                                                                          
+                                                                        </li>
+
+                                                                    </ul>
+
+                                                                </li>
+
+                                                            </ul>
+
+
+
+
+                                                        </nav>
+
+                                                        <div class="Burger-content-footer">
+                                                            <div class="Burger-content-footer-container">
+                                                                <nav aria-labelledby="block-sao-tome-pieddepage-2-menu"
+                                                                    id="block-sao-tome-pieddepage-2">
+
+                                                                    <h2 class="visually-hidden"
+                                                                        id="block-sao-tome-pieddepage-2-menu">Pied de
+                                                                        page</h2>
+
+
+
+
+                                                                    <ul data-region="header" class="menu menu-level-0">
+
+                                                                        <li
+                                                                            class="menu-item menu-item--expanded menu-item--active-trail">
+                                                                            <span>Liens Utiles</span>
+
+
+                                                                            <div
+                                                                                class="menu_link_content menu-link-contentfooter view-mode-default menu-dropdown menu-dropdown-0 menu-type-default">
+
+                                                                                <ul class="menu menu-level-1">
+
+                                                                                    <li class="menu-item">
+
+
+
+                                                                                        <a href="/anda-presentation.html"
+                                                                                            title="">Présentation
+                                                                                            de l’ANDA</a>
+                                                                                        <div
+                                                                                            class="menu_link_content menu-link-contentfooter view-mode-default menu-dropdown menu-dropdown-1 menu-type-default">
+
+                                                                                        </div>
+
+
+
+                                                                                    </li>
+
+                                                                                    <li class="menu-item">
+
+
+
+                                                                                        <a href="/anda-filieres-aquacoles.html"
+                                                                                            title="">Filières
+                                                                                            Aquacoles</a>
+
+
+                                                                                        <div
+                                                                                            class="menu_link_content menu-link-contentfooter view-mode-default menu-dropdown menu-dropdown-1 menu-type-default">
+
+                                                                                        </div>
+
+
+
+                                                                                    </li>
+
+                                                                                    <li
+                                                                                        class="menu-item menu-item--active-trail">
+
+
+
+                                                                                        <a href="#" title="Contact"
+                                                                                            data-dialog-component="global_opener"
+                                                                                            data-dialog-id="contact">Publications</a>
+
+
+                                                                                        <div
+                                                                                            class="menu_link_content menu-link-contentfooter view-mode-default menu-dropdown menu-dropdown-1 menu-type-default">
+
+                                                                                        </div>
+
+
+
+                                                                                    </li>
+                                                                                </ul>
+
+
+
+                                                                            </div>
+
+
+
+                                                                        </li>
+
+                                                                        <li class="menu-item menu-item--expanded">
+                                                                            <span>Informations légales</span>
+
+
+                                                                            <div
+                                                                                class="menu_link_content menu-link-contentfooter view-mode-default menu-dropdown menu-dropdown-0 menu-type-default">
+
+                                                                                <ul class="menu menu-level-1">
+
+                                                                                    <li class="menu-item">
+
+
+
+                                                                                        <a href="#"
+                                                                                            title="Politique de confidentialité">Politique
+                                                                                            de confidentialité</a>
+
+
+                                                                                        <div
+                                                                                            class="menu_link_content menu-link-contentfooter view-mode-default menu-dropdown menu-dropdown-1 menu-type-default">
+
+                                                                                        </div>
+
+
+
+                                                                                    </li>
+
+                                                                                    <li class="menu-item">
+
+
+
+                                                                                        <a href="#"
+                                                                                            title="Politique de cookies">Politique
+                                                                                            de cookies</a>
+
+
+                                                                                        <div
+                                                                                            class="menu_link_content menu-link-contentfooter view-mode-default menu-dropdown menu-dropdown-1 menu-type-default">
+
+                                                                                        </div>
+
+
+
+                                                                                    </li>
+                                                                                </ul>
+
+
+
+                                                                            </div>
+
+
+
+                                                                        </li>
+                                                                    </ul>
+
+
+                                                                </nav>
+
+                                                                <div class="Burger-content-footer-rs"
+                                                                    data-burger-component="rs">
+                                                                    <button
+                                                                        class="button button--primary button--primary--light">
+                                                                        <span class="button-container">
+                                                                            <span class="button-label">Nous
+                                                                                contacter</span>
+                                                                        </span>
+                                                                    </button>
+                                                                    <nav aria-labelledby="block-sao-tome-reseauxsociaux-2-menu"
+                                                                        id="block-sao-tome-reseauxsociaux-2">
+
+                                                                        <h2 class="visually-hidden"
+                                                                            id="block-sao-tome-reseauxsociaux-2-menu">
+                                                                            Réseaux sociaux</h2>
+
+
+
+                                                                        <ul>
+                                                                            <li>
+                                                                                <a
+                                                                                    href="https://www.facebook.com/">Facebook</a>
+                                                                            </li>
+                                                                            <li>
+                                                                                <a
+                                                                                    href="https://www.instagram.com/">Instagram</a>
+                                                                            </li>
+                                                                            <li>
+                                                                                <a
+                                                                                    href="https://www.youtube.com/">Youtube</a>
+                                                                            </li>
+                                                                        </ul>
+
+
+
+                                                                    </nav>
+
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </header>
+
+                <main id="Main-wrapper">
+                    <div>
+
+                    </div>
+
+
+
+                    <div class="Front-wrapper">
+                        <div>
+                            <div id="block-sao-tome-content">
+
+
+                                <section class="Homepage node">
+
+
+                                    <header class="ParagraphHeaderHP" data-header-homepage-component="container">
+                                        <div class="ParagraphHeaderHP-screen--1"
+                                            data-header-homepage-component="screen-1">
+                                            <div class="ParagraphHeaderHP-slogan">
+                                                <div class="ParagraphHeaderHP-slogan-container">
+
+                                                    <!--<img src="themes/custom/sao_tome/assets/img/anda.png" alt="site branding" class="sublogo" width="200" height="65">-->
+
+                                                </div>
+                                            </div>
+
+                                            <button class="ScrollButton font--tag"
+                                                data-header-homepage-component="button">
+                                                J&#039;explore
+                                            </button>
+                                        </div>
+                                        <div class="ParagraphHeaderHP-media" data-header-homepage-component="media">
+
+
+                                            <!--data-player-src="https://player.vimeo.com/external/1123487243.m3u8?s=03111cd1b925cbe2fb9bb3187a7fbee2657a4416&amp;logging=false"
+data-player-provider="hls" data-player-variant="autoplay"-->
+
+                                            <div class="MediaVideoStreaming media" data-player-component="container"
+                                                id="MediaVideoStreaming--10">
+                                                <video style="clip-path: inset(2px 4px);"
+                                                    src="themes/custom/sao_tome/assets/video/ANDA-v-fr.mp4" playsinline
+                                                    autoplay muted loop
+                                                    poster="themes/custom/sao_tome/assets/pics/01.png"></video>
+                                            </div>
+
+                                        </div>
+                                        <div class="ParagraphHeaderHP-body" data-header-homepage-component="body">
+                                            <span class="ParagraphHeaderHP-body-welcome"
+                                                data-header-homepage-component="welcome"
+                                                data-text-resizing-overflow>Bienvenue</span>
+                                            <div class="ParagraphHeaderHP-body-top"
+                                                data-header-homepage-component="body-top">
+                                                <h1 class="ParagraphHeaderHP-body-title title--1">Présentation de l'ANDA
+                                                </h1>
+
+                                            </div>
+                                            <div class="ParagraphHeaderHP-body-text text-content">
+                                                <p class="text-align-center" style="text-align:justify;">Créée en 2011
+                                                    dans le cadre de la stratégie
+                                                    nationale Halieutis, l’Agence Nationale pour le Développement de
+                                                    l’Aquaculture (ANDA) est l’établissement public chargé d’accompagner
+                                                    le développement de l’aquaculture marine au Maroc. <br>
+                                                    Placée sous la tutelle de l’autorité gouvernementale chargée de la
+                                                    Pêche maritime, l’ANDA œuvre à construire une aquaculture durable,
+                                                    compétitive et créatrice de valeur, capable de contribuer pleinement
+                                                    à la croissance de l’économie bleue, à la création d’emplois et au
+                                                    développement des territoires.<br><strong>
+                                                    </strong></p>
+
+                                            </div>
+                                        </div>
+                                    </header>
+
+
+                                    <div class="Homepage-content">
+
+
+                                       
+
+
+                                        <section class="anda-stats">
+                                        <div class="head">
+                                            
+                                            <div class="ParagraphSpotlightContent-content paragraph">
+                                        <h2 class="ParagraphHeaderHP-body-title title--1" data-text-resizing-overflow="">
+                                            <span data-text-resizing-overflow-child="true">Aquaculture au Maroc
+                                            </span></h2>
+                                            </div>
+
+                                            <div class="controls">
+                                            <button id="prev" class="nav-btn" aria-label="Prev">‹</button>
+                                            <button id="next" class="nav-btn" aria-label="Next">›</button>
+                                            </div>
+                                        </div>
+
+                                        <div class="slider">
+                                            <div class="track" id="track">
+
+
+                                            <article class="project-card">
+                                                <img class="project-card__bg" src="themes/custom/sao_tome/assets/pics/07.png" alt="">
+                                                <div class="project-card__content">
+                                                <img class="project-card__thumb" src="themes/custom/sao_tome/assets/img/diagramme-circulaire.png?w=480" alt="">
+                                                <div>
+                                                    <h3 class="project-card__title">Secteur en chiffres</h3>
+                                                    <a class="project-card__btn" style="max-width: 150px; text-align: center;" href="/anda-aquaculture.html#anda-chiffres">Découvrir</a>
+                                                </div>
+                                                </div>
+                                            </article>
+
+                                            <article class="project-card">
+                                                <img class="project-card__bg" src="themes/custom/sao_tome/assets/pics/Capital humain 4.png" alt="">
+                                                <div class="project-card__content">
+                                                <img class="project-card__thumb" src="themes/custom/sao_tome/assets/img/favicon.svg" alt="">
+                                                <div>
+                                                    <h3 class="project-card__title">Filières aquacoles </h3>
+                                                    <a class="project-card__btn" style="max-width: 150px; text-align: center;" href="/anda-aquaculture.html#anda-filieres">Découvrir</a>
+                                                </div>
+                                                </div>
+                                            </article>
+
+                                            <article class="project-card">
+                                                <img class="project-card__bg" src="themes/custom/sao_tome/assets/pics/Aquafarm 7.png" alt="">
+                                                <div class="project-card__content">
+                                                <img class="project-card__thumb" src="themes/custom/sao_tome/assets/img/territoire.png" alt="">
+                                                <div>
+                                                    <h3 class="project-card__title">Territoires aquacoles</h3>
+                                                    <a class="project-card__btn" style="max-width: 150px; text-align: center;" href="/anda-aquaculture.html#anda-territoires">Découvrir</a>
+                                                </div>
+                                                </div>
+                                            </article>
+
+                                            <article class="project-card">
+                                                <img class="project-card__bg" src="themes/custom/sao_tome/assets/pics/Aquafarm 3.png" alt="">
+                                                <div class="project-card__content">
+                                                <img class="project-card__thumb" src="themes/custom/sao_tome/assets/img/partenariat.png" alt="">
+                                                <div>
+                                                    <h3 class="project-card__title">Programmes et partenariats </h3>
+                                                    <a class="project-card__btn" style="max-width: 150px; text-align: center;" href="#">Découvrir</a>
+                                                </div>
+                                                </div>
+                                            </article>
+
+                                            </div>
+                                        </div>
+
+                                        <div class="dots" id="dots"></div>
+                                        </section>
+
+
+                              
+
+
+                                        <div id="anda-chiffres" class="ParagraphSpotlightContent" style="--bg-color: #fbfaf6" data-scroll-animate-snap="true">
+                                        <div class="ParagraphSpotlightContent-wrapper ">
+                                            <div class="ParagraphSpotlightContent-container">
+
+                                                <div class="ParagraphSpotlightContent-contentx">
+                                                    <h2 class="ParagraphHeaderHP-body-title title--1" data-text-resizing-overflow="" style="color:  #38492a !important;" ><span data-text-resizing-overflow-child="true" style="color:  #38492a !important;">Chiffres clés
+                                                        </span></h2>
+
+<div class="usda-home-redesign">
+
+  <!-- ======================================================
+       RESULTS SECTION (carousel)
+       ====================================================== -->
+  <div class="usda-wins-editorial usda-fullbleed" aria-labelledby="usda-wins-heading">
+    <div class="usda-section-inner">
+ 
+
+      <div class="usda-win-carousel" role="region" aria-roledescription="carousel" aria-label="USDA results">
+        <div class="usda-win-grid" id="usda-win-track">
+
+          <article class="usda-win-stat">
+            <div class="icon" style="
+                text-align: left;
+                padding: 10px 30px;
+                color: #38492a;
+                width: 100%;
+                ">
+                <i class="fa fa-fish fa-3x"></i>
+            </div>
+            <p><span class="usda-win-stat__number">268Mdh</span></p>
+            <p>PRODUCTION TOTALE  <strong>EN VALEUR</strong></p>
+          </article>
+
+          <article class="usda-win-stat">
+            <div class="icon" style="
+                text-align: left;
+                padding: 10px 30px;
+                color: #38492a;
+                width: 100%;
+                ">
+                <i class="fa fa-chart-bar fa-3x"></i>
+            </div>
+            <p><span class="usda-win-stat__number">+26%</span></p>
+            <p><strong>CROISSANCE ANNUELLE </strong> VOLUME</p>
+          </article>
+
+          <article class="usda-win-stat">
+            <div class="icon" style="
+                text-align: left;
+                padding: 10px 30px;
+                color: #38492a;
+                width: 100%;
+                ">
+                <i class="fa fa-dollar fa-3x"></i>
+            </div>
+            <p><span class="usda-win-stat__number">+40% </span></p>
+            <p><strong>CROISSANCE ANNUELLE </strong> VALEUR</p>
+          </article>
+
+          <article class="usda-win-stat">
+            <div class="icon" style="
+                text-align: left;
+                padding: 10px 30px;
+                color: #38492a;
+                width: 100%;
+                ">
+                <i class="fa fa-users fa-3x"></i>
+            </div>
+            <p><span class="usda-win-stat__number">4400</span></p>
+            <p> <strong>EMPLOI</strong> </p>
+          </article>
+
+          <article class="usda-win-stat">
+            <div class="icon" style="
+                text-align: left;
+                padding: 10px 30px;
+                color: #38492a;
+                width: 100%;
+                ">
+                <i class="fa fa-home fa-3x"></i>
+            </div>
+            <p><span class="usda-win-stat__number">323</span></p>
+            <p><strong>FERMES </strong> AUTORISÉES</p>
+          </article>
+
+          <article class="usda-win-stat">
+            <div class="icon" style="
+                text-align: left;
+                padding: 10px 30px;
+                color: #38492a;
+                width: 100%;
+                ">
+                <i class="fa fa-home-alt fa-3x"></i>
+            </div>
+            <p><span class="usda-win-stat__number">187</span></p>
+            <p><strong>FERMES</strong> INSTALLEES</p>
+          </article>
+
+        
+
+        </div>
+      </div>
+    
+      <div class="button button--primary button--promary--dark ParagraphVerticalSliderItem-content-cta" >
+                                                           
+                                                        </div>
+    </div>
+</div>
+
+</div>
+
+
+
+
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    
+                                        
+                                        <section class="ParagraphPagesSlider paragraph" style="margin-left: 50px;" data-scroll-animate-snap>
+                                        <div class="ParagraphPagesSlider-container swiper slider--27"
+                                                data-pages-slider-component="container"
+                                            data-slider-animate-id="27">
+
+                                            <header class="ComponentHeaderEdito">
+                                                <h2 class="ParagraphHeaderHP-body-title title--1">
+                                                    Investir en aquaculture
+                                                </h2>
+                                            </header>
+                                            <div class="ParagraphPagesSlider-content swiper-wrapper" style="margin: auto;"
+                                                data-custom-cursor-component="none"
+                                                data-custom-cursor-label='<i class="icon icon-chevron-double-axis"></i>'
+                                                data-custom-cursor-drag="false">
+
+                                                <div class="ParagraphPagesSlider-item swiper-slide">
+                                                    
+                                                    <article class="NodeArticleTeaser"
+                                                        data-custom-cursor-component="target" 
+                                                        style="margin-left: 40px !important;"
+                                                        data-custom-cursor-label="Voir" data-fl-href="#">
+                                                        <div class="MediaImage media" data-image-loader>
+
+                                                            <img loading="lazy" alt="sao tome et principe"
+                                                                width="200" height="133" data-multiplier="1x"
+                                                                sizes="auto"
+                                                                src="themes/custom/sao_tome/assets/pics/Capital humain.png"
+                                                                data-to-process="true" />
+
+
+                                                        </div>
+
+
+                                                        <a class="NodeArticleTeaser-title" style="text-align: center;"
+                                                            
+                                                            data-fl-mute="span">
+                                                            <span>Étapes pour investir</span>
+                                                        </a>
+                                                    </article>
+
+                                                </div>
+                                                <div class="ParagraphPagesSlider-item swiper-slide">
+                                                    
+                                                    <article class="NodeArticleTeaser"
+                                                        data-custom-cursor-component="target" 
+                                                        style="margin-left: 40px !important;"
+                                                        data-custom-cursor-label="Voir" data-fl-href="#">
+                                                        <div class="MediaImage media" data-image-loader>
+
+                                                            <img loading="lazy" alt="sao tome et principe"
+                                                                width="200" height="133" data-multiplier="1x"
+                                                                sizes="auto"
+                                                                src="themes/custom/sao_tome/assets/pics/Algue.png"
+                                                                data-to-process="true" />
+
+
+                                                        </div>
+
+
+                                                        <a class="NodeArticleTeaser-title" style="text-align: center;"
+                                                            
+                                                            data-fl-mute="span">
+                                                            <span>Climat des affaires</span>
+                                                        </a>
+                                                    </article>
+
+                                                </div>
+                                                <div class="ParagraphPagesSlider-item swiper-slide">
+                                                    
+                                                    <article class="NodeArticleTeaser"
+                                                        data-custom-cursor-component="target" 
+                                                        style="margin-left: 40px !important;"
+                                                        data-custom-cursor-label="Voir" data-fl-href="#">
+                                                        <div class="MediaImage media" data-image-loader>
+
+                                                            <img loading="lazy" alt="sao tome et principe"
+                                                                width="200" height="133" data-multiplier="1x"
+                                                                sizes="auto"
+                                                                src="themes/custom/sao_tome/assets/pics/Pisci 4.png"
+                                                                data-to-process="true" />
+
+
+                                                        </div>
+
+
+                                                        <a class="NodeArticleTeaser-title" style="text-align: center;"
+                                                            
+                                                            data-fl-mute="span">
+                                                            <span>Réseau professionnel</span>
+                                                        </a>
+                                                    </article>
+
+                                                </div>
+
+                                            </div>
+
+
+
+
+
+
+
+                                        </div>
+
+                                        </section>
+
+
+                                        
+
+
+
+
+                                        <section
+                                            class="ComponentHorizontalSlider ComponentHorizontalSlider-container paragraph swiper slider--31"
+                                            data-horizontal-slider-component="container" data-custom-cursor-component="target" data-slider-animate-id="31"
+                                            data-scroll-animate-snap >
+                                            
+                                            
+                                            
+
+                                            <div class="ComponentHorizontalSlider-content swiper-wrapper"
+                                                data-custom-cursor-label='<i class="icon icon-chevron-double-axis"></i>'
+                                                data-custom-cursor-drag="false"
+                                                data-custom-cursor-navigation="custom-cursor-navigation-31">
+
+                                                <div class="ComponentHorizontalSliderItem swiper-slide"
+                                                    data-horizontal-slider-with-content>
+                                                    <div class="ComponentHorizontalSliderItem-media-wrapper media--1">
+                                                        <div class="ComponentHorizontalSliderItem-media-container"
+                                                            data-horizontal-slider-component="media-1-container">
+                                                            <div class="ComponentHorizontalSliderItem-media"
+                                                                data-horizontal-slider-component="media-1">
+                                                                <div class="MediaImage media" data-image-loader>
+
+                                                                    <img loading="lazy" alt="hotel sao tome" width="200"
+                                                                        height="133" data-multiplier="1x" sizes="auto"
+                                                                        src="themes/custom/sao_tome/assets/pics/Capital humain 2.png"
+                                                                        data-to-process="true" />
+
+
+                                                                </div>
+
+
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="ComponentHorizontalSliderItem-title-container"
+                                                        data-horizontal-slider-component="title-container">
+                                                        <div class="ComponentHorizontalSliderItem-title-inner title--1--immersive"
+                                                            data-horizontal-slider-component="title-inner">
+                                                        
+                                                            <h3 class="ComponentHorizontalSliderItem-title-content title--1--immersive"
+                                                                data-horizontal-slider-component="title"
+                                                                data-text-resizing-overflow>
+                                                                Mediatheque
+                                                            </h3>
+                                                        </div>
+                                                    </div>
+
+
+
+
+
+                                                    <!-- <div class="button button--secondary button--secondary--light ComponentHorizontalSliderItem-cta"
+                                                        data-custom-cursor-prevent="true">
+                                                        <a href="/organiser-mon-sejour/hebergements.html">
+                                                            <span class="button-label"
+                                                                data-label="Découvrir">Découvrir</span>
+                                                        </a>
+                                                    </div>-->
+
+                                                    <div class="ComponentHorizontalSliderItem-content">
+                                                        <div class="ComponentHorizontalSliderItem-content-container">
+                                                            <div
+                                                                class="ComponentHorizontalSliderItem-media-wrapper media--2">
+                                                                <div class="ComponentHorizontalSliderItem-media-container"
+                                                                    data-horizontal-slider-component="media-2-container">
+                                                                    <div class="ComponentHorizontalSliderItem-media"
+                                                                        data-horizontal-slider-component="media-2">
+                                                                        <div class="MediaImage media" data-image-loader>
+
+                                                                            <img loading="lazy" alt="hotel sao tome"
+                                                                                width="200" height="133"
+                                                                                data-multiplier="1x" sizes="auto"
+                                                                                src="themes/custom/sao_tome/assets/pics/7_1.png"
+                                                                                data-to-process="true" />
+
+
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div
+                                                                class="ComponentHorizontalSliderItem-media-wrapper media--3">
+                                                                <div class="ComponentHorizontalSliderItem-media-container"
+                                                                    data-horizontal-slider-component="media-3-container">
+                                                                    <div class="ComponentHorizontalSliderItem-media"
+                                                                        data-horizontal-slider-component="media-3">
+                                                                        <div class="MediaImage media" data-image-loader>
+
+                                                                            <img loading="lazy" alt="hotel sao tome"
+                                                                                width="200" height="209"
+                                                                                data-multiplier="1x" sizes="auto"
+                                                                                src="themes/custom/sao_tome/assets/pics/Fond Cage 1.png"
+                                                                                data-to-process="true" />
+
+
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div
+                                                                class="ComponentHorizontalSliderItem-text text-content">
+
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                
+
+
+
+
+
+                                            </div>
+
+                                            <div class="ComponentHorizontalSlider-buttons">
+                                                <button class="ComponentHorizontalSlider-button-prev swiper-button-prev"
+                                                    data-slider-animate-element="button-prev"
+                                                    data-custom-cursor-navigation-control="custom-cursor-navigation-31"
+                                                    data-custom-cursor-navigation="prev"
+                                                    data-custom-cursor-label='<i class="icon icon-chevron-left"></i>'>
+                                                    <i class="icon icon-arrow"></i>
+                                                </button>
+                                                <button class="ComponentHorizontalSlider-button-next swiper-button-next"
+                                                    data-slider-animate-element="button-next"
+                                                    data-custom-cursor-navigation-control="custom-cursor-navigation-31"
+                                                    data-custom-cursor-navigation="next"
+                                                    data-custom-cursor-label='<i class="icon icon-chevron-right"></i>'>
+                                                    <i class="icon icon-arrow"></i>
+                                                </button>
+                                            </div>
+                                        </section>
+
+
+
+
+                                    </div>
+                                </section>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </main>
+
+                <footer class="footer" data-footer-component="container" data-scroll-animate-snap="true">
+                    <div class="footer-container">
+                        <div class="footer-rs">
+                            <div class="blockEditoFooter">
+                                <h3 class="blockEditoFooter-title title--2--display"><strong>Agence Nationale pour le
+                                        Développement de l'Aquaculture (ANDA)</strong>&nbsp;</h3>
+                                
+                            </div>
+                            <nav aria-labelledby="block-sao-tome-reseauxsociaux-menu"
+                                id="block-sao-tome-reseauxsociaux">
+
+                                <h2 class="visually-hidden" id="block-sao-tome-reseauxsociaux-menu">Réseaux sociaux</h2>
+
+
+
+                                <ul>
+                                    <li>
+                                        <a href="https://www.facebook.com">Facebook</a>
+                                    </li>
+                                    <li>
+                                        <a
+                                            href="https://www.instagram.com">Instagram</a>
+                                    </li>
+                                    <li>
+                                        <a
+                                            href="https://www.youtube.com">Youtube</a>
+                                    </li>
+                                </ul>
+
+
+
+                            </nav>
+
+                        </div>
+                        <nav aria-labelledby="block-sao-tome-pieddepage-menu" id="block-sao-tome-pieddepage">
+
+                            <h2 class="visually-hidden" id="block-sao-tome-pieddepage-menu">Pied de page</h2>
+
+
+
+
+                            <ul data-region="footer" class="menu menu-level-0">
+
+                                <li class="menu-item menu-item--expanded menu-item--active-trail">
+                                    <span>Liens Utiles</span>
+
+
+                                    <div
+                                        class="menu_link_content menu-link-contentfooter view-mode-default menu-dropdown menu-dropdown-0 menu-type-default">
+
+                                        <ul class="menu menu-level-1">
+
+                                            <li class="menu-item">
+
+
+
+                                                <a href="/anda-about.html#anda-presentation" title=" Espace presse"> Présentation de
+                                                    l’ANDA</a>
+
+
+                                                <div
+                                                    class="menu_link_content menu-link-contentfooter view-mode-default menu-dropdown menu-dropdown-1 menu-type-default">
+
+                                                </div>
+
+
+
+                                            </li>
+
+                                            <li class="menu-item">
+
+
+
+                                                <a href="/anda-aquaculture.html#filieres" Espace institutionnel">
+                                                    Filières Aquacoles</a>
+
+
+                                                <div
+                                                    class="menu_link_content menu-link-contentfooter view-mode-default menu-dropdown menu-dropdown-1 menu-type-default">
+
+                                                </div>
+
+
+
+                                            </li>
+
+                                            <li class="menu-item menu-item--active-trail">
+
+
+
+                                                <a href="#" title="Contact" data-dialog-component="global_opener"
+                                                    data-dialog-id="contact">Étapes pour investir</a>
+
+
+                                                <div
+                                                    class="menu_link_content menu-link-contentfooter view-mode-default menu-dropdown menu-dropdown-1 menu-type-default">
+
+                                                </div>
+
+
+
+                                            </li>
+                                            <li class="menu-item menu-item--active-trail">
+
+
+
+                                                <a href="#" title="Contact" data-dialog-component="global_opener"
+                                                    data-dialog-id="contact">Contact</a>
+
+
+                                                <div
+                                                    class="menu_link_content menu-link-contentfooter view-mode-default menu-dropdown menu-dropdown-1 menu-type-default">
+
+                                                </div>
+
+
+
+                                            </li>
+                                        </ul>
+
+
+
+                                    </div>
+
+
+
+                                </li>
+
+                                <li class="menu-item menu-item--expanded">
+                                    <span>Informations légales</span>
+
+
+                                    <div
+                                        class="menu_link_content menu-link-contentfooter view-mode-default menu-dropdown menu-dropdown-0 menu-type-default">
+
+                                        <ul class="menu menu-level-1">
+
+                                            <li class="menu-item">
+
+
+
+                                                <a href="#"
+                                                    title="Politique de confidentialité">Politique de
+                                                    confidentialité</a>
+
+
+                                                <div
+                                                    class="menu_link_content menu-link-contentfooter view-mode-default menu-dropdown menu-dropdown-1 menu-type-default">
+
+                                                </div>
+
+
+
+                                            </li>
+
+                                            <li class="menu-item">
+
+
+
+                                                <a href="#"
+                                                    title="Politique de cookies">Politique de cookies</a>
+
+
+                                                <div
+                                                    class="menu_link_content menu-link-contentfooter view-mode-default menu-dropdown menu-dropdown-1 menu-type-default">
+
+                                                </div>
+
+
+
+                                            </li>
+                                        </ul>
+
+
+
+                                    </div>
+
+
+
+                                </li>
+                            </ul>
+
+
+                        </nav>
+
+                    </div>
+
+
+
+                    <span id="logo-text-footer" class="logo-text-footer-pv">ANDA</span>
+
+
+
+                    <!-- ID CONTACT DELETED-->
+                </footer>
+
+            </div>
+        </div>
+
+    </div>
+
+
+    <script type="application/json"
+        data-drupal-selector="drupal-settings-json">{"path":{"baseUrl":"\/","pathPrefix":"fr\/","currentPath":"node\/2","currentPathIsAdmin":false,"isFront":true,"currentLanguage":"fr","assetsPath":"themes\/custom\/sao_tome\/assets"},"pluralDelimiter":"\u0003","suppressDeprecationErrors":true,"ajaxPageState":{"libraries":"eJx1kGFyhDAIhS-k8UgdjKhsSUghurqnb3Tb0an1TwjvIzyCF8Wm0ykBu4xLBkWoFY1eWPmNUcyosdDH14S6ul40VBye-kEBBrTmHd5SFmFrvMgnodVeomHMVQKFQSGN9ut0KG6KaWqZbMSuMpDSIpSBCFiGIx8ROtR6LPdU3E5AlF4SM3BtTKXmQBQCqtGMdUAbT_r2IfB5J5AOEIDikW0-dmmaGNZzPqNm8v-4P7Hty1wssMurZQxNC4bVTjQ0P9HBA5aLiIyhrM51mIHYnMF8ffm3KMsw8H1Zz7i0cu9V1mTbcu-4lYvPF7wd33Wb4ow","theme":"sao_tome","theme_token":null},"ajaxTrustedUrl":{"form_action_p_pvdeGsVG5zNF_XLGPTvYSKCf43t8qZYSwcfZl2uzM":true,"\/fr\/homepage?ajax_form=1":true},"easyResponsiveImages":{"lazyLoadingThreshold":1250},"theme":{"path":"themes\/custom\/sao_tome","name":"sao_tome"},"langCode":"fr","env":{"isDev":false},"mapbox_gl":{"access_token_client":"pk.eyJ1Ijoic2FvLXRvbWUtZXQtcHJpbmNpcGUiLCJhIjoiY21idGllZW1qMDQ4OTJscXU0ZHdkbmp6biJ9.5wNiFENuw7NpadPa2yqVBQ","access_token":"pk.eyJ1Ijoic2FvLXRvbWUtZXQtcHJpbmNpcGUiLCJhIjoiY21iczI0ZHhoMGVoMzJscXUxNXE0bWxjbSJ9.4BdR_0ImUhzarBDGFs5Mmw","style":"mapbox:\/\/styles\/sao-tome-et-principe\/cmbs2uvbm011e01sc9hug1m3m","themePath":"themes\/custom\/sao_tome"},"webform":{"xss":{"allowedTags":["a","abbr","acronym","address","article","aside","b","bdi","bdo","big","blockquote","br","caption","cite","code","col","colgroup","command","dd","del","details","dfn","div","dl","dt","em","figcaption","figure","footer","h1","h2","h3","h4","h5","h6","header","hgroup","hr","i","img","ins","kbd","li","mark","menu","meter","nav","ol","output","p","pre","progress","q","rp","rt","ruby","s","samp","section","small","span","strong","sub","summary","sup","table","tbody","td","tfoot","th","thead","time","tr","tt","u","ul","var","wbr","label","fieldset","legend","font"]}},"ajax":{"edit-actions-submit":{"callback":"::submitAjaxForm","event":"click","effect":"fade","speed":500,"progress":{"type":"throbber","message":""},"disable-refocus":true,"url":"\/fr\/homepage?ajax_form=1","httpMethod":"POST","dialogType":"ajax","submit":{"_triggering_element_name":"op","_triggering_element_value":"Envoyer mon message"}}},"user":{"uid":0,"permissionsHash":"ca50dd150382fb2f1959fc49dc6cdd6b151340d12c13a0e278e0bf7faa6beb73"}}</script>
+    <script src="core/assets/vendor/jquery/jquery.min1fc6.js?v=4.0.0"></script>
+    <script src="core/assets/vendor/once/once.minf700.js?v=1.0.1"></script>
+    <script src="sites/default/files/languages/fr_UWRWcyG40o6y7CJ78zNILi_sM_FLMYN3c2iHCaT7SyEda5a.js?tmlhth"></script>
+    <script src="core/misc/drupalSettingsLoaderc1fc.js?v=11.4.7"></script>
+    <script src="core/misc/drupalc1fc.js?v=11.4.7"></script>
+    <script src="core/misc/drupal.initc1fc.js?v=11.4.7"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/DrawSVGPlugin.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js"></script>
+    <script src="themes/custom/sao_tome/assets/js/header-homepageda5a.js?tmlhth"></script>
+    <script src="themes/custom/sao_tome/assets/js/slider-animateda5a.js?tmlhth"></script>
+    <script src="themes/custom/sao_tome/assets/js/dialog-coreda5a.js?tmlhth"></script>
+    <script src="themes/custom/sao_tome/assets/js/interactive-mapda5a.js?tmlhth"></script>
+    <script src="core/assets/vendor/tabbable/index.umd.minb994.js?v=6.3.0"></script>
+    <script src="core/misc/jquery.forme0a5.js?v=4.3.0"></script>
+    <script src="modules/contrib/lmwr_images/assets/dist/lmwr-imagesda5a.js?tmlhth"></script>
+    <script src="modules/contrib/lmwr_tools/assets/cookies-consentda5a.js?tmlhth"></script>
+    <script src="themes/custom/sao_tome/assets/js/horizontal-sliderda5a.js?tmlhth" defer></script>
+    <script src="themes/custom/sao_tome/assets/js/immersive-meshda5a.js?tmlhth" defer></script>
+    <script src="themes/custom/sao_tome/assets/js/mainda5a.js?tmlhth"></script>
+    <script src="themes/custom/sao_tome/assets/js/pages-sliderda5a.js?tmlhth" defer></script>
+    <script src="https://cdn.plyr.io/3.7.8/plyr.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/hls.js@latest" defer></script>
+    <script src="themes/custom/sao_tome/assets/js/playerda5a.js?tmlhth" defer></script>
+    <script src="themes/custom/sao_tome/assets/js/vertical-sliderda5a.js?tmlhth" defer></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js"></script>
+    <script src="core/misc/progressc1fc.js?v=11.4.7"></script>
+    <script src="core/assets/vendor/loadjs/loadjs.mine0a5.js?v=4.3.0"></script>
+    <script src="core/misc/debouncec1fc.js?v=11.4.7"></script>
+    <script src="core/misc/announcec1fc.js?v=11.4.7"></script>
+    <script src="core/misc/messagec1fc.js?v=11.4.7"></script>
+    <script src="core/themes/claro/js/ajaxda5a.js?tmlhth"></script>
+    <script src="core/misc/ajaxc1fc.js?v=11.4.7"></script>
+    <script src="modules/contrib/webform/js/webform.scrollda5a.js?tmlhth"></script>
+    <script src="modules/contrib/webform/js/webform.ajaxda5a.js?tmlhth"></script>
+    <script src="modules/contrib/webform/js/webform.element.details.saveda5a.js?tmlhth"></script>
+    <script src="modules/contrib/webform/js/webform.element.details.toggleda5a.js?tmlhth"></script>
+    <script src="modules/contrib/webform/js/webform.element.messageda5a.js?tmlhth"></script>
+    <script src="modules/contrib/webform/js/webform.element.selectda5a.js?tmlhth"></script>
+    <script src="core/misc/formc1fc.js?v=11.4.7"></script>
+    <script src="modules/contrib/webform/js/webform.behaviorsda5a.js?tmlhth"></script>
+    <script src="core/misc/statesc1fc.js?v=11.4.7"></script>
+    <script src="modules/contrib/webform/js/webform.statesda5a.js?tmlhth"></script>
+    <script src="modules/contrib/webform/js/webform.formda5a.js?tmlhth"></script>
+
+
+    <script>
+        (function () {
+            // Wait until the AppLoader has released the scroll lock
+            function releaseScrollAndJump() {
+                var hash = window.location.hash;
+                if (!hash || hash === '#') return;
+
+                var target = document.querySelector(hash);
+                if (!target) return;
+
+                // Temporarily unlock scroll if the loader is still locking it
+                var html = document.documentElement;
+                var wasLocked = html.classList.contains('is-app-loading');
+                if (wasLocked) {
+                    html.classList.remove('is-app-loading');
+                }
+
+                // Do the jump
+                target.scrollIntoView({ behavior: 'auto', block: 'start' });
+
+                // If the loader wasn't actually finished, let it re-lock and
+                // re-jump on real completion
+                if (wasLocked) {
+                    html.classList.add('is-app-loading');
+                }
+            }
+
+            // 1) Try immediately after DOM is parsed (in case loader is already gone)
+            if (document.readyState !== 'loading') {
+                releaseScrollAndJump();
+            } else {
+                document.addEventListener('DOMContentLoaded', releaseScrollAndJump);
+            }
+
+            // 2) Retry after everything loaded (images, fonts, main.js)
+            window.addEventListener('load', function () {
+                setTimeout(releaseScrollAndJump, 300);
+            });
+
+            // 3) Poll until the AppLoader element is actually removed
+            //    (that's the real signal that the site is ready)
+            var tries = 0;
+            var poll = setInterval(function () {
+                tries++;
+                var loader = document.getElementById('AppLoader');
+                var stillLoading = document.documentElement.classList.contains('is-app-loading');
+
+                if (!loader || (!stillLoading && tries > 3)) {
+                    clearInterval(poll);
+                    releaseScrollAndJump();
+                }
+                if (tries > 60) clearInterval(poll); // ~12s max
+            }, 200);
+
+            // 4) Also re-jump if the user navigates back/forward with a hash
+            window.addEventListener('hashchange', releaseScrollAndJump);
+        })();
+    </script>
+
+
+<style>
+        .d-none {
+            display: none;
+        }
+    </style>
+    <script>
+        const bull = document.querySelector(".bull-agadir");
+        const bullInfo = bull.querySelector(".tool-tip .info");
+
+        bull.addEventListener("mouseenter", () => {
+            bullInfo.classList.remove("d-none");
+        });
+
+        bull.addEventListener("mouseleave", () => {
+            bullInfo.classList.add("d-none");
+        });
+    </script>
+
+
+
+<script src="themes/custom/sao_tome/assets/js/slidy.js"></script>
+
+<script>
+        (function() {
+            function formatNumber(value) {
+                if (value >= 10000) {
+                    return value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ' ');
+                }
+                return value.toString();
+            }
+
+            function easeOutQuart(t) {
+                return 1 - Math.pow(1 - t, 4);
+            }
+
+            function animateCounter(el) {
+                const target = parseInt(el.getAttribute('data-target'), 10);
+                const suffix = el.getAttribute('data-suffix') || '';
+                const duration = 2000;
+                let startTime = null;
+
+                function step(timestamp) {
+                    if (!startTime) startTime = timestamp;
+                    const elapsed = timestamp - startTime;
+                    const progress = Math.min(elapsed / duration, 1);
+                    const easedProgress = easeOutQuart(progress);
+                    const currentValue = Math.floor(easedProgress * target);
+
+                    el.textContent = formatNumber(currentValue) + suffix;
+
+                    if (progress < 1) {
+                        requestAnimationFrame(step);
+                    } else {
+                        el.textContent = formatNumber(target) + suffix;
+                    }
+                }
+
+                requestAnimationFrame(step);
+            }
+
+            const counters = document.querySelectorAll('.chfr-number');
+            if (counters.length === 0) return;
+
+            counters.forEach(el => {
+                const suffix = el.getAttribute('data-suffix') || '';
+                el.textContent = '0' + suffix;
+            });
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const counter = entry.target;
+                        if (!counter.dataset.animated) {
+                            counter.dataset.animated = 'true';
+                            animateCounter(counter);
+                        }
+                        observer.unobserve(counter);
+                    }
+                });
+            }, {
+                threshold: 0.3,
+                rootMargin: '0px 0px -20px 0px'
+            });
+
+            counters.forEach(counter => observer.observe(counter));
+        })();
+    </script>
+
+
+ <script src="themes/custom/sao_tome/assets/js/gal.js"></script>
+
+</body>
+
+
+</html>

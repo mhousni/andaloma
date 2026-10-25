@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+<div id="anda-real-map">
+<style>
+#anda-real-map{
+ --main:#8A9D8A;--dark:#435B49;--soft:#EAF0E9;
+ --line:#D8E2D5;--pale:#F7F9F5;
+ font-family:Arial,sans-serif;color:var(--dark);width:100%;
+}
+#anda-real-map *{box-sizing:border-box}
+#anda-real-map .wrap{max-width:1250px;margin:auto;padding:18px}
+#anda-real-map h2{font-size:clamp(23px,3vw,32px);margin:0 0 8px;color:var(--dark)}
+#anda-real-map .intro{font-size:13px;color:#829182;line-height:1.7;margin-bottom:20px}
+#anda-real-map .layout{display:grid;grid-template-columns:1.1fr .9fr;gap:18px}
+#anda-real-map .mapbox,#anda-real-map .details{
+ border:1px solid var(--line);border-radius:16px;overflow:hidden;
+ background:white;box-shadow:0 5px 18px #435b4910;
+}
+#anda-real-map .map-title{padding:16px 18px;background:var(--pale);font-size:14px;font-weight:bold}
+#anda-real-map #anda-leaflet-map{height:620px;width:100%;background:#e9f1ed}
+#anda-real-map .details{padding:22px;min-height:620px}
+#anda-real-map .kicker{font-size:10px;letter-spacing:1.4px;color:var(--main);font-weight:bold;text-transform:uppercase}
+#anda-real-map .details h3{font-size:25px;margin:8px 0;color:var(--dark)}
+#anda-real-map .description{font-size:12px;line-height:1.7;color:#829182}
+#anda-real-map .status{display:inline-block;background:var(--soft);padding:8px 12px;border-radius:20px;font-size:11px;font-weight:bold;margin:12px 0 18px}
+#anda-real-map .metrics{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:20px}
+#anda-real-map .metric{padding:15px;background:var(--pale);border:1px solid #e8eee5;border-radius:12px}
+#anda-real-map .metric small{display:block;font-size:10px;color:#829182;margin-bottom:8px}
+#anda-real-map .metric strong{font-size:22px;color:var(--dark)}
+#anda-real-map .block{margin:18px 0}
+#anda-real-map .block h4{font-size:13px;margin:0 0 10px;color:var(--dark)}
+#anda-real-map .tags{display:flex;flex-wrap:wrap;gap:7px}
+#anda-real-map .tag{background:var(--soft);padding:8px 11px;border-radius:20px;font-size:11px;color:#607660}
+#anda-real-map .list{list-style:none;padding:0;margin:0}
+#anda-real-map .list li{padding:8px 0;border-bottom:1px solid #edf1ea;font-size:12px;color:#718271;line-height:1.5}
+#anda-real-map .list li:before{content:"●";color:var(--main);margin-right:9px}
+#anda-real-map .note{background:var(--pale);border-left:3px solid var(--main);padding:13px;font-size:12px;line-height:1.7;color:#718271;border-radius:0 8px 8px 0}
+#anda-real-map .region-buttons{display:flex;flex-wrap:wrap;gap:8px;margin-top:17px}
+#anda-real-map .region-buttons button{
+ border:1px solid var(--line);background:white;color:#718271;
+ border-radius:20px;padding:8px 12px;font-size:10px;cursor:pointer;
+}
+#anda-real-map .region-buttons button.active,
+#anda-real-map .region-buttons button:hover{background:var(--main);color:white;border-color:var(--main)}
+#anda-real-map .disclaimer{font-size:10px;color:#9aa69a;line-height:1.6;margin-top:18px}
+#anda-real-map .loading{padding:20px;text-align:center;color:#718271;font-size:13px}
+#anda-real-map .leaflet-container{font-family:Arial,sans-serif}
+#anda-real-map .leaflet-popup-content-wrapper{border-radius:10px}
+#anda-real-map .leaflet-popup-content{font-size:12px;color:var(--dark)}
+@media(max-width:850px){
+ #anda-real-map .layout{grid-template-columns:1fr}
+ #anda-real-map #anda-leaflet-map{height:480px}
+ #anda-real-map .details{min-height:auto}
+}
+@media(max-width:500px){
+ #anda-real-map .wrap{padding:10px}
+ #anda-real-map #anda-leaflet-map{height:390px}
+ #anda-real-map .details{padding:16px}
+}
+</style>
+
+<div class="wrap">
+ <h2>Territoires aquacoles</h2>
+ <div class="intro">
+  Découvrez les territoires du littoral marocain et consultez
+  les informations aquacoles propres à chaque région.
+ </div>
+
+ <div class="layout">
+  <div class="mapbox">
+   <div class="map-title">Carte géographique des régions côtières du Maroc</div>
+   <div id="anda-leaflet-map">
+    <div class="loading">Chargement de la carte géographique...</div>
+   </div>
+  </div>
+
+  <div class="details" aria-live="polite">
+   <div class="kicker">Territoire aquacole</div>
+   <h3 id="anda-r-name">Souss-Massa</h3>
+   <p class="description" id="anda-r-description">
+    Région à fort potentiel pour le développement de l'aquaculture marine.
+   </p>
+   <div class="status" id="anda-r-status">● Potentiel aquacole identifié</div>
+
+   <div class="metrics">
+    <div class="metric">
+     <small>Potentiel identifié</small>
+     <strong id="anda-r-area">+3 900 ha</strong>
+    </div>
+    <div class="metric">
+     <small>Parcelles identifiées</small>
+     <strong id="anda-r-plots">+250</strong>
+    </div>
+   </div>
+
+   <div class="block">
+    <h4>🐟 Filières aquacoles potentielles</h4>
+    <div class="tags" id="anda-r-sectors"></div>
+   </div>
+
+   <div class="block">
+    <h4>⚓ Infrastructures maritimes</h4>
+    <ul class="list" id="anda-r-infra"></ul>
+   </div>
+
+   <div class="block">
+    <h4>✦ Atouts du territoire</h4>
+    <div class="note" id="anda-r-advantages"></div>
+   </div>
+
+   <div class="disclaimer">
+    * Informations données à titre indicatif. Les données régionales
+    sont à compléter et à valider selon les informations disponibles.
+   </div>
+  </div>
+ </div>
+
+ <div class="region-buttons" id="anda-region-buttons"></div>
+</div>
+
+<script>
+(function(){
+ const root=document.getElementById('anda-real-map');
+ if(!root || root.dataset.init) return;
+ root.dataset.init='1';
+
+ const regions=[
+  {id:'tanger',name:'Tanger-Tétouan-Al Hoceïma',match:['tanger','tetouan','hoceima'],
+   desc:'Territoire du nord du Royaume présentant un potentiel aquacole en cours d’étude.',
+   status:'Potentiel en cours de finalisation',area:'À finaliser',plots:'À préciser',
+   sectors:['Potentiel en cours de finalisation'],
+   infra:['Données relatives aux infrastructures maritimes à compléter.'],
+   advantages:'Le potentiel aquacole de la région est en cours de finalisation. Les informations seront actualisées après validation des données régionales.'},
+
+  {id:'oriental',name:'L’Oriental',match:['oriental'],
+   desc:'Territoire littoral méditerranéen.',
+   status:'Informations régionales à compléter',area:'À renseigner',plots:'À renseigner',
+   sectors:['À préciser'],infra:['Infrastructures maritimes régionales à renseigner.'],
+   advantages:'Les informations relatives au potentiel et aux atouts aquacoles seront intégrées après consolidation des données.'},
+
+  {id:'rabat',name:'Rabat-Salé-Kénitra',match:['rabat','sale','kenitra'],
+   desc:'Territoire du littoral atlantique.',
+   status:'Informations régionales à compléter',area:'À renseigner',plots:'À renseigner',
+   sectors:['À préciser'],infra:['Infrastructures maritimes régionales à renseigner.'],
+   advantages:'Les caractéristiques du territoire et ses opportunités aquacoles seront précisées sur la base des données régionales validées.'},
+
+  {id:'casa',name:'Casablanca-Settat',match:['casablanca','settat'],
+   desc:'Territoire atlantique à présenter à l’échelle régionale.',
+   status:'Informations régionales à compléter',area:'À renseigner',plots:'À renseigner',
+   sectors:['À préciser'],infra:['Infrastructures maritimes régionales à renseigner.'],
+   advantages:'Les informations relatives aux potentialités aquacoles et aux infrastructures seront complétées après validation.'},
+
+  {id:'marrakech',name:'Marrakech-Safi',match:['marrakech','safi'],
+   desc:'Territoire côtier de la région Marrakech-Safi.',
+   status:'Informations régionales à compléter',area:'À renseigner',plots:'À renseigner',
+   sectors:['À préciser'],infra:['Infrastructures maritimes régionales à renseigner.'],
+   advantages:'Les potentialités du littoral régional et les filières concernées seront détaillées à partir des données consolidées.'},
+
+  {id:'souss',name:'Souss-Massa',match:['souss','massa'],
+   desc:'Région à fort potentiel pour le développement de l’aquaculture marine.',
+   status:'Potentiel aquacole identifié',area:'+3 900 ha',plots:'+250',
+   sectors:['Pisciculture','Conchyliculture'],
+   infra:['Port : Agadir','VDP : Imessouane','PDA : Imi Ouaddar, Tifnit, Aglou, Sidi Boulfdail, Goun...'],
+   advantages:'Un littoral favorable au développement de l’aquaculture, avec des infrastructures maritimes et des filières potentielles diversifiées.'},
+
+  {id:'guelmim',name:'Guelmim-Oued Noun',match:['guelmim','oued noun'],
+   desc:'Territoire du sud atlantique.',
+   status:'Informations régionales à compléter',area:'À renseigner',plots:'À renseigner',
+   sectors:['À préciser'],infra:['Infrastructures maritimes régionales à renseigner.'],
+   advantages:'Le potentiel aquacole régional et les atouts du territoire seront précisés après consolidation des informations.'},
+
+  {id:'laayoune',name:'Laâyoune-Sakia El Hamra',match:['laayoune','laayoun','sakia'],
+   desc:'Territoire du littoral sud-atlantique.',
+   status:'Informations régionales à compléter',area:'À renseigner',plots:'À renseigner',
+   sectors:['À préciser'],infra:['Infrastructures maritimes régionales à renseigner.'],
+   advantages:'Les données relatives aux potentialités aquacoles, aux filières et aux infrastructures seront intégrées après validation.'},
+
+  {id:'dakhla',name:'Dakhla-Oued Eddahab',match:['dakhla','oued eddahab'],
+   desc:'Territoire littoral du sud du Royaume.',
+   status:'Informations régionales à compléter',area:'À renseigner',plots:'À renseigner',
+   sectors:['À préciser'],infra:['Infrastructures maritimes régionales à renseigner.'],
+   advantages:'Les informations détaillées sur le potentiel, les filières et les infrastructures seront ajoutées à partir des données régionales validées.'}
+ ];
+
+ const $=id=>root.querySelector('#'+id);
+ let map,geoLayer,selected='souss',featureById={};
+
+ function norm(s){
+  return String(s||'').normalize('NFD').replace(/[\u0300-\u036f]/g,'')
+   .toLowerCase().replace(/[^a-z0-9]+/g,' ').trim();
+ }
+
+ function matchRegion(props){
+  const values=Object.values(props||{}).filter(v=>typeof v==='string');
+  const all=norm(values.join(' '));
+  return regions.find(r=>r.match.some(m=>all.includes(norm(m))));
+ }
+
+ function showRegion(id,zoom){
+  const r=regions.find(x=>x.id===id);
+  if(!r)return;
+  selected=id;
+  $('anda-r-name').textContent=r.name;
+  $('anda-r-description').textContent=r.desc;
+  $('anda-r-status').textContent='● '+r.status;
+  $('anda-r-area').textContent=r.area;
+  $('anda-r-plots').textContent=r.plots;
+  $('anda-r-advantages').textContent=r.advantages;
+
+  const tags=$('anda-r-sectors');
+  tags.replaceChildren();
+  r.sectors.forEach(s=>{
+   const el=document.createElement('span');
+   el.className='tag';el.textContent=s;tags.appendChild(el);
+  });
+
+  const list=$('anda-r-infra');
+  list.replaceChildren();
+  r.infra.forEach(s=>{
+   const li=document.createElement('li');li.textContent=s;list.appendChild(li);
+  });
+
+  root.querySelectorAll('.region-buttons button').forEach(b=>{
+   b.classList.toggle('active',b.dataset.region===id);
+  });
+
+  if(geoLayer){
+   geoLayer.eachLayer(layer=>{
+    const active=layer.feature && matchRegion(layer.feature.properties)?.id===id;
+    layer.setStyle({
+     fillColor:active?'#8A9D8A':'#DCE7D9',
+     fillOpacity:active?.85:.55,
+     color:active?'#435B49':'#8A9D8A',
+     weight:active?3:1.2
+    });
+    if(active && zoom) map.fitBounds(layer.getBounds(),{padding:[35,35],maxZoom:7});
+   });
+  }
+ }
+
+ function initButtons(){
+  const box=$('anda-region-buttons');
+  regions.forEach(r=>{
+   const b=document.createElement('button');
+   b.type='button';b.dataset.region=r.id;b.textContent=r.name;
+   b.addEventListener('click',()=>{
+    showRegion(r.id,true);
+    if(window.innerWidth<850){
+     $('anda-r-name').scrollIntoView({behavior:'smooth',block:'start'});
+    }
+   });
+   box.appendChild(b);
+  });
+ }
+
+ function loadMap(){
+  const leafletCss=document.createElement('link');
+  leafletCss.rel='stylesheet';
+  leafletCss.href='https://unpkg.com/leaflet@1.9.4/dist/leaflet.css';
+  document.head.appendChild(leafletCss);
+
+  const script=document.createElement('script');
+  script.src='https://unpkg.com/leaflet@1.9.4/dist/leaflet.js';
+  script.onload=()=>{
+   map=L.map($('anda-leaflet-map'),{scrollWheelZoom:false})
+    .setView([29.5,-9.5],5);
+
+   L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',{
+    attribution:'© OpenStreetMap contributors',
+    maxZoom:10
+   }).addTo(map);
+
+   fetch('https://communes.pages.dev/data/v1/geometry/regions.geojson')
+    .then(res=>{
+     if(!res.ok)throw new Error('GeoJSON indisponible');
+     return res.json();
+    })
+    .then(data=>{
+     geoLayer=L.geoJSON(data,{
+      filter:feature=>!!matchRegion(feature.properties),
+      style:feature=>({
+       fillColor:'#DCE7D9',fillOpacity:.65,
+       color:'#8A9D8A',weight:1.2
+      }),
+      onEachFeature:(feature,layer)=>{
+       const r=matchRegion(feature.properties);
+       if(!r)return;
+       featureById[r.id]=layer;
+       layer.bindTooltip(r.name,{sticky:true});
+       layer.on('click',()=>showRegion(r.id,false));
+      }
+     }).addTo(map);
+
+     if(geoLayer.getLayers().length){
+      map.fitBounds(geoLayer.getBounds(),{padding:[20,20]});
+      showRegion('souss',false);
+     }else{
+      $('anda-leaflet-map').innerHTML=
+       '<div class="loading">Les limites régionales n’ont pas pu être identifiées dans le fichier GeoJSON.</div>';
+     }
+     setTimeout(()=>map.invalidateSize(),300);
+    })
+    .catch(()=>{
+     $('anda-leaflet-map').innerHTML=
+      '<div class="loading">Impossible de charger les limites géographiques. Vérifiez la connexion ou la disponibilité de la source GeoJSON.</div>';
+    });
+  };
+  script.onerror=()=>{
+   $('anda-leaflet-map').innerHTML=
+    '<div class="loading">La bibliothèque cartographique n’a pas pu être chargée.</div>';
+  };
+  document.head.appendChild(script);
+ }
+
+ initButtons();
+ showRegion('souss',false);
+ loadMap();
+})();
+</script>
+</div>
+</body>
+</html>
