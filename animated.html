@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Organigramme ANDA - Patched (prefixed)</title>
+    <style>
+        /* --- DESIGN TOKENS --- */
+        :root {
+            --bg-color: #f4f6f8;
+            --color-dark-blue: #5a6b7c;
+            --color-teal: #7ea5b5;
+            --color-purple: #8b92b7;
+            --color-orange: #f6b862;
+            --line-color: #b0bec5;
+            --text-light: #ffffff;
+            --font-main: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            
+            --node-gap: 24px;
+            --col-width: 280px;
+            --line-thickness: 2px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: var(--font-main);
+            background-color: var(--bg-color);
+            display: flex;
+            justify-content: center;
+            padding: 60px 20px;
+            min-height: 100vh;
+            overflow-x: auto;
+        }
+
+        /* --- LAYOUT STRUCTURE --- */
+        .pvorg-org-chart {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: max-content;
+            min-width: 1000px;
+        }
+
+        .pvorg-node {
+            color: var(--text-light);
+            padding: 15px 20px;
+            border-radius: 12px;
+            text-align: center;
+            font-weight: 600;
+            font-size: 13px;
+            line-height: 1.4;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            position: relative;
+            z-index: 2;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .pvorg-node:hover {
+            transform: translateY(-3px) scale(1.02);
+            box-shadow: 0 8px 15px rgba(0,0,0,0.15);
+        }
+
+        /* Specific Node Styles */
+        .pvorg-node.pvorg-direction { background: var(--color-dark-blue); font-size: 16px; width: 200px; padding: 20px; }
+        .pvorg-node.pvorg-teal { background: var(--color-teal); width: 250px; }
+        .pvorg-node.pvorg-purple { background: var(--color-purple); width: var(--col-width); font-size: 14px; padding: 20px; }
+        .pvorg-node.pvorg-orange { background: var(--color-orange); width: 260px; }
+
+        /* --- TOP SECTION --- */
+        .pvorg-top-section {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            padding-top: 50px;
+        }
+
+        .pvorg-top-left, .pvorg-top-right {
+            display: flex;
+            flex-direction: column;
+            gap: var(--node-gap);
+            width: 260px;
+        }
+
+        .pvorg-top-left { align-items: flex-end; }
+        .pvorg-top-right { align-items: flex-start; }
+
+        .pvorg-top-center-spacer {
+            width: 80px; 
+            position: relative;
+        }
+
+        /* --- CONNECTING LINES LOGIC --- */
+
+        .pvorg-node.pvorg-direction::after {
+            content: '';
+            position: absolute;
+            bottom: -327px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: var(--line-thickness);
+            height: 328px;
+            background-color: var(--line-color);
+            z-index: 1;
+        }
+
+        .pvorg-top-left .pvorg-node::after, .pvorg-top-right .pvorg-node::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            width: 40px;
+            height: var(--line-thickness);
+            background-color: var(--line-color);
+            z-index: 1;
+        }
+
+        .pvorg-top-left .pvorg-node::after { right: -40px; }
+        .pvorg-top-right .pvorg-node::after { left: -40px; }
+
+        .pvorg-top-center-spacer::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translateX(-50%);
+            width: var(--line-thickness);
+            height: calc(100% + 40px);
+            background-color: var(--line-color);
+            z-index: 1;
+        }
+
+        /* --- MIDDLE SECTION --- */
+        .pvorg-departments-container {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            position: relative;
+            padding-top: 60px; 
+            margin-top: 30px;
+        }
+
+        .pvorg-departments-container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: calc(var(--col-width) / 2);
+            right: calc(var(--col-width) / 2);
+            height: var(--line-thickness);
+            background-color: var(--line-color);
+            z-index: 1;
+        }
+
+        .pvorg-department-column {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: var(--col-width);
+            position: relative;
+        }
+
+        .pvorg-department-column::before {
+            content: '';
+            position: absolute;
+            top: -59px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: var(--line-thickness);
+            height: 100px;
+            background-color: var(--line-color);
+            z-index: 1;
+        }
+
+        .pvorg-sub-services {
+            display: flex;
+            flex-direction: column;
+            gap: var(--node-gap);
+            margin-top: 30px;
+            width: 100%;
+            align-items: center;
+            position: relative;
+        }
+
+        .pvorg-sub-services::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: var(--line-thickness);
+            background-color: var(--line-color);
+            z-index: 1;
+        }
+
+        .pvorg-department-column:has(.pvorg-sub-services) .pvorg-sub-services::before {
+            top: -30px;
+            height: calc(100% + 30px);
+        }
+
+        /* --- ANIMATIONS (paused until .pvorg-animate is added) --- */
+        @keyframes pvorg-fadeInDown {
+            from { opacity: 0; transform: translateY(-15px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes pvorg-growLineY {
+            from { transform: scaleY(0); }
+            to { transform: scaleY(1); }
+        }
+
+        @keyframes pvorg-growLineX {
+            from { transform: scaleX(0); }
+            to { transform: scaleX(1); }
+        }
+
+        /* Hidden state by default (paused animations) */
+        .pvorg-org-chart .pvorg-node {
+            opacity: 0;
+            animation: pvorg-fadeInDown 0.5s ease forwards;
+            animation-play-state: paused;
+        }
+
+        .pvorg-org-chart .pvorg-node.pvorg-direction::after {
+            transform-origin: top;
+            animation: pvorg-growLineY 0.4s ease forwards;
+            animation-delay: 0.3s;
+            animation-play-state: paused;
+        }
+
+        .pvorg-org-chart .pvorg-top-center-spacer::before {
+            transform-origin: top;
+            animation: pvorg-growLineY 0.4s ease forwards;
+            animation-delay: 0.4s;
+            animation-play-state: paused;
+        }
+
+        .pvorg-org-chart .pvorg-top-left .pvorg-node::after, 
+        .pvorg-org-chart .pvorg-top-right .pvorg-node::after {
+            animation: pvorg-growLineX 0.3s ease forwards;
+            animation-delay: 0.4s;
+            animation-play-state: paused;
+        }
+
+        .pvorg-org-chart .pvorg-departments-container::before {
+            transform-origin: center;
+            animation: pvorg-growLineX 0.6s ease forwards;
+            animation-delay: 0.7s;
+            animation-play-state: paused;
+        }
+
+        .pvorg-org-chart .pvorg-department-column::before {
+            transform-origin: top;
+            animation: pvorg-growLineY 0.3s ease forwards;
+            animation-delay: 1.2s;
+            animation-play-state: paused;
+        }
+
+        /* Staggering */
+        .pvorg-org-chart .pvorg-direction { animation-delay: 0.1s; }
+        .pvorg-org-chart .pvorg-top-left .pvorg-node:nth-child(1), 
+        .pvorg-org-chart .pvorg-top-right .pvorg-node:nth-child(1) { animation-delay: 0.3s; }
+        .pvorg-org-chart .pvorg-top-left .pvorg-node:nth-child(2), 
+        .pvorg-org-chart .pvorg-top-right .pvorg-node:nth-child(2) { animation-delay: 0.4s; }
+        .pvorg-org-chart .pvorg-top-left .pvorg-node:nth-child(3) { animation-delay: 0.5s; }
+        .pvorg-org-chart .pvorg-department-column .pvorg-node.pvorg-purple { animation-delay: 1.2s; }
+        .pvorg-org-chart .pvorg-sub-services .pvorg-node:nth-child(1) { animation-delay: 1.5s; }
+        .pvorg-org-chart .pvorg-sub-services .pvorg-node:nth-child(2) { animation-delay: 1.6s; }
+        .pvorg-org-chart .pvorg-sub-services .pvorg-node:nth-child(3) { animation-delay: 1.7s; }
+        .pvorg-org-chart .pvorg-sub-services .pvorg-node:nth-child(4) { animation-delay: 1.8s; }
+
+        .pvorg-sub-services .pvorg-node { z-index: 2; }
+        .pvorg-top-left .pvorg-node::after { transform-origin: left; }
+        .pvorg-top-right .pvorg-node::after { transform-origin: right; }
+
+        /* --- PLAY STATE when .pvorg-animate is added --- */
+        .pvorg-org-chart.pvorg-animate .pvorg-node,
+        .pvorg-org-chart.pvorg-animate .pvorg-node.pvorg-direction::after,
+        .pvorg-org-chart.pvorg-animate .pvorg-top-center-spacer::before,
+        .pvorg-org-chart.pvorg-animate .pvorg-top-left .pvorg-node::after,
+        .pvorg-org-chart.pvorg-animate .pvorg-top-right .pvorg-node::after,
+        .pvorg-org-chart.pvorg-animate .pvorg-departments-container::before,
+        .pvorg-org-chart.pvorg-animate .pvorg-department-column::before {
+            animation-play-state: running;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Spacer to test scrolling -->
+    <div style="height: 800px; display: flex; justify-content: center; align-items: center; font-size: 24px; color: #999;">
+        ↓ Scroll down to see the org chart animate ↓
+    </div>
+
+    <!-- This is the "equipe" trigger wrapper -->
+    <div id="equipe" class="equipe">
+        <div class="pvorg-org-chart">
+            
+            <!-- Top Central Node -->
+            <div class="pvorg-node pvorg-direction">Direction</div>
+
+            <!-- Top Section with lateral nodes -->
+            <div class="pvorg-top-section">
+                <div class="pvorg-top-left">
+                    <div class="pvorg-node pvorg-teal">Service de l'audit interne et du contrôle de gestion</div>
+                    <div class="pvorg-node pvorg-teal">Représentation régionale de l'ANDA à Nador</div>
+                    <div class="pvorg-node pvorg-teal">Service de la promotion et de la communication</div>
+                </div>
+                
+                <div class="pvorg-top-center-spacer"></div>
+
+                <div class="pvorg-top-right">
+                    <div class="pvorg-node pvorg-teal">Représentation régionale de l'ANDA à Dakhla</div>
+                    <div class="pvorg-node pvorg-teal">Représentation régionale de l'ANDA à Agadir</div>
+                </div>
+            </div>
+
+            <!-- Middle Section (Departments) -->
+            <div class="pvorg-departments-container">
+                
+                <div class="pvorg-department-column">
+                    <div class="pvorg-node pvorg-purple">Département de l'investissement, de la promotion et des études</div>
+                    <div class="pvorg-sub-services">
+                        <div class="pvorg-node pvorg-orange">Service de l'appui aux investisseurs</div>
+                        <div class="pvorg-node pvorg-orange">Service des études</div>
+                    </div>
+                </div>
+
+                <div class="pvorg-department-column">
+                    <div class="pvorg-node pvorg-purple">Département de l'ingénierie des projets aquacoles</div>
+                    <div class="pvorg-sub-services">
+                        <div class="pvorg-node pvorg-orange">Service des plans d'aménagement</div>
+                        <div class="pvorg-node pvorg-orange">Service de l'appui technique</div>
+                        <div class="pvorg-node pvorg-orange">Service de la réglementation et des autorisations</div>
+                    </div>
+                </div>
+
+                <div class="pvorg-department-column">
+                    <div class="pvorg-node pvorg-purple">Département des ressources et des systèmes d'information</div>
+                    <div class="pvorg-sub-services">
+                        <div class="pvorg-node pvorg-orange">Service des ressources humaines</div>
+                        <div class="pvorg-node pvorg-orange">Service des systèmes d'information</div>
+                        <div class="pvorg-node pvorg-orange">Service du budget et de la comptabilité</div>
+                        <div class="pvorg-node pvorg-orange">Service des achats et des moyens généraux</div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <script>
+        (function () {
+            const trigger = document.getElementById('equipe');
+            const chart = trigger.querySelector('.pvorg-org-chart');
+            if (!trigger || !chart) return;
+
+            let animated = false;
+
+            // Trigger when the #equipe section enters the viewport
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting && !animated) {
+                        animated = true;
+                        chart.classList.add('pvorg-animate');
+                        observer.unobserve(trigger); // fire only once
+                    }
+                });
+            }, {
+                threshold: 0.2 // 20% of the equipe section visible
+            });
+
+            observer.observe(trigger);
+        })();
+    </script>
+
+</body>
+</html>

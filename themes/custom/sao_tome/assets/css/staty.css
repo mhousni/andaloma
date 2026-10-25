@@ -1,0 +1,169 @@
+
+
+        .chfr-section {
+            max-width: 1280px;
+            width: 100%;
+            background: #ffffff;
+            border-radius: 2rem;
+            box-shadow: 0 20px 35px -8px rgba(0, 30, 50, 0.15);
+            padding: 3rem 2rem;
+            transition: all 0.2s;
+        }
+
+        .chfr-title {
+            text-align: center;
+            font-size: 1.9rem;
+            font-weight: 600;
+            color: #0b3b5c;
+            margin-bottom: 2.5rem;
+            letter-spacing: -0.02em;
+            position: relative;
+        }
+
+        .chfr-title::after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 4px;
+            background: #1e7e8c;
+            margin: 0.8rem auto 0;
+            border-radius: 4px;
+        }
+
+        .chfr-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+        }
+
+        .chfr-card {
+            text-align: center;
+            padding: 1.5rem 1rem;
+            border-radius: 1.5rem;
+            background: #ffffff;
+            border: 1px solid #e2edf2;
+            transition: transform 0.25s ease, box-shadow 0.3s ease, border-color 0.3s;
+            box-shadow: 0 6px 14px rgba(0, 40, 60, 0.02);
+        }
+
+        .chfr-card:hover {
+            transform: translateY(-6px);
+            border-color: #9bc6d0;
+            box-shadow: 0 20px 30px -12px rgba(0, 90, 110, 0.18);
+        }
+
+        .chfr-icon-wrapper {
+                display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 100px;
+    height: 100px;
+    background: #e3f1f5;
+    border-radius: 50%;
+    margin-bottom: 1.2rem;
+    color: #0e5f6b;
+    font-size: 5.2rem;
+    transition: background 0.3s, color 0.3s;
+        }
+
+        .chfr-card:hover .chfr-icon-wrapper {
+            background: #1e7e8c;
+            color: #ffffff;
+        }
+
+        .chfr-number {
+            font-size: 2.6rem;
+            font-weight: 800;
+            color: #0b3b5c;
+            line-height: 1.2;
+            margin-bottom: 0.4rem;
+            letter-spacing: -0.02em;
+            display: flex;
+            align-items: baseline;
+            justify-content: center;
+            gap: 0.15rem;
+        }
+
+        .chfr-suffix {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #1e7e8c;
+            margin-left: 2px;
+        }
+
+        .chfr-label {
+            font-size: 0.95rem;
+            font-weight: 500;
+            color: #3f5e6b;
+            line-height: 1.4;
+            text-transform: uppercase;
+            letter-spacing: 0.02em;
+            max-width: 180px;
+            margin: 0 auto;
+        }
+
+        .chfr-content {
+            /* container for number + label */
+        }
+
+        /* Responsive breakpoints */
+        @media (max-width: 1024px) {
+            .chfr-grid {
+                gap: 1.2rem;
+            }
+            .chfr-number {
+                font-size: 2.2rem;
+            }
+            .chfr-icon-wrapper {
+                width: 60px;
+                height: 60px;
+                font-size: 1.9rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .chfr-section {
+                padding: 2rem 1.2rem;
+            }
+            .chfr-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 1.5rem;
+            }
+            .chfr-title {
+                font-size: 1.6rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .chfr-grid {
+                grid-template-columns: 1fr;
+                gap: 1.2rem;
+            }
+            .chfr-card {
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                text-align: left;
+                gap: 1rem;
+                padding: 1rem 1.2rem;
+            }
+            .chfr-icon-wrapper {
+                margin-bottom: 0;
+                width: 55px;
+                height: 55px;
+                font-size: 1.7rem;
+                flex-shrink: 0;
+            }
+            .chfr-content {
+                flex: 1;
+            }
+            .chfr-number {
+                justify-content: flex-start;
+                font-size: 2rem;
+            }
+            .chfr-label {
+                margin: 0;
+                max-width: none;
+                font-size: 0.85rem;
+            }
+        }

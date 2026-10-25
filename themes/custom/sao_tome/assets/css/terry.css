@@ -5,17 +5,22 @@
         }
         .terretoires {
             padding: 40px 20px;
-            background: #0c2e54;
+            background: transparent;
+           
+
         }
         /* --- Main Container (The Card) --- */
         .trtr-card {
             /* background: #ffffff; */
             width: 100%;
-            max-width: 480px;
-            border-radius: 8px;
+            /* max-width: 480px; */
+            /* border-radius: 8px; */
             box-shadow: 0 10px 30px rgba(252, 251, 251, 0.1);
             overflow: hidden;
             position: relative;
+
+             border: 2px dashed #f1f1f1;
+            border-radius: 25px;
         }
 
         /* --- Header Section --- */

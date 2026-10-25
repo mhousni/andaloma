@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Custom Video Player with WebVTT Subtitles</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background: #222;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.video-container {
+    width: 800px;
+    max-width: 90%;
+    position: relative;
+    background: #000;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+video {
+    width: 100%;
+    display: block;
+}
+
+.video-controls {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    background: rgba(0, 0, 0, 0.7);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    transform: translateY(100%);
+    transition: transform 0.3s ease;
+}
+
+.video-container:hover .video-controls {
+    transform: translateY(0);
+}
+
+button {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    padding: 5px 10px;
+    margin: 0 5px;
+    outline: none;
+}
+
+button:hover {
+    color: #ff9800;
+}
+
+.progress {
+    flex-grow: 1;
+    height: 10px;
+    margin: 0 10px;
+    cursor: pointer;
+    background: #444;
+    border-radius: 5px;
+    appearance: none;
+}
+
+.progress::-webkit-slider-thumb {
+    appearance: none;
+    width: 15px;
+    height: 15px;
+    background: #ff9800;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.volume {
+    width: 80px;
+    height: 6px;
+    margin: 0 10px;
+    cursor: pointer;
+    background: #444;
+    border-radius: 3px;
+    appearance: none;
+}
+
+.volume::-webkit-slider-thumb {
+    appearance: none;
+    width: 12px;
+    height: 12px;
+    background: #ff9800;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.time {
+    font-size: 14px;
+    margin: 0 10px;
+    white-space: nowrap;
+}
+
+/* Subtitles styling */
+video::cue {
+    background: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    font-size: 16px;
+    text-shadow: 1px 1px 2px black;
+}
+
+/* Fullscreen styles */
+.video-container.fullscreen {
+    width: 100%;
+    height: 100%;
+    max-width: none;
+    border-radius: 0;
+}
+
+/* Active button state */
+button.active {
+    color: #ff9800;
+}
+    </style>
+</head>
+<body>
+    <div class="video-container">
+        <video id="video">
+            <source src="https://samplelib.com/lib/preview/mp4/sample-5s.mp4" type="video/mp4">
+            <track label="English" kind="subtitles" srclang="en" src="subtitles.vtt" default>
+            Your browser does not support the video tag.
+        </video>
+        
+        <div class="video-controls">
+            <button class="play-pause" title="Play/Pause">▶</button>
+            <input type="range" class="progress" min="0" max="100" value="0" step="0.1">
+            <span class="time">
+                <span class="current-time">00:00</span> / <span class="duration">00:00</span>
+            </span>
+            <button class="mute" title="Mute/Unmute">🔊</button>
+            <input type="range" class="volume" min="0" max="1" value="1" step="0.1">
+            <button class="fullscreen" title="Fullscreen">⛶</button>
+            <button class="subtitles" title="Toggle Subtitles">CC</button>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+    const video = document.getElementById('video');
+    const playPauseBtn = document.querySelector('.play-pause');
+    const progress = document.querySelector('.progress');
+    const currentTime = document.querySelector('.current-time');
+    const duration = document.querySelector('.duration');
+    const muteBtn = document.querySelector('.mute');
+    const volume = document.querySelector('.volume');
+    const fullscreenBtn = document.querySelector('.fullscreen');
+    const subtitlesBtn = document.querySelector('.subtitles');
+    const videoContainer = document.querySelector('.video-container');
+
+    // Play/Pause
+    playPauseBtn.addEventListener('click', togglePlayPause);
+    video.addEventListener('click', togglePlayPause);
+
+    function togglePlayPause() {
+        if (video.paused) {
+            video.play();
+            playPauseBtn.textContent = '❚❚';
+            playPauseBtn.title = 'Pause';
+        } else {
+            video.pause();
+            playPauseBtn.textContent = '▶';
+            playPauseBtn.title = 'Play';
+        }
+    }
+
+    // Progress bar
+    video.addEventListener('timeupdate', updateProgress);
+    progress.addEventListener('input', setProgress);
+
+    function updateProgress() {
+        progress.value = (video.currentTime / video.duration) * 100;
+        currentTime.textContent = formatTime(video.currentTime);
+    }
+
+    function setProgress() {
+        video.currentTime = (progress.value * video.duration) / 100;
+    }
+
+    // Duration display
+    video.addEventListener('loadedmetadata', function() {
+        duration.textContent = formatTime(video.duration);
+    });
+
+    function formatTime(seconds) {
+        const minutes = Math.floor(seconds / 60);
+        seconds = Math.floor(seconds % 60);
+        return `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+    }
+
+    // Volume controls
+    muteBtn.addEventListener('click', toggleMute);
+    volume.addEventListener('input', setVolume);
+
+    function toggleMute() {
+        video.muted = !video.muted;
+        muteBtn.textContent = video.muted ? '🔇' : '🔊';
+        muteBtn.title = video.muted ? 'Unmute' : 'Mute';
+        volume.value = video.muted ? 0 : video.volume;
+    }
+
+    function setVolume() {
+        video.volume = volume.value;
+        video.muted = volume.value === '0';
+        muteBtn.textContent = video.muted ? '🔇' : '🔊';
+        muteBtn.title = video.muted ? 'Unmute' : 'Mute';
+    }
+
+    // Fullscreen
+    fullscreenBtn.addEventListener('click', toggleFullscreen);
+
+    function toggleFullscreen() {
+        if (!document.fullscreenElement) {
+            videoContainer.requestFullscreen().catch(err => {
+                console.error(`Error attempting to enable fullscreen: ${err.message}`);
+            });
+            videoContainer.classList.add('fullscreen');
+        } else {
+            document.exitFullscreen();
+            videoContainer.classList.remove('fullscreen');
+        }
+    }
+
+    // Subtitles
+    subtitlesBtn.addEventListener('click', toggleSubtitles);
+
+    function toggleSubtitles() {
+        const track = video.textTracks[0];
+        if (track) {
+            if (track.mode === 'hidden') {
+                track.mode = 'showing';
+                subtitlesBtn.classList.add('active');
+                subtitlesBtn.title = 'Hide Subtitles';
+            } else {
+                track.mode = 'hidden';
+                subtitlesBtn.classList.remove('active');
+                subtitlesBtn.title = 'Show Subtitles';
+            }
+        }
+    }
+
+    // Initialize subtitles button state
+    video.addEventListener('loadedmetadata', function() {
+        const track = video.textTracks[0];
+        if (track) {
+            track.mode = 'hidden';
+            subtitlesBtn.title = 'Show Subtitles';
+        } else {
+            subtitlesBtn.disabled = true;
+        }
+    });
+
+    // Keyboard shortcuts
+    document.addEventListener('keydown', function(e) {
+        if (e.target.tagName.toLowerCase() === 'input') return;
+
+        switch (e.key) {
+            case ' ':
+            case 'k':
+                togglePlayPause();
+                break;
+            case 'm':
+                toggleMute();
+                break;
+            case 'f':
+                toggleFullscreen();
+                break;
+            case 'c':
+                toggleSubtitles();
+                break;
+            case 'ArrowLeft':
+                video.currentTime = Math.max(0, video.currentTime - 5);
+                break;
+            case 'ArrowRight':
+                video.currentTime = Math.min(video.duration, video.currentTime + 5);
+                break;
+            case 'ArrowUp':
+                video.volume = Math.min(1, video.volume + 0.1);
+                volume.value = video.volume;
+                break;
+            case 'ArrowDown':
+                video.volume = Math.max(0, video.volume - 0.1);
+                volume.value = video.volume;
+                break;
+        }
+    });
+});
+    </script>
+</body>
+</html>

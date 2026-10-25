@@ -81,6 +81,7 @@
     margin-bottom: 15px;
     display: inline-block;
         }
+       
 
         /* Growth Items */
         .growth-item {
@@ -104,7 +105,7 @@
         }
 
         .growth-text h4 { font-size: 1.5rem; margin: 0; color: var(--primary-dark); }
-        .growth-text p { font-size: 1.85rem; color: var(--text-gray); margin: 0; }
+        .growth-text p { font-size: 1.0rem; color: var(--text-gray); margin: 0; }
 
         /* Lists */
         ul.data-list {
@@ -117,7 +118,7 @@
             justify-content: space-between;
             padding: 10px 0;
             border-bottom: 1px dashed #eee;
-            font-size: 1.95rem;
+            font-size: 1.1rem;
             opacity: 0;
             animation: fadeIn 1s ease forwards;
             animation-delay: 1s; /* Appear after counters */
@@ -146,6 +147,10 @@
             width: 100%;
             margin-top: auto;
         }
+
+        .dashboard .text-content li, .text-content p , .card ul li {
+    font-size: 1.8rem !important;
+}
 
         /* Responsive Design */
         @media (max-width: 1024px) {

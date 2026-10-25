@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Centered Video Popup · 50% screen · andavid prefix</title>
+  <style>
+    /* Reset & base */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: system-ui, 'Segoe UI', Roboto, sans-serif;
+      background: #f4f7fb;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 1rem;
+    }
+
+    /* main wrapper */
+    .andavid-video {
+      position: relative;
+      display: inline-block;
+    }
+
+    /* Button styling – prefixed */
+    .andavid-button {
+      display: inline-block;
+      border-radius: 40px;
+      font-weight: 600;
+      text-align: center;
+      cursor: pointer;
+      transition: 0.2s ease;
+      border: none;
+      background: transparent;
+    }
+
+    .andavid-button--secondary {
+      border: 1.5px solid #1e2b3c;
+      background: white;
+      color: #1e2b3c;
+    }
+
+    .andavid-button--secondary--light {
+      background: #eef2f7;
+      border-color: #b0c4de;
+      color: #1e2b3c;
+    }
+
+    .andavid-button--secondary--light:hover {
+      background: #d9e2ef;
+      border-color: #8aa9c9;
+    }
+
+    .andavid-button-label {
+      display: inline-block;
+      padding: 0.75rem 2rem;
+      font-size: 1rem;
+      letter-spacing: 0.3px;
+      pointer-events: none;
+    }
+
+    /* clickable area covers button */
+    #btnVidePA {
+      text-decoration: none;
+      display: block;
+      border-radius: 40px;
+    }
+
+    /* ----- POPUP OVERLAY (black background, full screen) ----- */
+    .andavid-video-popup {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background-color: #000000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 1000;
+
+      /* hidden by default */
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+      transition: opacity 0.25s ease, visibility 0.25s ease;
+    }
+
+    /* visible state */
+    .andavid-video-popup.andavid-show {
+      opacity: 1;
+      visibility: visible;
+      pointer-events: auto;
+    }
+
+    /* the video element itself: centered, 50% width & height */
+    .andavid-video-popup video {
+      width: 50vw;
+      height: 50vh;
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
+      background: #111;
+      border-radius: 12px;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
+    }
+
+    /* .andavid-video-none as default hidden state — but we rely on .andavid-show */
+    /* ensure .andavid-video-none without .andavid-show stays hidden */
+    .andavid-video-popup.andavid-video-none:not(.andavid-show) {
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+    }
+
+    /* .andavid-show always wins */
+    .andavid-video-popup.andavid-video-none.andavid-show {
+      opacity: 1;
+      visibility: visible;
+      pointer-events: auto;
+    }
+
+    /* optional close hint */
+    .andavid-video-popup::after {
+      content: "✕ click anywhere to close";
+      position: fixed;
+      bottom: 24px;
+      right: 30px;
+      color: rgba(255, 255, 255, 0.6);
+      font-size: 0.9rem;
+      letter-spacing: 0.5px;
+      background: rgba(0, 0, 0, 0.4);
+      padding: 8px 16px;
+      border-radius: 40px;
+      backdrop-filter: blur(4px);
+      pointer-events: none;
+      opacity: 0.8;
+      font-weight: 400;
+      transition: opacity 0.2s;
+    }
+  </style>
+</head>
+<body>
+  <!-- wrapper with prefixed class -->
+  <div class="andavid-video">
+    <!-- BUTTON -->
+    <div id="btnVideP" class="andavid-button andavid-button--secondary andavid-button--secondary--light">
+      <a href="#" id="btnVidePA">
+        <span class="andavid-button-label" data-label="Voir le Video">Voir le Video</span>
+      </a>
+    </div>
+
+    <!-- POPUP -->
+    <div id="videoPopup" class="andavid-video-popup andavid-video-none">
+      <video id="video" controls playsinline>
+        <source src="https://samplelib.com/lib/preview/mp4/sample-5s.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+    </div>
+  </div>
+
+  <script>
+    (function() {
+      const btnLink = document.getElementById('btnVidePA');
+      const popup = document.getElementById('videoPopup');
+      const video = document.getElementById('video');
+
+      // Open popup on button click
+      btnLink.addEventListener('click', function(e) {
+        e.preventDefault();
+        popup.classList.add('andavid-show');
+        video.currentTime = 0;
+        video.play().catch(err => {
+          console.log("Playback prevented:", err);
+        });
+      });
+
+      // Close popup when clicking anywhere on the black overlay
+      // (but not when clicking the video itself)
+      popup.addEventListener('click', function(e) {
+        if (e.target === video || video.contains(e.target)) {
+          return;
+        }
+        popup.classList.remove('andavid-show');
+        video.pause();
+      });
+
+      // Close with Escape key
+      document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && popup.classList.contains('andavid-show')) {
+          popup.classList.remove('andavid-show');
+          video.pause();
+        }
+      });
+
+      // Pause video when popup is hidden via class mutation
+      const observer = new MutationObserver((mutations) => {
+        mutations.forEach((mutation) => {
+          if (mutation.attributeName === 'class') {
+            const isVisible = popup.classList.contains('andavid-show');
+            if (!isVisible) {
+              video.pause();
+            }
+          }
+        });
+      });
+      observer.observe(popup, { attributes: true });
+
+      // Initial state: ensure video is paused
+      video.pause();
+    })();
+  </script>
+</body>
+</html>

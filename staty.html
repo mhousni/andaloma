@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ANDA – Chiffres Clés</title>
+    <!-- Font Awesome for icons (free CDN) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: system-ui, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+            background: #f0f4f8;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            padding: 1.5rem;
+        }
+
+        .chiffres-section {
+            max-width: 1280px;
+            width: 100%;
+            background: #ffffff;
+            border-radius: 2rem;
+            box-shadow: 0 20px 35px -8px rgba(0, 30, 50, 0.15);
+            padding: 3rem 2rem;
+            transition: all 0.2s;
+        }
+
+        .chiffres-section h2 {
+            text-align: center;
+            font-size: 1.9rem;
+            font-weight: 600;
+            color: #0b3b5c;
+            margin-bottom: 2.5rem;
+            letter-spacing: -0.02em;
+            position: relative;
+        }
+
+        .chiffres-section h2::after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 4px;
+            background: #1e7e8c;
+            margin: 0.8rem auto 0;
+            border-radius: 4px;
+        }
+
+        .chiffres-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+        }
+
+        .chiffre-card {
+            text-align: center;
+            padding: 1.5rem 1rem;
+            border-radius: 1.5rem;
+            background: #ffffff;
+            border: 1px solid #e2edf2;
+            transition: transform 0.25s ease, box-shadow 0.3s ease, border-color 0.3s;
+            box-shadow: 0 6px 14px rgba(0, 40, 60, 0.02);
+        }
+
+        .chiffre-card:hover {
+            transform: translateY(-6px);
+            border-color: #9bc6d0;
+            box-shadow: 0 20px 30px -12px rgba(0, 90, 110, 0.18);
+        }
+
+        .icon-wrapper {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 70px;
+            height: 70px;
+            background: #e3f1f5;
+            border-radius: 50%;
+            margin-bottom: 1.2rem;
+            color: #0e5f6b;
+            font-size: 2.2rem;
+            transition: background 0.3s, color 0.3s;
+        }
+
+        .chiffre-card:hover .icon-wrapper {
+            background: #1e7e8c;
+            color: #ffffff;
+        }
+
+        .chiffre-number {
+            font-size: 2.6rem;
+            font-weight: 800;
+            color: #0b3b5c;
+            line-height: 1.2;
+            margin-bottom: 0.4rem;
+            letter-spacing: -0.02em;
+            display: flex;
+            align-items: baseline;
+            justify-content: center;
+            gap: 0.15rem;
+        }
+
+        .chiffre-suffix {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #1e7e8c;
+            margin-left: 2px;
+        }
+
+        .chiffre-label {
+            font-size: 0.95rem;
+            font-weight: 500;
+            color: #3f5e6b;
+            line-height: 1.4;
+            text-transform: uppercase;
+            letter-spacing: 0.02em;
+            max-width: 180px;
+            margin: 0 auto;
+        }
+
+        /* Responsive breakpoints */
+        @media (max-width: 1024px) {
+            .chiffres-grid {
+                gap: 1.2rem;
+            }
+            .chiffre-number {
+                font-size: 2.2rem;
+            }
+            .icon-wrapper {
+                width: 60px;
+                height: 60px;
+                font-size: 1.9rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .chiffres-section {
+                padding: 2rem 1.2rem;
+            }
+            .chiffres-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 1.5rem;
+            }
+            .chiffres-section h2 {
+                font-size: 1.6rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .chiffres-grid {
+                grid-template-columns: 1fr;
+                gap: 1.2rem;
+            }
+            .chiffre-card {
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                text-align: left;
+                gap: 1rem;
+                padding: 1rem 1.2rem;
+            }
+            .icon-wrapper {
+                margin-bottom: 0;
+                width: 55px;
+                height: 55px;
+                font-size: 1.7rem;
+                flex-shrink: 0;
+            }
+            .chiffre-content {
+                flex: 1;
+            }
+            .chiffre-number {
+                justify-content: flex-start;
+                font-size: 2rem;
+            }
+            .chiffre-label {
+                margin: 0;
+                max-width: none;
+                font-size: 0.85rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <section class="chiffres-section">
+        <h2>L'aquaculture en chiffres</h2>
+        <div class="chiffres-grid">
+
+            <!-- Column 1: Projets actifs -->
+            <div class="chiffre-card">
+                <div class="icon-wrapper">
+                    <i class="fas fa-diagram-project"></i>
+                </div>
+                <div class="chiffre-content">
+                    <div class="chiffre-number" data-target="244" data-suffix="">0</div>
+                    <div class="chiffre-label">Projets aquacoles actifs</div>
+                </div>
+            </div>
+
+            <!-- Column 2: Capacité cible -->
+            <div class="chiffre-card">
+                <div class="icon-wrapper">
+                    <i class="fas fa-weight-hanging"></i>
+                </div>
+                <div class="chiffre-content">
+                    <div class="chiffre-number" data-target="90000" data-suffix=" t">0</div>
+                    <div class="chiffre-label">Capacité cible (tonnes/an)</div>
+                </div>
+            </div>
+
+            <!-- Column 3: Fermes opérationnelles -->
+            <div class="chiffre-card">
+                <div class="icon-wrapper">
+                    <i class="fas fa-fish"></i>
+                </div>
+                <div class="chiffre-content">
+                    <div class="chiffre-number" data-target="183" data-suffix="">0</div>
+                    <div class="chiffre-label">Fermes opérationnelles</div>
+                </div>
+            </div>
+
+            <!-- Column 4: Financement mobilisé -->
+            <div class="chiffre-card">
+                <div class="icon-wrapper">
+                    <i class="fas fa-hand-holding-dollar"></i>
+                </div>
+                <div class="chiffre-content">
+                    <div class="chiffre-number" data-target="42" data-suffix=" M DH">0</div>
+                    <div class="chiffre-label">Financement mobilisé</div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <script>
+        (function() {
+            // Format number with thin space (French style) for readability
+            function formatNumber(value) {
+                // For large numbers (>= 10000), use space as thousands separator
+                if (value >= 10000) {
+                    return value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ' ');
+                }
+                return value.toString();
+            }
+
+            // Easing function: easeOutQuart (fast start, gentle stop)
+            function easeOutQuart(t) {
+                return 1 - Math.pow(1 - t, 4);
+            }
+
+            // Animate a single counter element
+            function animateCounter(el) {
+                const target = parseInt(el.getAttribute('data-target'), 10);
+                const suffix = el.getAttribute('data-suffix') || '';
+                const duration = 2000; // milliseconds
+                let startTime = null;
+
+                function step(timestamp) {
+                    if (!startTime) startTime = timestamp;
+                    const elapsed = timestamp - startTime;
+                    const progress = Math.min(elapsed / duration, 1);
+                    const easedProgress = easeOutQuart(progress);
+                    const currentValue = Math.floor(easedProgress * target);
+
+                    el.textContent = formatNumber(currentValue) + suffix;
+
+                    if (progress < 1) {
+                        requestAnimationFrame(step);
+                    } else {
+                        // Ensure final value is exactly the target
+                        el.textContent = formatNumber(target) + suffix;
+                    }
+                }
+
+                requestAnimationFrame(step);
+            }
+
+            // Intersection Observer: start animation when section enters viewport
+            const counters = document.querySelectorAll('.chiffre-number');
+            if (counters.length === 0) return;
+
+            // Set initial text
+            counters.forEach(el => {
+                const suffix = el.getAttribute('data-suffix') || '';
+                el.textContent = '0' + suffix;
+            });
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const counter = entry.target;
+                        // Avoid double animation
+                        if (!counter.dataset.animated) {
+                            counter.dataset.animated = 'true';
+                            animateCounter(counter);
+                        }
+                        observer.unobserve(counter);
+                    }
+                });
+            }, {
+                threshold: 0.3,        // trigger when 30% of element visible
+                rootMargin: '0px 0px -20px 0px'
+            });
+
+            counters.forEach(counter => observer.observe(counter));
+        })();
+    </script>
+</body>
+</html>

@@ -1,0 +1,21 @@
+/* path:hover{
+fill: red;
+} */
+
+/* path[id="18"]:hover { fill: #C48D39; }
+path[id="13"]:hover { fill: #C48D39; }
+path[id="17"]:hover { fill: #C48D39; }
+path[id="19"]:hover { fill: #C48D39; }
+path[id="16"]:hover { fill: #C48D39; } */
+a#popupF1Btn, 
+a#popupF2Btn,
+a#popupF3Btn,
+a#popupF4Btn,
+a#popupF5Btn{
+    text-decoration: none !important;
+}
+
+.rightX {
+  transform: rotate(269deg);
+  -webkit-transform: rotate(269deg);
+}

@@ -1,0 +1,496 @@
+.usda-home-redesign {
+  --navy: #002d72;
+  --navy-dark: #001b3d;
+  --red: #b50909;
+  --gold: #e6b325;
+  --yellow: #ffe36a;
+  --cream: #f4f0e7;
+  --paper: #fbfaf6;
+  --panel: #efebe2;
+  --ink: #1b1b1b;
+  --line: rgba(0,45,114,.16);
+  --ease-out: cubic-bezier(.22,1,.36,1);
+  --site-bg: #fcfcfc;
+  color: var(--ink);
+  position: relative;
+  isolation: isolate;
+}
+.usda-home-redesign *,
+.usda-home-redesign *::before,
+.usda-home-redesign *::after { box-sizing: border-box; }
+
+.usda-sr-only {
+  position: absolute !important;
+  width: 1px; height: 1px;
+  margin: -1px; padding: 0;
+  overflow: hidden;
+  clip: rect(0,0,0,0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* ==========================================================
+   LAYOUT
+   ========================================================== */
+.usda-fullbleed {
+  position: relative;
+  left: 50%;
+  width: 100vw;
+  max-width: 100vw;
+  margin-left: -50vw;
+}
+.usda-section-inner {
+  width: min(calc(100% - 8rem), 1120px);
+  margin-inline: auto;
+}
+
+/* ==========================================================
+   SECTION HEADING
+   ========================================================== */
+.usda-section-heading {
+  clear: both;
+  max-width: 118.6rem;
+  padding: 0 3rem;
+  margin: 0 auto 3.2rem;
+  color: #002d72;
+  font-size: 3.2rem;
+  font-weight: 300;
+  line-height: 3.7rem;
+  text-align: center;
+  text-wrap: balance;
+}
+.usda-section-heading::after {
+  content: "";
+  display: block;
+  width: 64px;
+  height: 3px;
+  margin: 1.8rem auto 0;
+  border-radius: 3px;
+  background: var(--gold);
+  transform-origin: center;
+}
+
+/* ==========================================================
+   RESULTS SECTION
+   ========================================================== */
+.usda-wins-editorial {
+  position: relative;
+  z-index: 5;
+  overflow: hidden;
+  padding: 6.4rem 0 10rem;
+  background: var(--paper);
+}
+.usda-wins-editorial .usda-section-inner {
+  position: relative;
+  z-index: 1;
+}
+.usda-win-intro {
+  max-width: 820px;
+  margin: -1.2rem auto 4.4rem;
+  color: #39444e;
+  font-size: 2rem;
+  font-weight: 400;
+  line-height: 1.7;
+  text-align: center;
+  text-wrap: balance;
+}
+
+/* Yellow marker highlights */
+.usda-win-intro :is(strong,b),
+.usda-win-stat p :is(strong,b) {
+  padding: 0 .06em;
+  margin: 0 -.06em;
+  color: inherit;
+  font-weight: 800;
+  text-decoration: none;
+  background-image: linear-gradient(
+    102deg,
+    rgba(255,227,106,0) .15em,
+    rgba(255,227,106,.88) .3em,
+    rgba(255,227,106,.88) calc(100% - .3em),
+    rgba(255,227,106,0) calc(100% - .15em)
+  );
+  background-repeat: no-repeat;
+  background-position: left 0 top 0;
+  background-size: calc(var(--hx,1) * 100%) 100%;
+  transition: background-size .9s var(--ease-out);
+  transition-delay: calc(var(--d,0ms) + 350ms);
+}
+.usda-win-stat:nth-child(3n+2) { --hr: .5deg;  --hs: -5deg; --mr: .5deg;  --ms: -5deg; }
+.usda-win-stat:nth-child(3n)   { --hr: -1.5deg; --hs: -6deg; --mr: -2deg; --ms: -6deg; }
+
+/* ==========================================================
+   RESULTS GRID + CARDS
+   ========================================================== */
+.usda-win-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0,1fr));
+  gap: 1.4rem;
+}
+.usda-win-stat {
+  position: relative;
+  min-width: 0;
+  min-height: 19rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2.6rem 2.6rem;
+  overflow: hidden;
+  border-radius: 28px;
+  background: var(--panel);
+  text-align: center;
+  transition: transform .22s ease, background-color .22s ease, box-shadow .22s ease;
+  isolation: isolate;
+}
+.usda-win-stat > * { min-width: 0; }
+.usda-win-stat__number {
+  position: relative;
+  z-index: 0;
+  display: inline-block;
+  max-width: 100%;
+  margin: 0 0 1rem;
+  color: var(--navy-dark);
+  font-size: clamp(4.2rem,4.4vw,5.6rem);
+  font-weight: 800;
+  line-height: .88;
+  letter-spacing: -.055em;
+  font-variant-numeric: tabular-nums;
+  transform: scale(1);
+  transition: color .22s ease, transform .25s var(--ease-out);
+}
+.usda-win-stat p {
+  width: 100%;
+  max-width: 32rem;
+  margin: 0 auto !important;
+  color: #35414a;
+  font-size: 1.7rem;
+  font-weight: 400;
+  line-height: 1.55;
+  overflow-wrap: break-word;
+  text-wrap: balance;
+}
+.usda-win-stat p :is(strong,b) { color: var(--navy-dark); }
+
+/* Cursor glow */
+.usda-win-stat::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  opacity: 0;
+  background: radial-gradient(
+    220px circle at var(--gx,50%) var(--gy,50%),
+    rgba(255,227,106,.32),
+    transparent 70%
+  );
+  transition: opacity .3s ease;
+}
+@media (hover:hover) and (pointer:fine) {
+  .usda-home-redesign .usda-win-grid .usda-win-stat:hover {
+    transform: translateY(-2px);
+    background: #f3efe6;
+    box-shadow: 0 7px 18px rgba(0,45,114,.055);
+  }
+  .usda-win-stat:hover::after { opacity: 1; }
+  .usda-win-stat:hover .usda-win-stat__number {
+    color: var(--red);
+    transform: scale(1.07);
+  }
+}
+
+/* ==========================================================
+   MOTION STATES
+   ========================================================== */
+.usda-motion .usda-word {
+  display: inline-block;
+  overflow: hidden;
+  vertical-align: bottom;
+  padding-bottom: .12em;
+  margin-bottom: -.12em;
+}
+.usda-motion .usda-word > span {
+  display: inline-block;
+  transform: translate3d(0,110%,0);
+  transition: transform 1s var(--ease-out);
+  transition-delay: calc(var(--d,0ms) + var(--i) * 75ms);
+}
+.usda-motion .is-inview .usda-word > span,
+.usda-motion .usda-rural-hero.is-inview .usda-word > span {
+  transform: none;
+}
+.usda-motion .usda-section-heading::after {
+  transform: scaleX(0);
+  transition: transform .9s var(--ease-out) .35s;
+}
+.usda-motion .usda-section-heading.is-inview::after {
+  transform: scaleX(1);
+}
+.usda-motion .usda-win-intro {
+  opacity: 0;
+  transform: translate3d(0,16px,0);
+  transition: opacity .8s var(--ease-out) .2s, transform .9s var(--ease-out) .2s;
+}
+.usda-motion .usda-win-intro.is-inview {
+  opacity: 1;
+  transform: none;
+}
+.usda-motion .usda-win-intro :is(strong,b),
+.usda-motion .usda-win-stat p :is(strong,b) {
+  --hx: 0;
+}
+.usda-motion .usda-win-intro .usda-highlight-visible,
+.usda-motion .usda-win-stat p .usda-highlight-visible {
+  --hx: 1;
+}
+.usda-motion .usda-win-stat {
+  opacity: 0;
+  transform: translate3d(0,44px,0) scale(.95);
+  transition:
+    opacity .7s var(--ease-out) var(--d,0ms),
+    transform 1s var(--ease-out) var(--d,0ms),
+    background-color .22s ease,
+    box-shadow .22s ease;
+}
+.usda-motion .usda-win-stat.is-inview {
+  opacity: 1;
+  transform: none;
+}
+.usda-motion .usda-win-stat.is-settled {
+  transition: transform .22s ease, background-color .22s ease, box-shadow .22s ease;
+}
+
+/* ==========================================================
+   RESULTS DEPTH CAROUSEL
+   ========================================================== */
+.usda-win-carousel {
+  --card-w: clamp(30rem,34vw,42rem);
+  position: relative;
+}
+.usda-win-carousel.is-depth .usda-win-grid {
+  position: relative;
+  display: block;
+  height: var(--stage-h,30rem);
+  margin-inline: calc(50% - 50vw);
+  margin-block: -1.6rem -4.8rem;
+  overflow: hidden;
+  perspective: 1600px;
+  perspective-origin: var(--lean-x,50%) 50%;
+  touch-action: pan-y;
+  outline: none;
+  -webkit-mask-image: linear-gradient(to right, transparent 0, #000 12%, #000 88%, transparent 100%);
+  mask-image: linear-gradient(to right, transparent 0, #000 12%, #000 88%, transparent 100%);
+}
+.usda-win-carousel.is-depth.is-dragging .usda-win-grid {
+  cursor: grabbing;
+  -webkit-user-select: none;
+  user-select: none;
+}
+.usda-win-carousel.is-depth .usda-win-grid .usda-win-stat {
+  position: absolute;
+  top: 2.4rem;
+  left: 50%;
+  width: var(--card-w);
+  height: var(--card-h,auto);
+  min-height: 0;
+  margin-left: calc(var(--card-w) / -2);
+  transform-origin: 50% 50%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  cursor: pointer;
+  transition: background-color .35s ease, box-shadow .45s ease !important;
+}
+.usda-home-redesign .usda-win-carousel.is-depth .usda-win-grid .usda-win-stat.is-active {
+  cursor: auto;
+  background: #fff;
+  box-shadow:
+    0 0 0 1px rgba(0,45,114,.08),
+    0 26px 50px -22px rgba(0,27,61,.30);
+}
+.usda-win-carousel.is-depth .usda-win-grid:focus-visible .usda-win-stat.is-active {
+  outline: 3px solid var(--gold);
+  outline-offset: 4px;
+}
+.usda-motion .usda-win-carousel.is-depth .usda-win-grid {
+  opacity: 0;
+  transform: translate3d(0,30px,0);
+  transition: opacity .8s var(--ease-out), transform 1s var(--ease-out);
+}
+.usda-motion .usda-win-carousel.is-depth.is-inview .usda-win-grid {
+  opacity: 1;
+  transform: none;
+}
+
+.usda-win-controls {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.6rem;
+  margin-top: 2.4rem;
+}
+.usda-win-controls[hidden] { display: none !important; }
+.usda-win-arrow {
+  flex: none;
+  display: grid;
+  place-items: center;
+  width: 48px;
+  height: 48px;
+  padding: 0;
+  border: 1px solid rgba(0,45,114,.45);
+  border-radius: 50%;
+  background: var(--paper);
+  color: var(--navy);
+  cursor: pointer;
+  transition: background-color .25s ease, color .25s ease, border-color .25s ease, opacity .25s ease;
+}
+.usda-win-arrow svg { width: 20px; height: 20px; }
+.usda-win-arrow:hover:not([aria-disabled="true"]) {
+  background: var(--navy-dark);
+  border-color: var(--navy-dark);
+  color: #fff;
+}
+.usda-win-arrow[aria-disabled="true"] { opacity: .35; cursor: default; }
+.usda-win-meta {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: .8rem;
+  min-width: 12rem;
+}
+.usda-win-progress {
+  position: relative;
+  width: 12rem;
+  height: 4px;
+  overflow: hidden;
+  border-radius: 999px;
+  background: rgba(0,45,114,.16);
+}
+.usda-win-progress > span {
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: var(--navy-dark);
+  transform-origin: left center;
+  transform: scaleX(var(--prog,0));
+  transition: transform .45s var(--ease-out);
+}
+.usda-win-status {
+  margin: 0 !important;
+  color: #35414a;
+  font-size: 1.5rem;
+  font-variant-numeric: tabular-nums;
+  text-align: center;
+}
+.usda-win-toggle {
+  position: relative;
+  z-index: 2;
+  display: block;
+  margin: 1rem auto 0;
+  padding: .8rem 1.2rem;
+  border: 0;
+  background: none;
+  color: var(--navy);
+  font: inherit;
+  font-size: 1.7rem;
+  font-weight: 700;
+  text-decoration: underline;
+  text-underline-offset: .25em;
+  cursor: pointer;
+}
+.usda-win-toggle:hover { text-decoration-thickness: 2px; }
+.usda-win-arrow:focus-visible,
+.usda-win-toggle:focus-visible {
+  outline: 3px solid var(--gold);
+  outline-offset: 3px;
+}
+
+@media (max-width: 1000px) {
+  .usda-section-inner { width: min(calc(100% - 6rem),1120px); }
+  .usda-win-carousel { --card-w: clamp(28rem,50vw,40rem); }
+  .usda-win-grid { grid-template-columns: repeat(2,minmax(0,1fr)); }
+  .usda-win-stat { min-height: 17rem; }
+  .usda-win-stat:last-child:nth-child(odd) {
+    grid-column: 1 / -1;
+    width: calc(50% - .7rem);
+    justify-self: center;
+  }
+}
+@media (max-width: 700px) {
+  .usda-section-inner { width: calc(100% - 4rem); }
+  .usda-section-heading {
+    padding: 0 .5rem;
+    margin-bottom: 3rem;
+    font-size: 3.2rem;
+    line-height: 1.2;
+  }
+  .usda-wins-editorial { padding: 4.8rem 0 7rem; }
+  .usda-win-intro {
+    margin: -1rem auto 2.8rem;
+    font-size: 1.8rem;
+    line-height: 1.65;
+  }
+  .usda-win-grid { grid-template-columns: 1fr; gap: 1rem; }
+  .usda-win-stat {
+    display: flex;
+    align-items: flex-start;
+    gap: .8rem;
+    min-height: 0;
+    padding: 2.2rem 2.4rem;
+    border-radius: 20px;
+    text-align: left;
+    flex-direction: column;
+  }
+  .usda-win-stat:last-child:nth-child(odd) {
+    grid-column: auto;
+    width: 100%;
+    justify-self: stretch;
+  }
+  .usda-win-stat > p:first-child { width: auto; margin: 0 !important; }
+  .usda-win-stat__number {
+    margin: 0;
+    font-size: 3.8rem;
+    line-height: 1;
+    white-space: nowrap;
+  }
+  .usda-win-stat p {
+    max-width: none;
+    font-size: 1.6rem;
+    line-height: 1.5;
+    text-wrap: pretty;
+  }
+  .usda-win-carousel { --card-w: min(78vw,36rem); }
+  .usda-win-carousel.is-depth .usda-win-grid {
+    perspective: 1100px;
+    -webkit-mask-image: linear-gradient(to right, transparent 0, #000 6%, #000 94%, transparent 100%);
+    mask-image: linear-gradient(to right, transparent 0, #000 6%, #000 94%, transparent 100%);
+  }
+  .usda-win-carousel.is-depth .usda-win-grid .usda-win-stat { top: 2rem; }
+  .usda-win-controls { gap: 1.2rem; margin-top: 2.4rem; }
+  .usda-win-meta { min-width: 9rem; }
+  .usda-win-progress { width: 9rem; }
+}
+@media (forced-colors: active) {
+  .usda-win-carousel.is-depth .usda-win-grid {
+    -webkit-mask-image: none;
+    mask-image: none;
+  }
+  .usda-win-carousel.is-depth .usda-win-stat.is-active {
+    outline: 2px solid CanvasText;
+  }
+  .usda-win-progress { background: GrayText; }
+  .usda-win-progress > span { background: Highlight; }
+  .usda-win-stat::after,
+  .usda-win-stat__number::before { display: none; }
+  .usda-win-intro :is(strong,b),
+  .usda-win-stat p :is(strong,b) { background: none; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .usda-home-redesign *,
+  .usda-home-redesign *::before,
+  .usda-home-redesign *::after { transition: none !important; }
+  .usda-home-redesign .usda-win-grid .usda-win-stat:hover,
+  .usda-win-stat:hover .usda-win-stat__number { transform: none; }
+}
