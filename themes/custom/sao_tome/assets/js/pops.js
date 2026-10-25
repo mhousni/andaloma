@@ -1,6 +1,9 @@
 var keys = {37: 1, 38: 1, 39: 1, 40: 1};
 
 function preventDefault(e) {
+  if (e.target instanceof Element && e.target.closest('.aqua-modal-dialog')) {
+    return;
+  }
   e.preventDefault();
 }
 
@@ -49,14 +52,8 @@ btnF1.addEventListener('click', (e) => {
     e.preventDefault()
 
     targetF1.classList.toggle('d-none');
-    btnF1BG.style.width = (screen.width + 1000)+'px';
     btnF1BG.classList.toggle('d-none');
     disableScroll();
-    const element = document.querySelector('body');
-
-element.addEventListener('wheel', function(event) {
-  event.preventDefault();
-}, { passive: false });
 });
 btnCloseF1.addEventListener('click', (e) => {
     e.preventDefault()
@@ -75,14 +72,8 @@ btnF2.addEventListener('click', (e) => {
     e.preventDefault()
 
     targetF2.classList.toggle('d-none');
-    btnF2BG.style.width = (screen.width + 1000)+'px';
     btnF2BG.classList.toggle('d-none');
     disableScroll();
-    const element = document.querySelector('body');
-
-    element.addEventListener('wheel', function(event) {
-        event.preventDefault();
-    }, { passive: false });
 });
 btnCloseF2.addEventListener('click', (e) => {
     e.preventDefault()
@@ -102,14 +93,8 @@ btnF3.addEventListener('click', (e) => {
     e.preventDefault()
 
     targetF3.classList.toggle('d-none');
-    btnF3BG.style.width = (screen.width + 1000)+'px';
     btnF3BG.classList.toggle('d-none');
     disableScroll();
-    const element = document.querySelector('body');
-
-    element.addEventListener('wheel', function(event) {
-        event.preventDefault();
-    }, { passive: false });
 });
 btnCloseF3.addEventListener('click', (e) => {
     e.preventDefault()
@@ -130,14 +115,8 @@ btnF4.addEventListener('click', (e) => {
     e.preventDefault()
 
     targetF4.classList.toggle('d-none');
-    btnF4BG.style.width = (screen.width + 1000)+'px';
     btnF4BG.classList.toggle('d-none');
     disableScroll();
-    const element = document.querySelector('body');
-
-    element.addEventListener('wheel', function(event) {
-        event.preventDefault();
-    }, { passive: false });
 });
 btnCloseF4.addEventListener('click', (e) => {
     e.preventDefault()
@@ -157,14 +136,8 @@ btnF5.addEventListener('click', (e) => {
     e.preventDefault()
 
     targetF5.classList.toggle('d-none');
-    btnF5BG.style.width = (screen.width + 1000)+'px';
     btnF5BG.classList.toggle('d-none');
     disableScroll();
-    const element = document.querySelector('body');
-
-    element.addEventListener('wheel', function(event) {
-        event.preventDefault();
-    }, { passive: false });
 });
 btnCloseF5.addEventListener('click', (e) => {
     e.preventDefault()
@@ -173,6 +146,3 @@ btnCloseF5.addEventListener('click', (e) => {
     btnF5BG.classList.toggle('d-none');
     enableScroll();
 });
-
-
-
