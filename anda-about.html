@@ -29,6 +29,7 @@
     <script src="https://unpkg.com/embla-carousel/embla-carousel.umd.js"></script>
     <link rel="stylesheet" href="/themes/custom/sao_tome/assets/css/missions.css">
     <link rel="stylesheet" href="/themes/custom/sao_tome/assets/css/vid.css">
+    <link rel="stylesheet" href="/themes/custom/sao_tome/assets/css/orgnz.css">
      <style>
         .embla__viewport,
         .embla-2__viewport {
@@ -173,6 +174,7 @@
     </script>
 
     <link rel="stylesheet" href="/themes/custom/sao_tome/assets/css/pvorg.css">
+    <link rel="stylesheet" href="/themes/custom/sao_tome/assets/css/orgnz.css">
     <style>
         #block-sao-tome-main-menu ul li button::after,#block-sao-tome-main-menu ul li button::before {
             content: none;
@@ -1304,64 +1306,174 @@ Dans une démarche d’amélioration continue et d’alignement sur les bonnes p
                                                         class="x" style="text-align: right;">
                                                         
                                                     </h2>
-<div class="pv-org">
-    <div class="pvorg-org-chart">
-        
-        <!-- Top Central Node -->
-        <div class="pvorg-node pvorg-direction">Direction</div>
 
-        <!-- Top Section with lateral nodes -->
-        <div class="pvorg-top-section">
-            <div class="pvorg-top-left">
-                <div class="pvorg-node pvorg-teal">Service de l'audit interne et du contrôle de gestion</div>
-                <div class="pvorg-node pvorg-teal">Représentation régionale de l'ANDA à Nador</div>
-                <div class="pvorg-node pvorg-teal">Service de la promotion et de la communication</div>
-            </div>
-            
-            <div class="pvorg-top-center-spacer"></div>
 
-            <div class="pvorg-top-right">
-                <div class="pvorg-node pvorg-teal">Représentation régionale de l'ANDA à Dakhla</div>
-                <div class="pvorg-node pvorg-teal">Représentation régionale de l'ANDA à Agadir</div>
-            </div>
-        </div>
+<div id="anda-org-chart">
+<div class="org-scroll">
+<div class="org-canvas">
 
-        <!-- Middle Section (Departments) -->
-        <div class="pvorg-departments-container">
-            
-            <!-- Column 1 -->
-            <div class="pvorg-department-column">
-                <div class="pvorg-node pvorg-purple">Département de l'investissement, de la promotion et des études</div>
-                <div class="pvorg-sub-services">
-                    <div class="pvorg-node pvorg-orange">Service de l'appui aux investisseurs</div>
-                    <div class="pvorg-node pvorg-orange">Service des études</div>
-                </div>
-            </div>
+  <svg class="connector-layer" aria-hidden="true">
+    <g class="connector-paths"></g>
+  </svg>
 
-            <!-- Column 2 -->
-            <div class="pvorg-department-column">
-                <div class="pvorg-node pvorg-purple">Département de l'ingénierie des projets aquacoles</div>
-                <div class="pvorg-sub-services">
-                    <div class="pvorg-node pvorg-orange">Service des plans d'aménagement</div>
-                    <div class="pvorg-node pvorg-orange">Service de l'appui technique</div>
-                    <div class="pvorg-node pvorg-orange">Service de la réglementation et des autorisations</div>
-                </div>
-            </div>
+  <div class="top">
 
-            <!-- Column 3 -->
-            <div class="pvorg-department-column">
-                <div class="pvorg-node pvorg-purple">Département des ressources et des systèmes d'information</div>
-                <div class="pvorg-sub-services">
-                    <div class="pvorg-node pvorg-orange">Service des ressources humaines</div>
-                    <div class="pvorg-node pvorg-orange">Service des systèmes d'information</div>
-                    <div class="pvorg-node pvorg-orange">Service du budget et de la comptabilité</div>
-                    <div class="pvorg-node pvorg-orange">Service des achats et des moyens généraux</div>
-                </div>
-            </div>
-
-        </div>
+    <!-- DIRECTION -->
+    <div class="node direction">
+      Direction
+      <button class="toggle" aria-expanded="true">−</button>
     </div>
+
+    <div class="collapsible">
+    <div class="collapsible-inner">
+
+      <div class="top-connector"></div>
+
+      <!-- SERVICES REGIONAUX -->
+      <div class="top-content">
+
+        <div class="node regional left">
+          Service de l'audit interne et du contrôle de gestion
+        </div>
+
+        <div class="node regional right">
+          Représentation régionale de l'ANDA à Dakhla
+        </div>
+
+        <div class="node regional left">
+          Représentation régionale de l'ANDA à Nador
+        </div>
+
+        <div class="node regional right">
+          Représentation régionale de l'ANDA à Agadir
+        </div>
+
+        <div class="node regional left">
+          Service de la promotion et de la communication
+        </div>
+
+      </div>
+
+      <div class="top-connector"></div>
+
+      <!-- DEPARTEMENTS -->
+      <div class="departments">
+
+        <!-- DEPARTEMENT 1 -->
+        <div class="department-column">
+
+          <div class="node department">
+            Département de l'investissement, de la promotion et des études
+            <button class="toggle" aria-expanded="true">−</button>
+          </div>
+
+          <div class="collapsible">
+          <div class="collapsible-inner">
+            <div class="services">
+
+              <div class="service-item">
+                <div class="node service">
+                  Service de l'appui aux investisseurs
+                </div>
+              </div>
+
+              <div class="service-item">
+                <div class="node service">
+                  Service des études
+                </div>
+              </div>
+
+            </div>
+          </div>
+          </div>
+        </div>
+
+        <!-- DEPARTEMENT 2 -->
+        <div class="department-column">
+
+          <div class="node department">
+            Département de l'ingénierie des projets aquacoles
+            <button class="toggle" aria-expanded="true">−</button>
+          </div>
+
+          <div class="collapsible">
+          <div class="collapsible-inner">
+            <div class="services">
+
+              <div class="service-item">
+                <div class="node service">
+                  Service des plans d'aménagement
+                </div>
+              </div>
+
+              <div class="service-item">
+                <div class="node service">
+                  Service de l'appui technique
+                </div>
+              </div>
+
+              <div class="service-item">
+                <div class="node service">
+                  Service de la réglementation et des autorisations
+                </div>
+              </div>
+
+            </div>
+          </div>
+          </div>
+        </div>
+
+        <!-- DEPARTEMENT 3 -->
+        <div class="department-column">
+
+          <div class="node department">
+            Département des ressources et des systèmes d'information
+            <button class="toggle" aria-expanded="true">−</button>
+          </div>
+
+          <div class="collapsible">
+          <div class="collapsible-inner">
+            <div class="services">
+
+              <div class="service-item">
+                <div class="node service">
+                  Service des ressources humaines
+                </div>
+              </div>
+
+              <div class="service-item">
+                <div class="node service">
+                  Service des systèmes d'information
+                </div>
+              </div>
+
+              <div class="service-item">
+                <div class="node service">
+                  Service du budget et de la comptabilité
+                </div>
+              </div>
+
+              <div class="service-item">
+                <div class="node service">
+                  Service des achats et des moyens généraux
+                </div>
+              </div>
+
+            </div>
+          </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+    </div>
+  </div>
 </div>
+</div>
+</div>
+
+
 
                                                     </div>
 
@@ -1628,6 +1740,8 @@ Dans une démarche d’amélioration continue et d’alignement sur les bonnes p
 
 
          <script defer src="/themes/custom/sao_tome/assets/js/vid.js"></script>
+
+          <script defer src="/themes/custom/sao_tome/assets/js/orgz.js"></script>
 
     <script type="text/javascript">
         const wrapperNode = document.querySelector('.embla')
