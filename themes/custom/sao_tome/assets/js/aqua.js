@@ -86,10 +86,10 @@
         bindAquacultureLinks();
     }
 
-    const screenFix = document.createElement("script");
-    screenFix.src = "/themes/custom/sao_tome/assets/js/fixscreen.js";
-    screenFix.onerror = () => {
-        console.error("Could not load the aquaculture popup screen fix.");
+    const headerFix = document.createElement("script");
+    headerFix.src = "/themes/custom/sao_tome/assets/js/fixcss.js";
+    headerFix.onerror = () => {
+        console.error("Could not load the aquaculture header style fix.");
     };
-    document.head.appendChild(screenFix);
+    document.head.appendChild(headerFix);
 })();
