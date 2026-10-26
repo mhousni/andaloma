@@ -1,0 +1,30 @@
+.ParagraphHeaderHP-body-title.title--1.title-scroll-pending,
+.ParagraphHeaderHP-body-title .title--1.title-scroll-pending {
+  opacity: 0;
+  transform: translateY(1.5rem) scale(0.96);
+}
+
+.ParagraphHeaderHP-body-title.title--1.title-scroll-visible,
+.ParagraphHeaderHP-body-title .title--1.title-scroll-visible {
+  animation: paragraph-header-title-reveal 0.8s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+}
+
+@keyframes paragraph-header-title-reveal {
+  from {
+    opacity: 0;
+    transform: translateY(1.5rem) scale(0.96);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ParagraphHeaderHP-body-title.title--1.title-scroll-pending,
+  .ParagraphHeaderHP-body-title .title--1.title-scroll-pending {
+    opacity: 1;
+    transform: none;
+  }
+}
