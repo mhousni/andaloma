@@ -2625,7 +2625,7 @@ https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css
 
 
                                                                         </aside>
-                                                                        <div class="ParagraphImmersiveEditoItem-body">
+                                                                        <div class="ParagraphImmersiveEditoItem-body" style="padding-top: 9px;">
                                                                             <div id="anda-aqua-5"></div>
                                                                             <h3
                                                                                 class="ParagraphImmersiveEditoItem-title title--2--display">
@@ -4054,60 +4054,67 @@ https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js
 
     <script>
         (function () {
-            // Wait until the AppLoader has released the scroll lock
-            function releaseScrollAndJump() {
+            var observer;
+            var timeout;
+
+            function cancelPendingJump() {
+                if (observer) {
+                    observer.disconnect();
+                    observer = null;
+                }
+                if (timeout) {
+                    clearTimeout(timeout);
+                    timeout = null;
+                }
+            }
+
+            function jumpWhenReady() {
+                cancelPendingJump();
+
                 var hash = window.location.hash;
                 if (!hash || hash === '#') return;
 
-                var target = document.querySelector(hash);
+                var target = document.getElementById(decodeURIComponent(hash.slice(1)));
                 if (!target) return;
 
-                // Temporarily unlock scroll if the loader is still locking it
                 var html = document.documentElement;
-                var wasLocked = html.classList.contains('is-app-loading');
-                if (wasLocked) {
-                    html.classList.remove('is-app-loading');
+                function tryJump() {
+                    var loader = document.getElementById('AppLoader');
+                    var isLoading = html.classList.contains('is-app-loading');
+                    if (isLoading || loader) return false;
+
+                    cancelPendingJump();
+                    var currentTarget = document.getElementById(
+                        decodeURIComponent(window.location.hash.slice(1))
+                    );
+                    if (currentTarget) {
+                        currentTarget.scrollIntoView({ behavior: 'auto', block: 'start' });
+                    }
+                    return true;
                 }
 
-                // Do the jump
-                target.scrollIntoView({ behavior: 'auto', block: 'start' });
+                if (tryJump()) return;
 
-                // If the loader wasn't actually finished, let it re-lock and
-                // re-jump on real completion
-                if (wasLocked) {
-                    html.classList.add('is-app-loading');
-                }
-            }
-
-            // 1) Try immediately after DOM is parsed (in case loader is already gone)
-            if (document.readyState !== 'loading') {
-                releaseScrollAndJump();
-            } else {
-                document.addEventListener('DOMContentLoaded', releaseScrollAndJump);
-            }
-
-            // 2) Retry after everything loaded (images, fonts, main.js)
-            window.addEventListener('load', function () {
-                setTimeout(releaseScrollAndJump, 300);
-            });
-
-            // 3) Poll until the AppLoader element is actually removed
-            //    (that's the real signal that the site is ready)
-            var tries = 0;
-            var poll = setInterval(function () {
-                tries++;
+                observer = new MutationObserver(tryJump);
+                observer.observe(html, {
+                    attributes: true,
+                    attributeFilter: ['class']
+                });
                 var loader = document.getElementById('AppLoader');
-                var stillLoading = document.documentElement.classList.contains('is-app-loading');
-
-                if (!loader || (!stillLoading && tries > 3)) {
-                    clearInterval(poll);
-                    releaseScrollAndJump();
+                if (loader && loader.parentNode) {
+                    observer.observe(loader.parentNode, { childList: true });
                 }
-                if (tries > 60) clearInterval(poll); // ~12s max
-            }, 200);
 
-            // 4) Also re-jump if the user navigates back/forward with a hash
-            window.addEventListener('hashchange', releaseScrollAndJump);
+                timeout = setTimeout(function () {
+                    cancelPendingJump();
+                    console.error(
+                        'Could not navigate to the page section because the AppLoader scroll lock was not released.'
+                    );
+                }, 15000);
+            }
+
+            jumpWhenReady();
+            window.addEventListener('hashchange', jumpWhenReady);
         })();
     </script>
 
@@ -4319,20 +4326,6 @@ https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js
 <script src="/themes/custom/sao_tome/assets/js/fixcss.js"></script>
 <script src="/themes/custom/sao_tome/assets/js/jab.js"></script>
 
-
-<script>
-    document.addEventListener("DOMContentLoaded", () => {
-    if (window.location.hash) {
-        const target = document.querySelector(window.location.hash);
-        if (target) {
-            // Delay 100-300ms to wait for layout stabilization
-            setTimeout(() => {
-                target.scrollIntoView({ behavior: "smooth", block: "start" });
-            }, 3000);
-        }
-    }
-});
-</script>
 </body>
 
 </html>

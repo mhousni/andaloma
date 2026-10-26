@@ -280,10 +280,8 @@
     /* ---- measuring ---- */
     function measure() {
       if (expanded) { return; }
-      wrap.style.removeProperty("--card-h");
       cardW = winCards[0].offsetWidth || 400;
-      var h = 0;
-      winCards.forEach(function (c) { h = Math.max(h, c.offsetHeight); });
+      var h = 330;
       wrap.style.setProperty("--card-h", h + "px");
       var pad = narrowMQ.matches ? 84 : 96;
       wrap.style.setProperty("--stage-h", (h + pad) + "px");
