@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Auto‑Scrolling Carousels · Infinite Loop · caroxs</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      background-color: #141414;
+      font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+      color: white;
+      overflow: hidden;
+      padding-left: 50px;
+      gap: 40px;
+    }
+
+    .caroxs-carousel-wrapper {
+      width: 100%;
+    }
+
+    .caroxs-title {
+      margin-bottom: 20px;
+      font-size: 24px;
+      font-weight: bold;
+    }
+
+    .caroxs-drag-carousel {
+      display: flex;
+      gap: 15px;
+      overflow-x: auto;
+      padding-bottom: 20px;
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+      cursor: grab;
+      scroll-behavior: auto;
+      width: 100%;
+      touch-action: pan-x;
+    }
+
+    .caroxs-drag-carousel::-webkit-scrollbar {
+      display: none;
+    }
+
+    .caroxs-drag-carousel.caroxs-active {
+      cursor: grabbing;
+    }
+
+    .caroxs-item {
+      flex: 0 0 auto;
+      width: 200px;
+      height: 300px;
+      border-radius: 8px;
+      overflow: hidden;
+      transition: transform 0.2s ease;
+      user-select: none;
+      will-change: transform;
+    }
+
+    .caroxs-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      pointer-events: none;
+      display: block;
+    }
+
+    .caroxs-item:hover {
+      transform: scale(1.05);
+      z-index: 2;
+    }
+
+    .caroxs-loop-hint {
+      font-size: 12px;
+      color: #888;
+      margin-top: 10px;
+      padding-left: 10px;
+      letter-spacing: 0.5px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ─── TOP CAROUSEL (auto‑scrolls right) ─── -->
+  <div class="caroxs-carousel-wrapper">
+    <h2 class="caroxs-title">Trending Now · Auto Scroll Right</h2>
+    <div class="caroxs-drag-carousel" id="caroxsDragCarouselRight">
+      <div class="caroxs-item"><img src="https://images.unsplash.com/photo-1536440136628-849c177e76a1?w=400&h=600&fit=crop" alt="Movie 1"></div>
+      <div class="caroxs-item"><img src="https://images.unsplash.com/photo-1585951237318-9ea5e175b891?w=400&h=600&fit=crop" alt="Movie 2"></div>
+      <div class="caroxs-item"><img src="https://images.unsplash.com/photo-1626814026160-2237a95fc5a0?w=400&h=600&fit=crop" alt="Movie 3"></div>
+      <div class="caroxs-item"><img src="https://images.unsplash.com/photo-1440404653325-ab127d49abc1?w=400&h=600&fit=crop" alt="Movie 4"></div>
+      <div class="caroxs-item"><img src="https://images.unsplash.com/photo-1518676590629-3dcbd9c5a5c9?w=400&h=600&fit=crop" alt="Movie 5"></div>
+      <div class="caroxs-item"><img src="https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?w=400&h=600&fit=crop" alt="Movie 6"></div>
+      <div class="caroxs-item"><img src="https://images.unsplash.com/photo-1485846234645-a62644f84728?w=400&h=600&fit=crop" alt="Movie 7"></div>
+      <div class="caroxs-item"><img src="https://images.unsplash.com/photo-1616530940355-351fabd9524b?w=400&h=600&fit=crop" alt="Movie 8"></div>
+    </div>
+    <div class="caroxs-loop-hint">↻ auto‑scrolls right · drag to pause & explore</div>
+  </div>
+
+  <!-- ─── BOTTOM CAROUSEL (auto‑scrolls left) ─── -->
+  <div class="caroxs-carousel-wrapper">
+    <h2 class="caroxs-title">New Releases · Auto Scroll Left</h2>
+    <div class="caroxs-drag-carousel" id="caroxsDragCarouselLeft">
+      <div class="caroxs-item"><img src="https://images.unsplash.com/photo-1536440136628-849c177e76a1?w=400&h=600&fit=crop" alt="Movie A"></div>
+      <div class="caroxs-item"><img src="https://images.unsplash.com/photo-1585951237318-9ea5e175b891?w=400&h=600&fit=crop" alt="Movie B"></div>
+      <div class="caroxs-item"><img src="https://images.unsplash.com/photo-1626814026160-2237a95fc5a0?w=400&h=600&fit=crop" alt="Movie C"></div>
+      <div class="caroxs-item"><img src="https://images.unsplash.com/photo-1440404653325-ab127d49abc1?w=400&h=600&fit=crop" alt="Movie D"></div>
+      <div class="caroxs-item"><img src="https://images.unsplash.com/photo-1518676590629-3dcbd9c5a5c9?w=400&h=600&fit=crop" alt="Movie E"></div>
+      <div class="caroxs-item"><img src="https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?w=400&h=600&fit=crop" alt="Movie F"></div>
+      <div class="caroxs-item"><img src="https://images.unsplash.com/photo-1485846234645-a62644f84728?w=400&h=600&fit=crop" alt="Movie G"></div>
+      <div class="caroxs-item"><img src="https://images.unsplash.com/photo-1616530940355-351fabd9524b?w=400&h=600&fit=crop" alt="Movie H"></div>
+    </div>
+    <div class="caroxs-loop-hint">↻ auto‑scrolls left · drag to pause & explore</div>
+  </div>
+
+  <script>
+    (function() {
+      // ─── Generic setup for an auto‑scrolling carousel ───
+      function setupCarousel(slider, direction) {
+        if (!slider) return;
+
+        // 1. Duplicate original items for infinite loop
+        const originalItems = Array.from(slider.querySelectorAll('.caroxs-item'));
+        originalItems.forEach(item => {
+          const clone = item.cloneNode(true);
+          slider.appendChild(clone);
+        });
+
+        let isDown = false;
+        let startX;
+        let scrollLeft;
+        let isJumping = false;
+        let halfScrollWidth = 0;
+
+        // Auto‑scroll speed (px per frame)
+        const SCROLL_SPEED = 1.2;
+        const step = direction === 'left' ? -SCROLL_SPEED : SCROLL_SPEED;
+
+        function updateHalfWidth() {
+          if (slider.children.length === 0) return;
+          halfScrollWidth = slider.scrollWidth / 2;
+        }
+
+        setTimeout(updateHalfWidth, 50);
+        window.addEventListener('resize', updateHalfWidth);
+        window.addEventListener('load', updateHalfWidth);
+
+        // ─── Infinite scroll handler (for drag/auto) ───
+        function handleInfiniteScroll() {
+          if (isJumping) return;
+          if (halfScrollWidth <= 0) return;
+
+          const setWidth = halfScrollWidth;
+          const maxScroll = slider.scrollWidth - slider.clientWidth;
+
+          if (maxScroll < setWidth) return;
+
+          if (slider.scrollLeft >= setWidth) {
+            isJumping = true;
+            slider.scrollLeft -= setWidth;
+            requestAnimationFrame(() => { isJumping = false; });
+          } else if (slider.scrollLeft < 0) {
+            isJumping = true;
+            slider.scrollLeft += setWidth;
+            requestAnimationFrame(() => { isJumping = false; });
+          }
+        }
+
+        slider.addEventListener('scroll', () => {
+          requestAnimationFrame(handleInfiniteScroll);
+        });
+
+        // ─── Auto‑scroll loop ───
+        let isPaused = false;
+        let autoScrollFrameId = null;
+
+        function autoScrollTick() {
+          if (isPaused || isDown) {
+            autoScrollFrameId = requestAnimationFrame(autoScrollTick);
+            return;
+          }
+
+          // Only scroll if we have enough content
+          if (slider.scrollWidth > slider.clientWidth) {
+            slider.scrollLeft += step;
+            // The scroll event will handle the infinite jump
+          }
+
+          autoScrollFrameId = requestAnimationFrame(autoScrollTick);
+        }
+
+        // Start auto‑scroll after layout
+        function startAutoScroll() {
+          if (autoScrollFrameId) cancelAnimationFrame(autoScrollFrameId);
+          autoScrollFrameId = requestAnimationFrame(autoScrollTick);
+        }
+
+        setTimeout(startAutoScroll, 100);
+
+        // Pause on hover
+        slider.addEventListener('mouseenter', () => {
+          isPaused = true;
+        });
+        slider.addEventListener('mouseleave', () => {
+          isPaused = false;
+        });
+
+        // ─── Mouse drag ───
+        slider.addEventListener('mousedown', (e) => {
+          e.preventDefault();
+          isDown = true;
+          isPaused = true;
+          slider.classList.add('caroxs-active');
+          const rect = slider.getBoundingClientRect();
+          startX = e.pageX - rect.left;
+          scrollLeft = slider.scrollLeft;
+          halfScrollWidth = slider.scrollWidth / 2;
+        });
+
+        slider.addEventListener('mouseleave', () => {
+          isDown = false;
+          slider.classList.remove('caroxs-active');
+          // isPaused is set to false by the mouseleave handler above
+        });
+
+        slider.addEventListener('mouseup', () => {
+          isDown = false;
+          slider.classList.remove('caroxs-active');
+        });
+
+        slider.addEventListener('mousemove', (e) => {
+          if (!isDown) return;
+          e.preventDefault();
+          const rect = slider.getBoundingClientRect();
+          const x = e.pageX - rect.left;
+          const walk = (x - startX) * 2;
+          slider.scrollLeft = scrollLeft - walk;
+        });
+
+        // ─── Touch support ───
+        let touchStartX = 0;
+        let touchScrollLeft = 0;
+
+        slider.addEventListener('touchstart', (e) => {
+          const touch = e.touches[0];
+          const rect = slider.getBoundingClientRect();
+          touchStartX = touch.pageX - rect.left;
+          touchScrollLeft = slider.scrollLeft;
+          isDown = true;
+          isPaused = true;
+          slider.classList.add('caroxs-active');
+          halfScrollWidth = slider.scrollWidth / 2;
+        }, { passive: true });
+
+        slider.addEventListener('touchmove', (e) => {
+          if (!isDown) return;
+          e.preventDefault();
+          const touch = e.touches[0];
+          const rect = slider.getBoundingClientRect();
+          const x = touch.pageX - rect.left;
+          const walk = (x - touchStartX) * 2;
+          slider.scrollLeft = touchScrollLeft - walk;
+        }, { passive: false });
+
+        slider.addEventListener('touchend', () => {
+          isDown = false;
+          isPaused = false;
+          slider.classList.remove('caroxs-active');
+        });
+
+        slider.addEventListener('touchcancel', () => {
+          isDown = false;
+          isPaused = false;
+          slider.classList.remove('caroxs-active');
+        });
+
+        // Prevent image drag
+        slider.querySelectorAll('.caroxs-item img').forEach(img => {
+          img.addEventListener('dragstart', (e) => e.preventDefault());
+        });
+
+        // ─── Set default scroll position based on direction ───
+        function setDefaultPosition() {
+          if (!slider || slider.children.length === 0) return;
+          const setWidth = slider.scrollWidth / 2;
+          if (direction === 'left') {
+            // Start in the second set so that decreasing scrollLeft moves left naturally
+            slider.scrollLeft = setWidth;
+          } else {
+            // 'right' direction: start at 0
+            slider.scrollLeft = 0;
+          }
+        }
+
+        setTimeout(setDefaultPosition, 60);
+        window.addEventListener('load', () => {
+          setTimeout(setDefaultPosition, 30);
+        });
+      }
+
+      // ─── Initialize both carousels ───
+      const rightCarousel = document.getElementById('caroxsDragCarouselRight');
+      const leftCarousel = document.getElementById('caroxsDragCarouselLeft');
+
+      if (rightCarousel) setupCarousel(rightCarousel, 'right');
+      if (leftCarousel) setupCarousel(leftCarousel, 'left');
+
+      // Ensure correct starting positions after images load
+      window.addEventListener('load', () => {
+        setTimeout(() => {
+          if (leftCarousel) {
+            const setWidth = leftCarousel.scrollWidth / 2;
+            if (leftCarousel.scrollLeft < setWidth - 10) {
+              leftCarousel.scrollLeft = setWidth;
+            }
+          }
+          if (rightCarousel) {
+            if (rightCarousel.scrollLeft > 10) {
+              rightCarousel.scrollLeft = 0;
+            }
+          }
+        }, 150);
+      });
+
+    })();
+  </script>
+</body>
+</html>
