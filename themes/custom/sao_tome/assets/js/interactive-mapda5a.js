@@ -2854,6 +2854,12 @@
               )),
               (this.svg = this.content.querySelector(".world")),
               (this.svgGroup = this.svg.querySelector(".world-group")),
+              (this.mapFocus = {
+                x: parseFloat(this.svg.getAttribute("data-focus-x")),
+                y: parseFloat(this.svg.getAttribute("data-focus-y")),
+              }),
+              (!isFinite(this.mapFocus.x) || !isFinite(this.mapFocus.y)) &&
+                (this.mapFocus = null),
               (this.svgGroupRegions =
                 this.svg.querySelectorAll(".regions path")),
               (this.svgGroupOtherWorld =
@@ -2882,7 +2888,7 @@
               }),
               (this.dialogs = this.getDialogObjects()),
               (this.currentDialog = null),
-              (this.distanceScroll = 3 * window.innerHeight),
+              (this.distanceScroll = 2 * window.innerHeight),
               (this.svgOffsetYCenter = this.computeSvgGroupOffsetYCenter()),
               this.init());
           },
@@ -2927,9 +2933,45 @@
           },
         },
         {
+          key: "getMapFocusTransform",
+          value: function (t) {
+            var r = this,
+              e = this.svg.viewBox.baseVal;
+            return {
+              transformOrigin: "0px 0px",
+              x: function () {
+                return e.width / 2 - r.mapFocus.x * t;
+              },
+              y: function () {
+                var n = r.svg.getBoundingClientRect().height;
+                return (
+                  e.height / 2 -
+                  (r.header.getBoundingClientRect().height * e.height) /
+                    (2 * n) -
+                  r.mapFocus.y * t
+                );
+              },
+            };
+          },
+        },
+        {
           key: "animateMap",
           value: function () {
-            var t = this;
+            var t = this,
+              r = {
+                scale: 8,
+                ease: "sine.inOut",
+                duration: 0.5,
+              },
+              e = {
+                scale: 120,
+                ease: "sine.inOut",
+                duration: 0.5,
+              };
+            this.mapFocus
+              ? (Object.assign(r, this.getMapFocusTransform(8)),
+                Object.assign(e, this.getMapFocusTransform(120)))
+              : (r.y = this.svgOffsetYCenter);
             ((this.tl = gsap.timeline({
               scrollTrigger: {
                 trigger: this.container,
@@ -2947,12 +2989,7 @@
               this.tl
                 .to(
                   this.svgGroup,
-                  {
-                    scale: 8,
-                    y: this.svgOffsetYCenter,
-                    ease: "sine.inOut",
-                    duration: 0.5,
-                  },
+                  r,
                   0,
                 )
                 .to(
@@ -2969,7 +3006,9 @@
                 .to(
                   this.marker,
                   {
-                    y: this.svgOffsetYCenter,
+                    x: -45,
+                    y: "-18.0078%",
+                    z: -19,
                     duration: 0.5,
                     ease: "sine.inOut",
                   },
@@ -2977,7 +3016,7 @@
                 )
                 .to(
                   this.svgGroup,
-                  { scale: 120, ease: "sine.inOut", duration: 0.5 },
+                  e,
                   0.5,
                 )
                 .to(
@@ -3003,8 +3042,8 @@
                 )
                 .to(
                   this.map.container,
-                  { opacity: 1, ease: "power4.in", duration: 0.3 },
-                  0.7,
+                  { opacity: 1, ease: "power2.out", duration: 0.2 },
+                  0.5,
                 ),
               this.markerCircles.forEach(function (t, r) {
                 gsap.fromTo(
@@ -3026,7 +3065,7 @@
           value: function () {
             var t = this;
             (window.EventBus.on(window.Events.RESIZE, function () {
-              ((t.distanceScroll = 3 * window.innerHeight),
+              ((t.distanceScroll = 2 * window.innerHeight),
                 (t.svgOffsetYCenter = t.computeSvgGroupOffsetYCenter()));
             }),
               this.dialogs.forEach(function (r) {
