@@ -3,6 +3,8 @@
       function setupCarousel(slider, direction) {
         if (!slider) return;
 
+        slider.setAttribute('data-lenis-prevent-touch', '');
+
         // 1. Duplicate original items for infinite loop
         const originalItems = Array.from(slider.querySelectorAll('.caroxs-item'));
         originalItems.forEach(item => {
@@ -123,12 +125,16 @@
 
         // ─── Touch support ───
         let touchStartX = 0;
+        let touchStartY = 0;
+        let touchAxis = null;
         let touchScrollLeft = 0;
 
         slider.addEventListener('touchstart', (e) => {
           const touch = e.touches[0];
           const rect = slider.getBoundingClientRect();
           touchStartX = touch.pageX - rect.left;
+          touchStartY = touch.pageY - rect.top;
+          touchAxis = null;
           touchScrollLeft = slider.scrollLeft;
           isDown = true;
           isPaused = true;
@@ -138,10 +144,27 @@
 
         slider.addEventListener('touchmove', (e) => {
           if (!isDown) return;
-          e.preventDefault();
           const touch = e.touches[0];
           const rect = slider.getBoundingClientRect();
           const x = touch.pageX - rect.left;
+          const y = touch.pageY - rect.top;
+          const deltaX = x - touchStartX;
+          const deltaY = y - touchStartY;
+
+          if (!touchAxis && Math.max(Math.abs(deltaX), Math.abs(deltaY)) > 8) {
+            touchAxis = Math.abs(deltaX) > Math.abs(deltaY) ? 'x' : 'y';
+          }
+
+          if (touchAxis === 'y') {
+            isDown = false;
+            isPaused = false;
+            slider.classList.remove('caroxs-active');
+            return;
+          }
+
+          if (touchAxis !== 'x') return;
+
+          e.preventDefault();
           const walk = (x - touchStartX) * 2;
           slider.scrollLeft = touchScrollLeft - walk;
         }, { passive: false });
@@ -149,12 +172,14 @@
         slider.addEventListener('touchend', () => {
           isDown = false;
           isPaused = false;
+          touchAxis = null;
           slider.classList.remove('caroxs-active');
         });
 
         slider.addEventListener('touchcancel', () => {
           isDown = false;
           isPaused = false;
+          touchAxis = null;
           slider.classList.remove('caroxs-active');
         });
 

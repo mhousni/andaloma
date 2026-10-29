@@ -37,7 +37,7 @@
       cursor: grab;
       scroll-behavior: auto;
       width: 100%;
-      touch-action: pan-x;
+      touch-action: pan-y;
     }
 
     .caroxs-drag-carousel::-webkit-scrollbar {
